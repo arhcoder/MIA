@@ -52,6 +52,11 @@ class Harmony(Staff):
         
         self._content.append(chord)
         self._update_space()
+
+    #? Chords getter:
+    @property
+    def chords(self):
+        return self._content
     
     
     def __repr__(self):

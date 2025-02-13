@@ -3,7 +3,7 @@ from Data.harmony.chords import patterns
 
 class Chord:
 
-    def __init__(self, name: str, ctype: str, inversion: int, octave: int, time: int, dot: bool = False, tuning: int = 440):
+    def __init__(self, name: str, ctype: str, inversion: int, octave: int, time: int, dot: bool = False, degree: str = "", tuning: int = 440):
         """
             Paremeters:
             - name [str]: Indicates the name of the chord based on the root note.
@@ -114,6 +114,7 @@ class Chord:
         self._tuning = tuning
 
         #? Calculated:
+        self._degree = degree
         self._notes = None
         self._notes_str = None
         self._space = 0
@@ -187,7 +188,7 @@ class Chord:
         return self._name
     
     @name.setter
-    def name(self, value):
+    def name(self, value: str):
         naturals = ["C", "D", "E", "F", "G", "A", "B", "X"]
         sharps = ["C#", "D#", "F#", "G#", "A#"]
         flats = ["Db", "Eb", "Gb", "Ab", "Bb"]
@@ -206,7 +207,7 @@ class Chord:
         return self._ctype
     
     @ctype.setter
-    def ctype(self, value):
+    def ctype(self, value: str):
         value = value.lower()
         if value not in patterns:
             raise ValueError(f"\"value\" must be one of {patterns}, but given {value}")
@@ -220,7 +221,7 @@ class Chord:
         return self._inversion
     
     @inversion.setter
-    def inversion(self, value):
+    def inversion(self, value: int):
         if value < 0 or value > 3 or not isinstance(value, int):
             raise ValueError(f"\"inversion\" must be an integer between 0 and 3, but given {value}")
         if value != self._inversion:
@@ -233,7 +234,7 @@ class Chord:
         return self._octave
 
     @octave.setter
-    def octave(self, value):
+    def octave(self, value: int):
         if value < 0 or value > 8 or not isinstance(value, int):
             raise ValueError(f"\"octave\" must be an integer between 0 and 8, but given {value}")
         if value != self._octave:
@@ -246,7 +247,7 @@ class Chord:
         return self._time
     
     @time.setter
-    def time(self, value):
+    def time(self, value: int):
         if value not in [1, 2, 4, 8, 16, 32, 64, 3, 6, 12, 24]:
             raise ValueError(f"\"time\" must be one of: [1, 2, 4, 8, 16, 32, 64] or for tripletes: [3, 6, 12, 24], but given {value}")
         if value != self._time:
@@ -259,7 +260,7 @@ class Chord:
         return self._dot
 
     @dot.setter
-    def dot(self, value):
+    def dot(self, value: bool):
         if not isinstance(value, bool):
             raise TypeError(f"\"dot\" has to be boolean (True or False), but given {value}")
         if value != self._dot:
@@ -272,21 +273,37 @@ class Chord:
         return self._tuning
 
     @tuning.setter
-    def tuning(self, value):
+    def tuning(self, value: int):
         if value not in [440, 432]:
             raise ValueError(f"\"tuning\" must be either 440 or 432, but given {value}")
         if value != self._tuning:
             self._tuning = value
             self._calculate_notes()
     
+    #? DEGREE:
+    #* Given by external sources;
+    #* Says which is the function of the chord in a reference key:
+    @property
+    def degree(self):
+        return self._degree
+    
+    def degree(self, degree: str):
+        if not isinstance(degree, str):
+            raise TypeError("\"degree\" must be a string")
+        self._degree = degree
+    
     #? SPACE:
     @property
     def space(self):
         return self._space
     
+    @property
+    def notes(self):
+        return self._notes
+    
 
     def __repr__(self):
         return (
-            f"Chord(name={self._name}, ctype={self._ctype}, inversion={self._inversion}, octave={self._octave}, "
+            f"Chord(name={self._name}, ctype={self._ctype}, inversion={self._inversion}, octave={self._octave}, degree={self._degree}, "
             f"time={self._time}, space={self._space} dot={self._dot} notes={self._notes}, notes_str={self._notes_str})"
         )

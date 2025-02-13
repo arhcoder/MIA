@@ -112,7 +112,7 @@ class Note:
         return self._time
     
     @time.setter
-    def time(self, value):
+    def time(self, value: int):
         if value not in [1, 2, 4, 8, 16, 32, 64, 3, 6, 12, 24]:
             raise ValueError(f"\"time\" must be one of: [1, 2, 4, 8, 16, 32, 64] or for tripletes: [3, 6, 12, 24], but given {value}")
         if value != self._time:
@@ -130,7 +130,7 @@ class Note:
         return self._note
 
     @note.setter
-    def note(self, value):
+    def note(self, value: str):
         if value != self._note:
             self._note = str(value).capitalize()
             self._update_frequency()
@@ -141,7 +141,7 @@ class Note:
         return self._octave
 
     @octave.setter
-    def octave(self, value):
+    def octave(self, value: int):
         if value < 0 or value > 8 or not isinstance(value, int):
             raise ValueError(f"\"octave\" must be an integer between 0 and 8, but given {value}")
         if value != self._octave:
@@ -154,7 +154,7 @@ class Note:
         return self._dot
 
     @dot.setter
-    def dot(self, value):
+    def dot(self, value: bool):
         if not isinstance(value, bool):
             raise TypeError(f"\"dot\" has to be boolean (True or False), but given {value}")
         if value != self._dot:
@@ -167,7 +167,7 @@ class Note:
         return self._tuning
 
     @tuning.setter
-    def tuning(self, value):
+    def tuning(self, value: int):
         if value not in [440, 432]:
             raise ValueError(f"\"tuning\" must be either 440 or 432, but given {value}")
         if value != self._tuning:

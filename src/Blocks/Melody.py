@@ -29,12 +29,10 @@ class Melody(Staff):
         self._update_space()
     
 
-    def __repr__(self):
-        return (
-            f"Melody(signature={self._signature}, key={self._key}, tuning={self._tuning}, "
-            f"upbeat={self._upbeat}, anacrusis={self._anacrusis}, space={self._space}, "
-            f"bars_amount={self._bars_amount}, phrases={self._content})"
-        )
+    #? Phrases getter:
+    @property
+    def phrases(self):
+        return self._content
     
     def __repr__(self):
         return (
