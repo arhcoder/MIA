@@ -24,8 +24,8 @@ class Staff:
             raise TypeError(f"\"signature\" must be a tuple of two integers, but given {signature}")
         
         numerator, denominator = signature
-        if not (isinstance(numerator, int) and numerator > 0):
-            raise ValueError(f"\"signature\" numerator must be a positive integer, but given {numerator}")  
+        if not (isinstance(numerator, int) and numerator > 0) or numerator > 24:
+            raise ValueError(f"\"signature\" numerator must be a positive integer between 1 and 24 (max), but given {numerator}")  
         if denominator not in [2, 4, 8, 16, 32, 64]:
             raise ValueError(f"\"signature\" denominator must be one of [2, 4, 8, 16, 32, 64], but given {denominator}")
         self._signature = signature
@@ -82,7 +82,7 @@ class Staff:
         return self._signature
     
     @signature.setter
-    def signature(self, value):
+    def signature(self, value: tuple):
         if not isinstance(value, tuple) or len(value) != 2:
             raise TypeError(f"\"signature\" must be a tuple of two integers, but given {value}")
         
@@ -103,9 +103,9 @@ class Staff:
         return self._key
     
     @key.setter
-    def key(self, value):
+    def key(self, value: tuple):
         if not (isinstance(value, tuple) and len(value) == 2):
-            raise TypeError(f"\"key\" must be a tuple of (str, 'major'/'minor'), but given {value}")
+            raise TypeError(f"\"key\" must be a tuple of (str, \"major\"/\"minor\"), but given {value}")
         
         key_name, key_type = value
         if not isinstance(key_name, str):
@@ -123,7 +123,7 @@ class Staff:
         return self._upbeat
     
     @upbeat.setter
-    def upbeat(self, value):
+    def upbeat(self, value: int):
         if not isinstance(value, int):
             raise TypeError(f"\"upbeat\" must be an integer, but given {type(value).__name__}")
         
@@ -146,7 +146,7 @@ class Staff:
         return self._tuning
     
     @tuning.setter
-    def tuning(self, value):
+    def tuning(self, value: int):
         if value not in [440, 432]:
             raise ValueError(f"\"tuning\" must be either 440 or 432, but given {value}")
         self._tuning = value
@@ -175,7 +175,7 @@ class Staff:
         self._space = sum(element.space for element in self._content)
         self._update_bars_amount()
 
-    def _get_time_from_space(self, space_required):
+    def _get_time_from_space(self, space_required: float):
         """
             Find the appropriate time value that corresponds to the given space.
             Parameters:

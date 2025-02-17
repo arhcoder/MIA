@@ -7,8 +7,8 @@ simulated_annealing_phrases_params = {
 
     "initial_temperature": 100,
     "cooling_rate": 0.98,
-    "iterations": 3000,
-    "selection_bias": 5,
+    "iterations": 10000,
+    "selection_bias": 3,
     "dot_probability": 0.2,
 
     #? Set this parameters between -100 and 100 as IMPORTANCE:
@@ -22,9 +22,8 @@ simulated_annealing_phrases_params = {
     #*    3. A value of 100 means that the presence of that characteristic will be rewarded the most
     #*
     #? USE THE PARAMETERS IN A BALANCED WAY, NOT GOING TO extremes so as not to lose variety:
-    "correct_fitting_importance": 98,
-    "beat_on_strong_beats_reward": 90,
-    "not_beat_on_strong_beats_penalty": -70,
+    "correct_fitting_importance": 100,
+    "beat_on_strong_beats_reward": 100,
     "initial_rest_duration_reward": 10,
     "initial_rest_anacrusis_penalty": -100,
     "final_rest_duration_reward": 60,
@@ -36,7 +35,7 @@ simulated_annealing_phrases_params = {
 
     #? Uniformity is the grade on which there are
     #? repetitive use of notes figures:
-    "uniformity": 50
+    "uniformity": 20
 }
 
 
