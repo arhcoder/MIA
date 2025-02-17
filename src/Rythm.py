@@ -74,13 +74,13 @@ class Rythm:
                         - 100: Maximally rewards the characteristic, encouraging its presence
                     
                     - "correct_fitting_importance" [int]:
-                        Importance of fitting the syllables' durations exactly to the expected size
+                        Importance of fitting the syllables" durations exactly to the expected size
                     
                     - "beat_on_strong_beats_reward" [int]:
-                        Reward for aligning syllables with strong beats (e.g., downbeats)
-                    
-                    - "not_beat_on_strong_beats_penalty" [int]:
-                        Penalty for not aligning syllables with strong beats
+                        Reward for aligning syllables with strong beats:
+                            - If stressed hits a strong beat, the double (no, 10 times) of reward
+                            - If stressed hits semi-strong beat, the reward
+                            - If not, not
                     
                     - "initial_rest_duration_reward" [int]:
                         Reward for having an initial rest before the first syllable
@@ -141,7 +141,6 @@ class Rythm:
             self.params["selection_bias"] = 5
             self.params["correct_fitting_importance"] = 100
             self.params["beat_on_strong_beats_reward"] = 100
-            self.params["not_beat_on_strong_beats_penalty"] = -100
             self.params["initial_rest_duration_reward"] = -100
             self.params["initial_rest_anacrusis_penalty"] = -100
             self.params["final_rest_duration_reward"] = -100
@@ -267,6 +266,8 @@ class Rythm:
         # Here best_candidate is a tuple: (notes, dots):
         notes, dots = best_candidate
 
+        # Ensures the size of the phrase is not exceding:
+        notes, dots, extra_silences = self._adjust_phrase_size((notes, dots), total_space)
         
         #/ If for chords return as simple list of strings:
         if self.for_chords:
@@ -294,6 +295,11 @@ class Rythm:
             # For rests, use "X" in octave 0:
             if notes[-1] != 0:
                 note_obj = Note(time=notes[-1], note="X", octave=0, dot=dots[-1])
+                phrase.add_end(note_obj)
+            
+            # Process the extra silence coins:
+            for fig, dot in extra_silences:
+                note_obj = Note(time=fig, note="X", octave=0, dot=dot)
                 phrase.add_end(note_obj)
             
             return phrase
@@ -371,6 +377,7 @@ class Rythm:
                     best_score = score
             T *= cooling_rate
 
+        print("Best:", best_score)
         return best
     
 
@@ -429,6 +436,142 @@ class Rythm:
         return (new_notes, new_dots)
     
 
+    def _generate_compound_subdivisions(self, total: int):
+        """
+            Finds a random combination of duples, triples and quadruples meters
+            to compund special times signatures as 5/4, 7/4, etc
+        """
+        parts = [2, 3, 4]
+        partitions = []
+
+        def rec(remaining, current):
+            if remaining == 0:
+                partitions.append(current.copy())
+            else:
+                for p in parts:
+                    if p <= remaining:
+                        current.append(p)
+                        rec(remaining - p, current)
+                        current.pop()
+        rec(total, [])
+        if partitions:
+            return random.choice(partitions)
+        else:
+            return [total]
+    
+
+    def _adjust_phrase_size(self, candidate: tuple, total_space: int):
+        """
+            Adjusts the candidate (notes, dots) so that the total effective duration does not exceed total_space
+            If the total effective duration (rounded) is larger than total_space, then:
+            1. It inspects the last syllable note (the one before the final rest).
+                - If that note is a triplet variant, it prints a warning and leaves the candidate unchanged
+            2. Otherwise, it tries to reduce the last syllable note to a smaller effective figure
+                (For example, a Quarter (4) without a dot (16) might be replaced by an Eighth (8) with a dot (12),
+                or, if already dotted, by the same figure without the dot)
+                It chooses the candidate modification that reduces the duration by as little as possible while bringing
+                the overall total under the limit
+            3. If after this reduction there is still a gap, it adjusts the final rest (or even inserts additional silence notes)
+                so that the overall duration exactly matches the desired total_space
+        """
+        notes, dots = candidate
+
+        def effective(note, dot):
+            if note == 0:
+                return 0
+            base = self.TIMES[note][1]
+            return base + (0.5 * base if dot else 0)
+
+        # Compute total effective duration (rounded to integer):
+        total_eff = round(sum(effective(n, d) for n, d in zip(notes, dots)))
+
+        # No adjustment needed; return an empty extra silences list:
+        if total_eff <= total_space:
+            return (notes, dots, [])
+
+        # 1: Adjust the last syllable note
+        # Candidate structure: index 0 = initial rest, indices 1 .. -2 = syllable notes, index -1 = final rest:
+        last_syllable_index = len(notes) - 2
+        last_note = notes[last_syllable_index]
+        last_dot = dots[last_syllable_index]
+
+        # If the last syllable note is a triplet variant, do not adjust it:
+        if last_note in self.triplet_types:
+            print(f"WARNING: Phrase exceeds space of {total_space} and has triplet at the end")
+            return (notes, dots, [])
+        
+        # Build candidate modifications for the last syllable note using allowed non-triplet figures (non-zero):
+        current_last_eff = effective(last_note, last_dot)
+        allowed_non_triplet = [fig for fig in self.TIMES.keys() if fig not in self.triplet_types and fig != 0]
+        candidate_mods = []
+
+        # Try both undotted and dotted versions for each candidate:
+        for fig in allowed_non_triplet:
+            for dot_candidate in [False, True]:
+                cand_eff = self.TIMES[fig][1] + (0.5 * self.TIMES[fig][1] if dot_candidate else 0)
+
+                # Only consider candidates that reduce the effective duration:
+                if cand_eff < current_last_eff:
+                    candidate_mods.append((fig, dot_candidate, cand_eff))
+        if not candidate_mods:
+            print("WARNING: Cannot reduce last note further to adjust phrase size")
+            return (notes, dots, [])
+        
+        # Sort candidate modifications by effective duration (largest first, but still less than current):
+        candidate_mods.sort(key=lambda x: x[2], reverse=True)
+        chosen_mod = None
+        for mod_fig, mod_dot, mod_eff in candidate_mods:
+            new_total_eff = total_eff - current_last_eff + mod_eff
+            if new_total_eff <= total_space:
+                chosen_mod = (mod_fig, mod_dot, mod_eff)
+                total_eff = new_total_eff
+                break
+        
+        # None of the mods bring the total under; choose the one that reduces the duration the least:
+        if chosen_mod is None:
+            chosen_mod = candidate_mods[0]
+            total_eff = total_eff - current_last_eff + chosen_mod[2]
+
+        # Apply the chosen modification:
+        notes[last_syllable_index] = chosen_mod[0]
+        dots[last_syllable_index] = chosen_mod[1]
+
+        # 2: Fill the Remaining Gap Using a Greedy Coin-Change Algorithm:
+        # Remove the existing final rest (last element):
+        notes.pop()
+        dots.pop()
+        total_eff = round(sum(effective(n, d) for n, d in zip(notes, dots)))
+        gap = total_space - total_eff
+
+        # For silence filling we use allowed non-triplet figures (and we use them undotted) because
+        # their effective durations equal their base values;
+        # Coins available (sorted descending by effective duration):
+        coins = []
+        for fig in sorted([fig for fig in self.TIMES.keys() if fig not in self.triplet_types and fig != 0],
+                           key=lambda f: self.TIMES[f][1], reverse=True):
+            coins.append((fig, False, self.TIMES[fig][1]))
+
+        # Greedy coin-change: choose as few coins as possible to exactly fill the gap:
+        extra_silences = []
+        remaining = gap
+        for coin in coins:
+            coin_value = coin[2]
+            count = remaining // coin_value
+            if count > 0:
+                extra_silences.extend([ (coin[0], coin[1]) ] * count)
+                remaining -= coin_value * count
+            if remaining == 0:
+                break
+        
+        # Because the smallest coin (Sixty-fourth, effective 1) is available, remaining should be 0:
+        if remaining != 0:
+            print(f"WARNING: Gap of {remaining} could not be exactly filled with available silence figures.")
+
+        # Rebuild final candidate: the adjusted notes/dots plus the extra silence coins;
+        # Here we return the adjusted candidate and the extra silences separately:
+        return (notes, dots, extra_silences)
+    
+
     def rate(self, candidate: tuple, syllables: list, total_space: int):
         """
         Objective function to rate the candidate solution
@@ -442,7 +585,7 @@ class Rythm:
         
         The function:
             1. Penalizes the absolute difference between the computed space (summing the durations of all
-               notes with an extra half note duration added when dotted) and total_space. (The computed space is rounded.)
+               notes with an extra half note duration added when dotted) and total_space. (The computed space is rounded)
             2. Rewards placement of stressed syllables ("*") on strong beats (accounting for the upbeat)
             3. Rewards the initial and final rests according to their effective duration relative to the maximum (96)
             4. Rewards (or penalizes) uniformity among the syllable notes
@@ -471,21 +614,101 @@ class Rythm:
 
         #? ---------------------------------------------------------------------------------
         #? 2. Reward stressed syllables on strong beats
-        #?    Determine the effective position of each syllable note within the bar,
-        #?    taking into account the upbeat:
-        base_duration = self.TIMES[self.signature[1]][1]
-        upbeat_duration = self.upbeat * base_duration
-        bar_space = self.signature[0] * base_duration
+        #? Gets the type of meter and the respective strong times for each:
+        numerator = self.signature[0]
+        denom = self.signature[1]
+        base_duration = self.TIMES[denom][1]
+        bar_space = numerator * base_duration
 
-        cumulative_time = 0
-        if notes[0] == 0:
-            cumulative_time = 0
+        # Meter classification:
+        if numerator == 1:
+            meter = "unique"
+        elif numerator % 3 == 0:
+            meter = "triple"
+        elif numerator % 4 == 0:
+            meter = "quadruple"
+        elif numerator % 2 == 0:
+            meter = "duple"
         else:
-            cumulative_time = self.TIMES[notes[0]][1]
-            if dots[0]:
-                cumulative_time += 0.5 * self.TIMES[notes[0]][1]
+            meter = "compound"
 
+        # Determine beat boundaries and beat strengths:
+        # Determine beat boundaries and beat strengths:
+        if meter == "unique":
+            beat_boundaries = [0, bar_space]
+            beat_strengths = ["strong"]
+        elif meter == "duple":
+            beat_boundaries = [0, bar_space / 2, bar_space]
+            beat_strengths = ["strong", "weak"]
+        elif meter == "triple":
+            beat_boundaries = [0, bar_space / 3, 2 * bar_space / 3, bar_space]
+            beat_strengths = ["strong", "weak", "semi-strong"]
+        elif meter == "quadruple":
+            beat_boundaries = [0, bar_space / 4, bar_space / 2, 3 * bar_space / 4, bar_space]
+            beat_strengths = ["strong", "weak", "semi-strong", "weak"]
+        elif meter == "compound":
+            subdivisions = self._generate_compound_subdivisions(numerator)
+            random.shuffle(subdivisions)
+            beat_boundaries = [0]
+            for part in subdivisions:
+                beat_boundaries.append(beat_boundaries[-1] + part * base_duration)
+            if len(subdivisions) == 1:
+                beat_strengths = ["strong"]
+            elif len(subdivisions) == 2:
+                beat_strengths = ["strong", "weak"]
+            elif len(subdivisions) == 3:
+                beat_strengths = ["strong", "weak", "semi-strong"]
+            else:
+                beat_strengths = ["strong", "weak", "semi-strong"] + ["weak"] * (len(subdivisions) - 3)
+                # Ensure no more than two consecutive weak beats:
+                for i in range(1, len(beat_strengths) - 1):
+                    if beat_strengths[i - 1] == "weak" and beat_strengths[i] == "weak" and beat_strengths[i + 1] == "weak":
+                        beat_strengths[i] = "semi-strong"
+
+        # Process syllable notes:
+        # upbeat_duration = self.upbeat * base_duration
+        # bar_space = self.signature[0] * base_duration
+        upbeat_duration = self.upbeat * base_duration
+        cumulative_time = -upbeat_duration
+
+        if notes[0] != 0:
+            initial_rest_duration = self.TIMES[notes[0]][1]
+            if dots[0]:
+                initial_rest_duration += 0.5 * self.TIMES[notes[0]][1]
+            cumulative_time += initial_rest_duration
+
+        # For each syllable, compute its onset (effective) position and apply a continuous reward if stressed:
         for idx, syl in enumerate(syllables):
+
+            # The effective onset of the syllable is given by cumulative_time modulo the bar length:
+            effective_position = cumulative_time % bar_space
+
+            # Identify which beat this effective_position falls into:
+            beat_index = None
+            for i in range(len(beat_boundaries) - 1):
+                if beat_boundaries[i] <= effective_position < beat_boundaries[i + 1]:
+                    beat_index = i
+                    break
+            if beat_index is None:
+                beat_index = len(beat_boundaries) - 2
+
+            beat_start = beat_boundaries[beat_index]
+            beat_duration = beat_boundaries[beat_index + 1] - beat_boundaries[beat_index]
+            offset = effective_position - beat_start
+
+            # Tolerance of 15% of beat duration:
+            tolerance = 0.02 * beat_duration
+
+            # Compute a continuous reward factor that decreases linearly with offset:
+            if "*" in syl:
+                
+                reward_factor = max(0, (tolerance - offset) / tolerance)
+                if beat_strengths[beat_index] == "strong":
+                    score += 10.0 * reward_factor * (self.params["beat_on_strong_beats_reward"] / 100.0)
+                elif beat_strengths[beat_index] == "semi-strong":
+                    score += 1.0 * reward_factor * (self.params["beat_on_strong_beats_reward"] / 100.0)
+
+            # Compute effective duration of the current syllable note:
             note_val = notes[idx + 1]
             if note_val == 0:
                 eff = 0
@@ -493,12 +716,8 @@ class Rythm:
                 eff = self.TIMES[note_val][1]
                 if dots[idx + 1]:
                     eff += 0.5 * self.TIMES[note_val][1]
-            effective_position = (cumulative_time - upbeat_duration) % bar_space
-            if "*" in syl:
-                if effective_position < 2:
-                    score += self.params["beat_on_strong_beats_reward"] / 100.0
-                else:
-                    score += self.params["not_beat_on_strong_beats_penalty"] / 100.0
+
+            # Update cumulative_time AFTER processing the onset of this syllable:
             cumulative_time += eff
 
         #? ---------------------------------------------------------------------------------

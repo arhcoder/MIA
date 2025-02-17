@@ -24,8 +24,8 @@ class Staff:
             raise TypeError(f"\"signature\" must be a tuple of two integers, but given {signature}")
         
         numerator, denominator = signature
-        if not (isinstance(numerator, int) and numerator > 0):
-            raise ValueError(f"\"signature\" numerator must be a positive integer, but given {numerator}")  
+        if not (isinstance(numerator, int) and numerator > 0) or numerator > 24:
+            raise ValueError(f"\"signature\" numerator must be a positive integer between 1 and 24 (max), but given {numerator}")  
         if denominator not in [2, 4, 8, 16, 32, 64]:
             raise ValueError(f"\"signature\" denominator must be one of [2, 4, 8, 16, 32, 64], but given {denominator}")
         self._signature = signature
