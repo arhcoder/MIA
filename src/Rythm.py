@@ -267,7 +267,7 @@ class Rythm:
         notes, dots = best_candidate
 
         # Ensures the size of the phrase is not exceding:
-        notes, dots, extra_silences = self._adjust_phrase_size((notes, dots), total_space)
+        notes, dots, extra_silences, original_notes_count = self._adjust_phrase_size((notes, dots), total_space)
         
         #/ If for chords return as simple list of strings:
         if self.for_chords:
@@ -285,9 +285,9 @@ class Rythm:
                 note_obj = Note(time=notes[0], note="X", octave=0, dot=dots[0])
                 phrase.add_end(note_obj)
             
-            # Process the syllable notes (indices 1 to len(notes)-2)
+            # Process the syllable notes (indices 1 to original_notes_count)
             # Use "A" in octave 4 as default (because is just rythmic, not melodic yet):
-            for idx in range(1, len(notes) - 1):
+            for idx in range(1, original_notes_count + 1):
                 note_obj = Note(time=notes[idx], note="A", octave=4, dot=dots[idx])
                 phrase.add_end(note_obj)
             
@@ -376,8 +376,7 @@ class Rythm:
                     best = copy.deepcopy(neighbor)
                     best_score = score
             T *= cooling_rate
-
-        print("Best:", best_score)
+        
         return best
     
 
@@ -474,7 +473,11 @@ class Rythm:
             3. If after this reduction there is still a gap, it adjusts the final rest (or even inserts additional silence notes)
                 so that the overall duration exactly matches the desired total_space
         """
+        
+        # The original number of syllable notes:
+        # (candidate structure: index 0 = initial rest, indices 1 .. -2 = syllable notes, index -1 = final rest):
         notes, dots = candidate
+        original_notes_count = len(notes) - 2
 
         def effective(note, dot):
             if note == 0:
@@ -487,7 +490,7 @@ class Rythm:
 
         # No adjustment needed; return an empty extra silences list:
         if total_eff <= total_space:
-            return (notes, dots, [])
+            return (notes, dots, [], original_notes_count)
 
         # 1: Adjust the last syllable note
         # Candidate structure: index 0 = initial rest, indices 1 .. -2 = syllable notes, index -1 = final rest:
@@ -498,7 +501,7 @@ class Rythm:
         # If the last syllable note is a triplet variant, do not adjust it:
         if last_note in self.triplet_types:
             print(f"WARNING: Phrase exceeds space of {total_space} and has triplet at the end")
-            return (notes, dots, [])
+            return (notes, dots, [], original_notes_count)
         
         # Build candidate modifications for the last syllable note using allowed non-triplet figures (non-zero):
         current_last_eff = effective(last_note, last_dot)
@@ -515,7 +518,7 @@ class Rythm:
                     candidate_mods.append((fig, dot_candidate, cand_eff))
         if not candidate_mods:
             print("WARNING: Cannot reduce last note further to adjust phrase size")
-            return (notes, dots, [])
+            return (notes, dots, [], original_notes_count)
         
         # Sort candidate modifications by effective duration (largest first, but still less than current):
         candidate_mods.sort(key=lambda x: x[2], reverse=True)
@@ -566,10 +569,13 @@ class Rythm:
         # Because the smallest coin (Sixty-fourth, effective 1) is available, remaining should be 0:
         if remaining != 0:
             print(f"WARNING: Gap of {remaining} could not be exactly filled with available silence figures.")
+        
+        # Re-append a final rest (0 with dot=False) to restore candidate structure:
+        notes.append(0)
+        dots.append(False)
 
-        # Rebuild final candidate: the adjusted notes/dots plus the extra silence coins;
-        # Here we return the adjusted candidate and the extra silences separately:
-        return (notes, dots, extra_silences)
+        # Returns all this stuff:
+        return (notes, dots, extra_silences, original_notes_count)
     
 
     def rate(self, candidate: tuple, syllables: list, total_space: int):
