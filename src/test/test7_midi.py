@@ -23,7 +23,7 @@ print("✅")
 
 
 #/ SONG PARAMETERS -------------------------------------------------------------------- #/
-key = "C"
+key = "c"
 scale = "major"
 signature = (4, 4)
 bars_per_sentence = 1
@@ -63,7 +63,7 @@ print("✅")
 
 #? RYTHM GENERATION:
 #* Rythm object to fit all sentences:
-print(f"{'* Generating Ryths':<40}", end="")
+print(f"{'* Generating Rythms':<40}", end="")
 rythm_melody = Rythm(
     signature=signature,
     upbeat=upbeat,
@@ -99,7 +99,7 @@ print("\nCHORDS PROGRESSION GENERATION")
 amount_of_chords_list = [chords_for_s1, chords_for_s2, chords_for_s3, chords_for_s4]
 
 #* Class GeneticProgression to get simple chord progression:
-print(f"{'* Creating Genetis':<40}", end="")
+print(f"{'* Creating Genetics':<40}", end="")
 progressions = GeneticProgression(
     params=genetic_progression_params
 )

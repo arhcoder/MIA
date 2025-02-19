@@ -5,7 +5,7 @@ sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")
 
 
 
-print("\nMIA INTEGRATION OF MELODY AND HARMONY\n")
+#! SAME AS TEST 7, BUT IN THE END THE GENERATION OF MIDI FOR CHORDS VOICE LEADING VERIFICATION !#
 
 
 
@@ -23,13 +23,13 @@ print("✅")
 
 
 #/ SONG PARAMETERS -------------------------------------------------------------------- #/
-key = "C"
+key = "A"
 scale = "major"
 signature = (4, 4)
 bars_per_sentence = 1
-upbeat = 1
+upbeat = 0
 chords_octave = 3
-
+tempo = 100
 
 
 #/ MELODY GENERATION -----------------------------------------------------------------. /#
@@ -39,19 +39,19 @@ print("\nMELODY GENERATION")
 print(f"{'* Generating sentences':<40}", end="")
 sentence1s = "Hey jude"
 sentence1 = ["hey*", " ", "jude*"]
-chords_for_s1 = 1
+chords_for_s1 = 4
 
 sentence2s = "Don't make it bad"
 sentence2 = ["dont*", " ", "make'*", " ", "it'*", " ", "bad*"]
-chords_for_s2 = 1
+chords_for_s2 = 4
 
 sentence3s = "Take a sad song"
 sentence3 = ["take*'", " ", "a*", "sad*", " ", "song*"]
-chords_for_s3 = 1
+chords_for_s3 = 4
 
 sentence4s = "And make it better"
 sentence4 = ["and*", " ", "make'*", " ", "it*", " ", "be*", "tte", "e", "er*"]
-chords_for_s4 = 1
+chords_for_s4 = 4
 
 sentences = [
     (sentence1s, sentence1),
@@ -113,7 +113,7 @@ n_chords = sum(amount_of_chords_list)
 #*  - [str] Type of the chord
 #*  - [str] Degree of the chord on the key
 #*  - [int] Inversion (if 0, it is fundamental state)
-print(f"{'* Generating Progressions':<40}", end="")
+print(f"{'* Generating Progressios':<40}", end="")
 progressions = progressions.create(
     chords=n_chords,
     key=key,
@@ -138,25 +138,15 @@ print("✅")
 
 
 
-#! FINAL RESULTS -----------------------------------------------------------------------!#
-print("\nGENERATED MUSICAL IDEA\n")
+#! MIDI RESULTS -----------------------------------------------------------------------!#
 
-#? MELODY:
-print("═"*40)
-print("MELODY")
-print("═"*40)
-print(melody)
-print("═"*40)
-
-print()
-
-#? HARMONY:
-print("═"*40)
-print("HARMONY")
-print("═"*40)
-print(harmony)
-print("═"*40)
-
-print()
+from MIDI import MIDI
+midi = MIDI(
+    melody=melody,
+    harmony=harmony,
+    tempo=tempo,
+    title="HEY TEST8"
+)
+midi.save()
 
 #! -------------------------------------------------------------------------------------!#

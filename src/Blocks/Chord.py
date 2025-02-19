@@ -152,18 +152,13 @@ class Chord:
         notes = []
         notes_obj = []
         notes_str = []
-        current_octave = self._octave
 
-        # Get each note of the chord:
-        for _, interval in enumerate(intervals):
-            note_index = (root_index + interval) % len(scale)
-            note_name = scale[note_index]
-
-            # Adjust the octave:
-            if root_index + interval >= len(scale):
-                current_octave += 1
-
-            notes.append({"note": note_name, "octave": current_octave})
+        # Calculate each note in the chord:
+        for interval in intervals:
+            total = root_index + interval
+            note_octave = self._octave + (total // len(scale))
+            note_name = scale[total % len(scale)]
+            notes.append({"note": note_name, "octave": note_octave})
 
         # Apply inversions:
         for _ in range(self._inversion):
@@ -174,10 +169,7 @@ class Chord:
 
         # Creates two lists for notes:
         for note in notes:
-            # Append the note using class Note:
             notes_obj.append(Note(self._time, note["note"], note["octave"], self._dot, self._tuning))
-
-            # Generates also a easy lecture of the chord notes:
             notes_str.append(f'{note["note"]}{note["octave"]}')
         
         # Saves the chords lists:
@@ -297,6 +289,7 @@ class Chord:
     def degree(self):
         return self._degree
     
+    @degree.setter
     def degree(self, degree: str):
         if not isinstance(degree, str):
             raise TypeError("\"degree\" must be a string")
@@ -315,5 +308,5 @@ class Chord:
     def __repr__(self):
         return (
             f"Chord(name={self._name}, ctype={self._ctype}, inversion={self._inversion}, octave={self._octave}, degree={self._degree}, "
-            f"time={self._time}, space={self._space} dot={self._dot} notes={self._notes}, notes_str={self._notes_str})"
+            f"time={self._time}, space={self._space}, dot={self._dot} notes={self._notes}, notes_str={self._notes_str})"
         )

@@ -625,6 +625,7 @@ def build_harmony(chords_per_sentence: list, chords_durations: list, chords_prog
     harmony = Harmony(signature=signature, key_name=key, key_type=scale, upbeat=upbeat)
 
     processes_chords = 0
+    last_non_silent_chord = None
     for i in range(len(chords_per_sentence)):
         n_chords = chords_per_sentence[i]
         bars = chords_durations[i]
@@ -643,23 +644,16 @@ def build_harmony(chords_per_sentence: list, chords_durations: list, chords_prog
         # - times_chords[2] is the final rest,
         # - times_chords[3] is the extra silences (if any),
         # - times_chords[4] is the list of dot flags
-        # initial_rest = result[0]
         syllable_figures = result[1]
-        # final_rest = result[2]
         extra_silences_phrase = result[3]
         dots_full = result[4]
 
         chord_phrase = syllable_figures[:]
         chord_phrase_dots = dots_full[1:-1]
 
-        #* Add the chords:
-        # print("Amount of chords:", len(chord_phrase))
-        for i in range(len(chord_phrase)):
-            fig = chord_phrase[i]
-            dot_flag = chord_phrase_dots[i]
-            # print("Num of chord:", i+1)
-            # print(chords_progression)
-            # print("\t* SELECTED:", chords_progression[processes_chords])
+        for j in range(len(chord_phrase)):
+            fig = chord_phrase[j]
+            dot_flag = chord_phrase_dots[j]
             chord_info = chords_progression[processes_chords]
             chord_obj = Chord(
                 name=chord_info[0],
@@ -670,13 +664,19 @@ def build_harmony(chords_per_sentence: list, chords_durations: list, chords_prog
                 time=fig,
                 dot=dot_flag
             )
+            # For chords beyond the first, adjust octave for optimal voice leading:
+            if processes_chords > 0 and chord_obj.name != "X" and \
+               last_non_silent_chord is not None and last_non_silent_chord.name != "X":
+                chord_obj = octave_chord(chord_obj, last_non_silent_chord)
+            
             harmony.add_element(chord_obj)
+            if chord_obj.name != "X":
+                last_non_silent_chord = chord_obj
             processes_chords += 1
 
-        #* Add extra silences if required:
+        # Add extra silences if required:
         if extra_silences_phrase:
             for coin in extra_silences_phrase:
-                # print(f"\nExtra silence added for sentence {i+1}: Fig: {coin[0]} - Dot: {coin[1]}")
                 chord_obj = Chord(
                     name="X",
                     ctype="",
@@ -688,3 +688,73 @@ def build_harmony(chords_per_sentence: list, chords_durations: list, chords_prog
                 harmony.add_element(chord_obj)
     
     return harmony
+
+
+
+def octave_chord(current_chord: Chord, last_chord: Chord):
+    """
+        Changes the octave of chords if the voice leading is missing through the octave;
+        For it it takes a current chord and it's last and change the octave if it minimices the distance on the notes
+
+        Parameters:
+            - current_chord [Chord]: The chord to check the octavation
+            - last_chord [Chord]: The last chord to compare the distances
+        
+        Returns:
+            - [Chord]: Same chord if voicing is okay, or chord with -1 or +1 in octave
+    """
+    # If either chord is silent, we skip adjustment:
+    if current_chord.name == "X" or last_chord.name == "X":
+        return current_chord
+
+    # Helper to create a candidate with a given octave adjustment:
+    def create_candidate(octave_adjust: int):
+        return Chord(
+            name=current_chord.name,
+            ctype=current_chord.ctype,
+            degree=current_chord.degree,
+            inversion=current_chord.inversion,
+            octave=current_chord.octave + octave_adjust,
+            time=current_chord.time,
+            dot=current_chord.dot,
+            tuning=current_chord.tuning
+        )
+    
+    # Gets candidates for +1 and -1 octave:
+    candidates = []
+    try:
+        candidates.append(create_candidate(0))
+    except Exception:
+        pass
+    try:
+        candidates.append(create_candidate(-1))
+    except Exception:
+        pass
+    try:
+        candidates.append(create_candidate(1))
+    except Exception:
+        pass
+
+    # Define a mapping to compute pitch in semitones:
+    semitones = {"C": 0, "C#": 1, "D": 2, "D#": 3, "E": 4,
+                 "F": 5, "F#": 6, "G": 7, "G#": 8, "A": 9,
+                 "A#": 10, "B": 11}
+
+    def note_pitch(note):
+        return note.octave * 12 + semitones[note.note]
+
+    def chord_distance(candidate: Chord, last: Chord):
+        distance = 0
+        for n1, n2 in zip(candidate.notes, last.notes):
+            distance += abs(note_pitch(n1) - note_pitch(n2))
+        return distance
+
+    best_candidate = candidates[0]
+    best_distance = chord_distance(best_candidate, last_chord)
+    for candidate in candidates[1:]:
+        d = chord_distance(candidate, last_chord)
+        if d < best_distance:
+            best_distance = d
+            best_candidate = candidate
+
+    return best_candidate
