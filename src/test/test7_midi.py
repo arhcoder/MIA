@@ -5,7 +5,7 @@ sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")
 
 
 
-print("\nMIA INTEGRATION OF MELODY AND HARMONY\n")
+#! SAME AS TEST 6, BUT IN THE END THE GENERATION OF MIDI !#
 
 
 
@@ -23,12 +23,13 @@ print("✅")
 
 
 #/ SONG PARAMETERS -------------------------------------------------------------------- #/
-key = "C"
-scale = "major"
-signature = (4, 4)
-bars_per_sentence = 1
-upbeat = 1
+key = "G"
+scale = "lydian"
+signature = (7, 4)
+bars_per_sentence = 2
+upbeat = 0
 chords_octave = 3
+tempo = 160
 
 
 
@@ -63,7 +64,7 @@ print("✅")
 
 #? RYTHM GENERATION:
 #* Rythm object to fit all sentences:
-print(f"{'* Generating Rythms':<40}", end="")
+print(f"{'* Generating Ryths':<40}", end="")
 rythm_melody = Rythm(
     signature=signature,
     upbeat=upbeat,
@@ -122,7 +123,7 @@ progressions = progressions.create(
 print("✅")
 
 #* Gives rythm to the chords:
-print(f"{'* Generating Ryths':<40}", end="")
+print(f"{'* Generating Rythms':<40}", end="")
 harmony = build_harmony(
     chords_per_sentence=amount_of_chords_list,
     chords_durations=[bars_per_sentence] * n_chords,
@@ -138,25 +139,15 @@ print("✅")
 
 
 
-#! FINAL RESULTS -----------------------------------------------------------------------!#
-print("\nGENERATED MUSICAL IDEA\n")
+#! MIDI RESULTS -----------------------------------------------------------------------!#
 
-#? MELODY:
-print("═"*40)
-print("MELODY")
-print("═"*40)
-print(melody)
-print("═"*40)
-
-print()
-
-#? HARMONY:
-print("═"*40)
-print("HARMONY")
-print("═"*40)
-print(harmony)
-print("═"*40)
-
-print()
+from MIDI import MIDI
+midi = MIDI(
+    melody=melody,
+    harmony=harmony,
+    tempo=tempo,
+    title="Hey, Jude G lydian 7quarters"
+)
+midi.save()
 
 #! -------------------------------------------------------------------------------------!#

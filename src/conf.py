@@ -8,7 +8,7 @@ simulated_annealing_phrases_params = {
     "initial_temperature": 100,
     "cooling_rate": 0.98,
     "iterations": 10000,
-    "selection_bias": 3,
+    "selection_bias": 5,
     "dot_probability": 0.2,
 
     #? Set this parameters between -100 and 100 as IMPORTANCE:

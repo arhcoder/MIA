@@ -2,22 +2,7 @@
 #? CONSTANTS:
 
 from Data.harmony.chords import patterns, classifications
-diatonics = {
-    
-    "major": ([0, 2, 4, 5, 7, 9, 11], "major"),
-    "minor": ([0, 2, 3, 5, 7, 8, 10], "minor"),
-
-    "minor harmonic": ([0, 2, 3, 5, 7, 8, 11], "minor"),
-    "minor melodic": ([0, 2, 3, 5, 7, 9, 11], "minor"),
-
-    "ionian": ([0, 2, 4, 5, 7, 9, 11], "major"),
-    "dorian": ([0, 2, 3, 5, 7, 9, 10], "minor"),
-    "phrygian": ([0, 1, 3, 5, 7, 8, 10], "minor"),
-    "lydian": ([0, 2, 4, 6, 7, 9, 11], "major"),
-    "mixolydian": ([0, 2, 4, 5, 7, 9, 10], "major"),
-    "aeolian": ([0, 2, 3, 5, 7, 8, 10], "minor"),
-    "locrian": ([0, 1, 3, 5, 6, 8, 10], "minor")
-}
+from Data.key.scales import diatonics
 note_names = ["C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B"]
 
 

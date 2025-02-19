@@ -267,15 +267,15 @@ class Rythm:
         notes, dots = best_candidate
 
         # Ensures the size of the phrase is not exceding:
-        notes, dots, extra_silences, original_notes_count = self._adjust_phrase_size((notes, dots), total_space)
+        notes, dots, extra_silences, original_notes_count = self._adjust_phrase_size((notes, dots), total_space, for_chords=self.for_chords)
         
         #/ If for chords return as simple list of strings:
         if self.for_chords:
 
-            # Here notes[0] is the initial rest, notes[1:-1] are the syllable notes, notes[-1] is the final rest:
-            return (notes[0], notes[1:-1], notes[-1], dots)
-
-        #/ If not for chords returns as Phrase clase:
+            # Returns a tuple with initial rest, chord figures, final rest, extra silences, and dots:
+            return (notes[0], notes[1:-1], notes[-1], extra_silences, dots)
+        
+        #/ If not for chords, return as a Phrase object:
         else:
             phrase = Phrase()
 
@@ -459,7 +459,7 @@ class Rythm:
             return [total]
     
 
-    def _adjust_phrase_size(self, candidate: tuple, total_space: int):
+    def _adjust_phrase_size(self, candidate: tuple, total_space: int, for_chords: bool = False):
         """
             Adjusts the candidate (notes, dots) so that the total effective duration does not exceed total_space
             If the total effective duration (rounded) is larger than total_space, then:
@@ -488,39 +488,69 @@ class Rythm:
         # Compute total effective duration (rounded to integer):
         total_eff = round(sum(effective(n, d) for n, d in zip(notes, dots)))
 
-        # No adjustment needed; return an empty extra silences list:
-        if total_eff <= total_space:
+        # Case 1: Exact match – nothing to adjust:
+        if total_eff == total_space:
             return (notes, dots, [], original_notes_count)
 
-        # 1: Adjust the last syllable note
-        # Candidate structure: index 0 = initial rest, indices 1 .. -2 = syllable notes, index -1 = final rest:
+        # Case 2: Candidate is shorter than total_space:
+        if total_eff < total_space:
+            # For non-chord mode, leaves the candidate unchanged:
+            if not for_chords:
+                return (notes, dots, [], original_notes_count)
+            
+            # For chords, we want to pad the gap:
+            # Remove the final rest:
+            notes.pop()
+            dots.pop()
+            total_eff = round(sum(effective(n, d) for n, d in zip(notes, dots)))
+            gap = total_space - total_eff
+
+            # Greedy coin-change: use allowed non-triplet, undotted figures (their effective duration equals base value):
+            coins = []
+            for fig in sorted([fig for fig in self.TIMES.keys() 
+                               if fig not in self.triplet_types and fig != 0],
+                              key=lambda f: self.TIMES[f][1], reverse=True):
+                coins.append((fig, False, self.TIMES[fig][1]))
+
+            extra_silences = []
+            remaining = gap
+            for coin in coins:
+                coin_value = coin[2]
+                count = remaining // coin_value
+                if count > 0:
+                    extra_silences.extend([ (coin[0], coin[1]) ] * count)
+                    remaining -= coin_value * count
+                if remaining == 0:
+                    break
+            if remaining != 0:
+                print(f"WARNING: Gap of {remaining} could not be exactly filled with available silence figures")
+            
+            # Re-append a final rest (0 with dot False) to restore candidate structure:
+            notes.append(0)
+            dots.append(False)
+            return (notes, dots, extra_silences, original_notes_count)
+
+        # Case 3: Candidate exceeds total_space;
+        # Step 1: Adjust the last syllable note:
         last_syllable_index = len(notes) - 2
         last_note = notes[last_syllable_index]
         last_dot = dots[last_syllable_index]
-
-        # If the last syllable note is a triplet variant, do not adjust it:
         if last_note in self.triplet_types:
             print(f"WARNING: Phrase exceeds space of {total_space} and has triplet at the end")
             return (notes, dots, [], original_notes_count)
         
-        # Build candidate modifications for the last syllable note using allowed non-triplet figures (non-zero):
         current_last_eff = effective(last_note, last_dot)
         allowed_non_triplet = [fig for fig in self.TIMES.keys() if fig not in self.triplet_types and fig != 0]
         candidate_mods = []
-
-        # Try both undotted and dotted versions for each candidate:
         for fig in allowed_non_triplet:
             for dot_candidate in [False, True]:
                 cand_eff = self.TIMES[fig][1] + (0.5 * self.TIMES[fig][1] if dot_candidate else 0)
-
-                # Only consider candidates that reduce the effective duration:
                 if cand_eff < current_last_eff:
                     candidate_mods.append((fig, dot_candidate, cand_eff))
         if not candidate_mods:
             print("WARNING: Cannot reduce last note further to adjust phrase size")
             return (notes, dots, [], original_notes_count)
         
-        # Sort candidate modifications by effective duration (largest first, but still less than current):
         candidate_mods.sort(key=lambda x: x[2], reverse=True)
         chosen_mod = None
         for mod_fig, mod_dot, mod_eff in candidate_mods:
@@ -529,32 +559,22 @@ class Rythm:
                 chosen_mod = (mod_fig, mod_dot, mod_eff)
                 total_eff = new_total_eff
                 break
-        
-        # None of the mods bring the total under; choose the one that reduces the duration the least:
         if chosen_mod is None:
             chosen_mod = candidate_mods[0]
             total_eff = total_eff - current_last_eff + chosen_mod[2]
-
-        # Apply the chosen modification:
         notes[last_syllable_index] = chosen_mod[0]
         dots[last_syllable_index] = chosen_mod[1]
 
-        # 2: Fill the Remaining Gap Using a Greedy Coin-Change Algorithm:
-        # Remove the existing final rest (last element):
+        # Step 2: Fill the remaining gap:
         notes.pop()
         dots.pop()
         total_eff = round(sum(effective(n, d) for n, d in zip(notes, dots)))
         gap = total_space - total_eff
-
-        # For silence filling we use allowed non-triplet figures (and we use them undotted) because
-        # their effective durations equal their base values;
-        # Coins available (sorted descending by effective duration):
         coins = []
-        for fig in sorted([fig for fig in self.TIMES.keys() if fig not in self.triplet_types and fig != 0],
+        for fig in sorted([fig for fig in self.TIMES.keys() 
+                           if fig not in self.triplet_types and fig != 0],
                            key=lambda f: self.TIMES[f][1], reverse=True):
             coins.append((fig, False, self.TIMES[fig][1]))
-
-        # Greedy coin-change: choose as few coins as possible to exactly fill the gap:
         extra_silences = []
         remaining = gap
         for coin in coins:
@@ -565,16 +585,11 @@ class Rythm:
                 remaining -= coin_value * count
             if remaining == 0:
                 break
-        
-        # Because the smallest coin (Sixty-fourth, effective 1) is available, remaining should be 0:
         if remaining != 0:
-            print(f"WARNING: Gap of {remaining} could not be exactly filled with available silence figures.")
-        
-        # Re-append a final rest (0 with dot=False) to restore candidate structure:
+            print(f"WARNING: Gap of {remaining} could not be exactly filled with available silence figures")
         notes.append(0)
         dots.append(False)
 
-        # Returns all this stuff:
         return (notes, dots, extra_silences, original_notes_count)
     
 

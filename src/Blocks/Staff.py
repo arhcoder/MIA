@@ -2,7 +2,7 @@ from Blocks.Note import get_times
 from Blocks.Phrase import Phrase
 from Blocks.Chord import Chord
 from Data.rythm.times import TIMES
-from Key import diatonics
+from Data.key.scales import diatonics
 
 class Staff:
 

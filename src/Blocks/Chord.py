@@ -117,11 +117,19 @@ class Chord:
         self._degree = degree
         self._notes = None
         self._notes_str = None
-        self._space = 0
+        self._space = None
         self._calculate_notes()
+        self._update_space()
     
 
     #/ METHODS:
+    def _update_space(self):
+        _, space = get_times(self._time)
+        if self._dot:
+            self._space = space + space / 2
+        else:
+            self._space = space
+    
     def _calculate_notes(self):
 
         # If silent chord, ignore the rest:
@@ -253,6 +261,7 @@ class Chord:
         if value != self._time:
             self._time = value
             self._calculate_notes()
+            self._update_space()
     
     #? DOT:
     @property
@@ -266,6 +275,7 @@ class Chord:
         if value != self._dot:
             self._dot = value
             self._calculate_notes()
+            self._update_space()
     
     #? TUNING:
     @property

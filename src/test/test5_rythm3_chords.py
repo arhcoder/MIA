@@ -36,7 +36,7 @@ rythm_instance = Rythm(signature=signature, upbeat=upbeat, params=simulated_anne
 for i, (sentence_str, sentence_tokens) in enumerate(sentences):
 
     rythm_results = rythm_instance.fit(sentence_tokens, bars=bars_per_sentence)
-    initial_rest, syllable_figures, final_rest, dots = rythm_results
+    initial_rest, syllable_figures, final_rest, extra_silences, dots = rythm_results
 
     processed_syllables = rythm_instance.preprocess_syllables(sentence_tokens)
     

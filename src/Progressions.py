@@ -1,7 +1,11 @@
 import random, re
-from Key import chords_of_scale, degree_of_chord, notes_of_scale, notes_of_chord, diatonics
+from Key import chords_of_scale, degree_of_chord, notes_of_scale, notes_of_chord
+from Rythm import Rythm
 from Selectors import lwrs, cwrs
+from Blocks.Harmony import Harmony
+from Blocks.Chord import Chord
 from Data.harmony.chords import patterns, classifications
+from Data.key.scales import diatonics
 
 
 class GeneticProgression:
@@ -575,3 +579,112 @@ class GeneticProgression:
         # print("Quality breakdown:", quality_scores)
 
         return total_score
+
+
+
+def build_harmony(chords_per_sentence: list, chords_durations: list, chords_progression: list, params: dict, signature: tuple, upbeat: int, key: str, scale: str, chords_octave: int):
+    """
+        Builds a Harmony object for a chord progression given
+
+        Parameters:
+        
+            - chords_per_sentence [list[int]]: Each integer indicates the number of chords in that phrase
+            For example, [1, 1, 2, 2] means phrase 1 has 1 chord, phrase 2 has 1 chord, phrase 3 has 2 chords, etc
+            
+            - chords_durations [list[int]]: Each integer indicates how many bars the corresponding phrase occupies
+            For example, [2, 2, 1, 1] means phrase 1 is 2 bars, phrase 2 is 2 bars, etc
+            
+            - chords_progression [list[tuple]]: Each tuple contains chord information (RESULT OF GeneticProgressions):
+            ([str] root, [str] type, [str] degree, [int] inversion)
+            
+            - params [dict] parameters (for instance, the simulated annealing parameters) to be passed to the Rythm class
+            See "conf.py" file
+            
+            - signature [tuple]: Time signature (e.g., (4, 4))
+            
+            - upbeat [int]: Number of upbeat beats
+            
+            - key [str], scale [str]: Key name and scale type (for Harmony)
+            
+            - chords_octave [int]: Octave in which chords should be rendered
+            
+            The function uses the Rythm.fit method (with for_chords=True) to generate, for each phrase,
+            a chord rhythm that is padded with extra silences (if needed) so that the total effective duration
+            exactly meets the expected size. Then, it builds a Harmony object by assigning each chord (from chords_progression)
+            its corresponding time value and dot flag :3
+        
+        Returns:
+            A Harmony object with the assembled chord progression
+    """
+    rythm_harmony = Rythm(signature=signature, upbeat=upbeat, params=params, for_chords=True)
+    
+    # These lists will hold the chord figures and their dot flags (one per chord that is actually sounding):
+    chord_sounds = []
+    chord_sounds_dots = []
+    
+    # Process each phrase: for each phrase, generate a chord sentence;
+    # The number of phrases is the length of chords_per_sentence (which should match the length of chords_durations):
+
+    #? Construct the Harmony object:
+    harmony = Harmony(signature=signature, key_name=key, key_type=scale, upbeat=upbeat)
+
+    processes_chords = 0
+    for i in range(len(chords_per_sentence)):
+        n_chords = chords_per_sentence[i]
+        bars = chords_durations[i]
+
+        # Generate a chord sentence consisting of n_chords tokens ("X*"):
+        chord_sentence = ["X*"] * n_chords
+
+        # Fit the chord sentence into the required number of bars;
+        # In chord mode, our modified Rythm.fit now returns a tuple:
+        # (initial_rest, chord_figures, final_rest, extra_silences, dots)
+        result = rythm_harmony.fit(sentence=chord_sentence, bars=bars)
+
+        # In candidate structure:
+        # - times_chords[0] is the initial rest (unused for chord sound),
+        # - times_chords[1] is the list of syllable note figures (i.e. the chord sounds),
+        # - times_chords[2] is the final rest,
+        # - times_chords[3] is the extra silences (if any),
+        # - times_chords[4] is the list of dot flags
+        # initial_rest = result[0]
+        syllable_figures = result[1]
+        # final_rest = result[2]
+        extra_silences_phrase = result[3]
+        dots_full = result[4]
+
+        chord_phrase = syllable_figures[:]
+        chord_phrase_dots = dots_full[1:-1]
+
+        #* Add the chords:
+        for i in range(len(chord_phrase)):
+            fig = chord_phrase[i]
+            dot_flag = chord_phrase_dots[i]
+            chord_info = chords_progression[i+processes_chords]
+            chord_obj = Chord(
+                name=chord_info[0],
+                ctype=chord_info[1],
+                degree=chord_info[2],
+                inversion=chord_info[3],
+                octave=chords_octave,
+                time=fig,
+                dot=dot_flag
+            )
+            harmony.add_element(chord_obj)
+            processes_chords += 1
+
+        #* Add extra silences if required:
+        if extra_silences_phrase:
+            for coin in extra_silences_phrase:
+                # print(f"\nExtra silence added for sentence {i+1}: Fig: {coin[0]} - Dot: {coin[1]}")
+                chord_obj = Chord(
+                    name="X",
+                    ctype="",
+                    inversion=0,
+                    octave=0,
+                    time=coin[0],
+                    dot=coin[1]
+                )
+                harmony.add_element(chord_obj)
+    
+    return harmony
