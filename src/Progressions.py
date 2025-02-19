@@ -618,10 +618,6 @@ def build_harmony(chords_per_sentence: list, chords_durations: list, chords_prog
     """
     rythm_harmony = Rythm(signature=signature, upbeat=upbeat, params=params, for_chords=True)
     
-    # These lists will hold the chord figures and their dot flags (one per chord that is actually sounding):
-    chord_sounds = []
-    chord_sounds_dots = []
-    
     # Process each phrase: for each phrase, generate a chord sentence;
     # The number of phrases is the length of chords_per_sentence (which should match the length of chords_durations):
 
@@ -657,10 +653,14 @@ def build_harmony(chords_per_sentence: list, chords_durations: list, chords_prog
         chord_phrase_dots = dots_full[1:-1]
 
         #* Add the chords:
+        # print("Amount of chords:", len(chord_phrase))
         for i in range(len(chord_phrase)):
             fig = chord_phrase[i]
             dot_flag = chord_phrase_dots[i]
-            chord_info = chords_progression[i+processes_chords]
+            # print("Num of chord:", i+1)
+            # print(chords_progression)
+            # print("\t* SELECTED:", chords_progression[processes_chords])
+            chord_info = chords_progression[processes_chords]
             chord_obj = Chord(
                 name=chord_info[0],
                 ctype=chord_info[1],

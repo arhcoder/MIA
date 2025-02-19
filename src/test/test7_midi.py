@@ -23,14 +23,13 @@ print("✅")
 
 
 #/ SONG PARAMETERS -------------------------------------------------------------------- #/
-key = "G"
-scale = "lydian"
-signature = (7, 4)
-bars_per_sentence = 2
+key = "C"
+scale = "major"
+signature = (4, 4)
+bars_per_sentence = 1
 upbeat = 0
 chords_octave = 3
-tempo = 160
-
+tempo = 100
 
 
 #/ MELODY GENERATION -----------------------------------------------------------------. /#
@@ -40,19 +39,19 @@ print("\nMELODY GENERATION")
 print(f"{'* Generating sentences':<40}", end="")
 sentence1s = "Hey jude"
 sentence1 = ["hey*", " ", "jude*"]
-chords_for_s1 = 1
+chords_for_s1 = 2
 
 sentence2s = "Don't make it bad"
 sentence2 = ["dont*", " ", "make'*", " ", "it'*", " ", "bad*"]
-chords_for_s2 = 1
+chords_for_s2 = 2
 
 sentence3s = "Take a sad song"
 sentence3 = ["take*'", " ", "a*", "sad*", " ", "song*"]
-chords_for_s3 = 1
+chords_for_s3 = 4
 
 sentence4s = "And make it better"
 sentence4 = ["and*", " ", "make'*", " ", "it*", " ", "be*", "tte", "e", "er*"]
-chords_for_s4 = 1
+chords_for_s4 = 4
 
 sentences = [
     (sentence1s, sentence1),
@@ -146,7 +145,7 @@ midi = MIDI(
     melody=melody,
     harmony=harmony,
     tempo=tempo,
-    title="Hey, Jude G lydian 7quarters"
+    title="Hey, Jude Pre-Test8"
 )
 midi.save()
 

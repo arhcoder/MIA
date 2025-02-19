@@ -490,12 +490,14 @@ class Rythm:
 
         # Case 1: Exact match – nothing to adjust:
         if total_eff == total_space:
+            # print("Space not reduced, not needed")
             return (notes, dots, [], original_notes_count)
 
         # Case 2: Candidate is shorter than total_space:
         if total_eff < total_space:
             # For non-chord mode, leaves the candidate unchanged:
             if not for_chords:
+                # print("For chords")
                 return (notes, dots, [], original_notes_count)
             
             # For chords, we want to pad the gap:
@@ -528,42 +530,51 @@ class Rythm:
             # Re-append a final rest (0 with dot False) to restore candidate structure:
             notes.append(0)
             dots.append(False)
+            # print("Space reduced 2")
             return (notes, dots, extra_silences, original_notes_count)
 
         # Case 3: Candidate exceeds total_space;
         # Step 1: Adjust the last syllable note:
-        last_syllable_index = len(notes) - 2
-        last_note = notes[last_syllable_index]
-        last_dot = dots[last_syllable_index]
-        if last_note in self.triplet_types:
-            print(f"WARNING: Phrase exceeds space of {total_space} and has triplet at the end")
-            return (notes, dots, [], original_notes_count)
-        
-        current_last_eff = effective(last_note, last_dot)
+        # Get the indices of the syllable notes (indices 1 to -2:
+        syllable_indices = list(range(1, len(notes)-1))
+        syllable_indices.reverse()
         allowed_non_triplet = [fig for fig in self.TIMES.keys() if fig not in self.triplet_types and fig != 0]
-        candidate_mods = []
-        for fig in allowed_non_triplet:
-            for dot_candidate in [False, True]:
-                cand_eff = self.TIMES[fig][1] + (0.5 * self.TIMES[fig][1] if dot_candidate else 0)
-                if cand_eff < current_last_eff:
-                    candidate_mods.append((fig, dot_candidate, cand_eff))
-        if not candidate_mods:
-            print("WARNING: Cannot reduce last note further to adjust phrase size")
-            return (notes, dots, [], original_notes_count)
         
-        candidate_mods.sort(key=lambda x: x[2], reverse=True)
-        chosen_mod = None
-        for mod_fig, mod_dot, mod_eff in candidate_mods:
-            new_total_eff = total_eff - current_last_eff + mod_eff
-            if new_total_eff <= total_space:
-                chosen_mod = (mod_fig, mod_dot, mod_eff)
-                total_eff = new_total_eff
+        for idx in syllable_indices:
+            if total_eff <= total_space:
                 break
-        if chosen_mod is None:
-            chosen_mod = candidate_mods[0]
-            total_eff = total_eff - current_last_eff + chosen_mod[2]
-        notes[last_syllable_index] = chosen_mod[0]
-        dots[last_syllable_index] = chosen_mod[1]
+            # Skip syllables that are triplet variants:
+            if notes[idx] in self.triplet_types:
+                continue
+            current_eff = effective(notes[idx], dots[idx])
+            candidate_mods = []
+            for fig in allowed_non_triplet:
+                for dot_candidate in [False, True]:
+                    cand_eff = self.TIMES[fig][1] + (0.5 * self.TIMES[fig][1] if dot_candidate else 0)
+                    if cand_eff < current_eff:
+                        candidate_mods.append((fig, dot_candidate, cand_eff))
+            # Cannot reduce this syllable; try an earlier one:
+            if not candidate_mods:
+                continue
+            candidate_mods.sort(key=lambda x: x[2], reverse=True)
+            chosen_mod = None
+            for mod_fig, mod_dot, mod_eff in candidate_mods:
+                new_total_eff = total_eff - current_eff + mod_eff
+                if new_total_eff <= total_space:
+                    chosen_mod = (mod_fig, mod_dot, mod_eff)
+                    total_eff = new_total_eff
+                    break
+            if chosen_mod is None:
+                # If no candidate brings the total under, pick the one that reduces it the least:
+                chosen_mod = candidate_mods[0]
+                total_eff = total_eff - current_eff + chosen_mod[2]
+            notes[idx] = chosen_mod[0]
+            dots[idx] = chosen_mod[1]
+            total_eff = round(sum(effective(n, d) for n, d in zip(notes, dots)))
+            print(f"\nAdjusted syllable at index {idx}: now {notes[idx]}, {dots[idx]}, total_eff: {total_eff}")
+        
+        if total_eff > total_space:
+            print("WARNING: Even after adjusting syllables, total effective duration exceeds target")
 
         # Step 2: Fill the remaining gap:
         notes.pop()
@@ -590,6 +601,7 @@ class Rythm:
         notes.append(0)
         dots.append(False)
 
+        # print("Space reduced 3")
         return (notes, dots, extra_silences, original_notes_count)
     
 
@@ -653,7 +665,6 @@ class Rythm:
         else:
             meter = "compound"
 
-        # Determine beat boundaries and beat strengths:
         # Determine beat boundaries and beat strengths:
         if meter == "unique":
             beat_boundaries = [0, bar_space]

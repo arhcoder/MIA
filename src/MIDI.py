@@ -9,6 +9,7 @@ from Blocks.Melody import Melody
 from Blocks.Harmony import Harmony
 from Data.key.scales import diatonics, major_key_signatures, minor_key_signatures
 
+
 class MIDI:
 
     #? CONSTRUCTOR:
