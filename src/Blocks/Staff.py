@@ -16,7 +16,7 @@ class Staff:
                 - key_type [str]: Name of the type of scale; Example: "major", "minor", "lydian", minor melodic"
                 - upbeat [int]: The space occupied by the upbeat (anacrusis)
                     Must be between 0 and the second value of the signature
-                - tuning [int]: The tuning frequency, either 440 or 432 Hz
+                - tuning [int | float]: Tuning frequency for A4
         """
 
         #? Signature:
@@ -50,8 +50,8 @@ class Staff:
         self._key = (key_name, key_type)
 
         #? Tuning:
-        if tuning not in [440, 432]:
-            raise ValueError(f"\"tuning\" must be either 440 or 432, but given {tuning}")
+        if not isinstance(tuning, (int, float)):
+            raise ValueError(f"\"tuning\" must be int or float for A4 frequency, but given {tuning}")
         self._tuning = tuning
 
         #? Upbeat:
@@ -147,8 +147,8 @@ class Staff:
     
     @tuning.setter
     def tuning(self, value: int):
-        if value not in [440, 432]:
-            raise ValueError(f"\"tuning\" must be either 440 or 432, but given {value}")
+        if not isinstance(value, (int, float)):
+            raise ValueError(f"\"tuning\" must be int for A4 frequency, but given {value}")
         self._tuning = value
         # Potentially, update tuning in all elements:
         for element in self._content:
@@ -192,7 +192,7 @@ class Staff:
 
     def __repr__(self):
         return (
-            f"Staff(signature={self._signature}, key={self._key}, tuning={self._tuning}, "
+            f"Staff(signature={self._signature}, key={self._key}, tuning=A4[{self._tuning}Hz], "
             f"upbeat={self._upbeat}, anacrusis={self._anacrusis}, space={self._space}, "
             f"bars_amount={self._bars_amount}, elements={self._content})"
         )

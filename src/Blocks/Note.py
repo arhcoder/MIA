@@ -1,10 +1,28 @@
 from Data.rythm.times import TIMES
 
-frequencies_path = "Data/frequencies/frequencies.csv"
+NOTE_TO_INDEX = {
+    "C": 0,
+    "C#": 1,
+    "Db": 1,
+    "D": 2,
+    "D#": 3,
+    "Eb": 3,
+    "E": 4,
+    "F": 5,
+    "F#": 6,
+    "Gb": 6,
+    "G": 7,
+    "G#": 8,
+    "Ab": 8,
+    "A": 9,
+    "A#": 10,
+    "Bb": 10,
+    "B": 11
+}
 
 class Note:
 
-    def __init__(self, time: int, note: str, octave: int, dot: bool = False, tuning: int = 440):
+    def __init__(self, time: int, note: str, octave: int, dot: bool = False, tuning: int | float = 440):
         """
             Parameters:
             - time [int]: Base time value for the note:
@@ -28,7 +46,7 @@ class Note:
             - octave [int]: Octave number (0–8)
 
             - dot [bool]: If True, add one have of the space of the note
-            - tuning [str]: Tuning frequency, either 440 (default) or 432 Hz
+            - tuning [int | float]: Tuning frequency for A4
         """
 
         #/ ATTRBIUTES:
@@ -51,8 +69,8 @@ class Note:
         self._dot = dot
 
         #? Note tuning:
-        if tuning not in [440, 432]:
-            raise ValueError(f"\"tuning\" must be either 440 or 432, but given {tuning}")
+        if not isinstance(tuning, (int, float)):
+            raise ValueError(f"\"tuning\" must be int or float for A4 frequency, but given {tuning}")
         self._tuning = tuning
 
         self._frequency = None
@@ -75,34 +93,14 @@ class Note:
             self._octave = 0
         else:
             try:
-                with open(frequencies_path, "r") as file:
-                    lines = file.readlines()
-            except FileNotFoundError:
-                raise FileNotFoundError(f"File \"{frequencies_path}\" not found")
+                note_index = NOTE_TO_INDEX[self._note]
+            except KeyError:
+                raise ValueError(f"Invalid note name: {self._note}")
+            midi_number = (self._octave + 1) * 12 + note_index
 
-            # Parse the CSV header and rows:
-            header = lines[0].strip().split(",")
-            rows = [line.strip().split(",") for line in lines[1:]]
-
-            # Find indices of relevant columns:
-            try:
-                note_col = header.index("note")
-                octave_col = header.index("octave")
-                tuning_col = header.index(f"f{self._tuning}")
-            except ValueError as e:
-                raise ValueError(f"Required column missing in the CSV: {e}")
-
-            # Process each row:
-            for row in rows:
-                note_names = set(row[note_col].split())
-                octave = int(row[octave_col])
-                frequency = float(row[tuning_col])
-
-                if self._note in note_names and self._octave == octave:
-                    self._frequency = frequency
-                    break
-            else:
-                raise ValueError(f"Invalid note \"{self._note}\" or octave \"{self._octave}\"")
+            # A4 is note 69:
+            semitone_diff = midi_number - 69
+            self._frequency = self._tuning * (2 ** (semitone_diff / 12))
     
 
     #/ SETTERS:
@@ -168,8 +166,8 @@ class Note:
 
     @tuning.setter
     def tuning(self, value: int):
-        if value not in [440, 432]:
-            raise ValueError(f"\"tuning\" must be either 440 or 432, but given {value}")
+        if not isinstance(value, (int, float)):
+            raise ValueError(f"\"tuning\" must be int for A4 frequency, but given {value}")
         if value != self._tuning:
             self._tuning = value
             self._update_frequency()
@@ -187,8 +185,8 @@ class Note:
 
     #/ PRINTING VARIABLES:
     def __repr__(self):
-        return (f"Note(note={self._note}, octave={self._octave}, frequency={self._frequency} Hz, "
-                f"time={self._time}, name={self._name} dot={self._dot} space={self._space}, tuning={self._tuning} Hz)")
+        return (f"Note(note={self._note}, octave={self._octave}, frequency={self._frequency}Hz, "
+                f"time={self._time}, name={self._name} dot={self._dot} space={self._space}, tuning=A4[{self._tuning}Hz])")
 
 
 def get_times(time: int):

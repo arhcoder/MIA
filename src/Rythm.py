@@ -10,7 +10,7 @@ from Selectors import ewrs
 
 class Rythm:
 
-    def __init__(self, signature: tuple, upbeat: int, params: dict, for_chords: bool = False):
+    def __init__(self, signature: tuple, upbeat: int, params: dict, for_chords: bool = False, tuning: int | float = 440):
         """
 
             This class allows to create an object that fits sentences (divided by syllables),
@@ -128,6 +128,8 @@ class Rythm:
                         and, in each one pass as "sentences" a list of "X" based
                         on the amount of chords for each phrase
                     2. "bars" has to be the same length of "bars" used on each phrase
+                
+                - tuning [int | float]: Tuning frequency for A4
         """
         self.signature = signature
         self.upbeat = upbeat
@@ -135,6 +137,7 @@ class Rythm:
         self.TIMES = TIMES
         self.triplet_types = {3, 6, 12, 24}
         self.for_chords = for_chords
+        self.tuning = tuning
 
         # If it is for chords, some params are simplier:
         if for_chords:
@@ -282,24 +285,24 @@ class Rythm:
             # Process the initial rest (index 0);
             # Use "X" in octave 0:
             if notes[0] != 0:
-                note_obj = Note(time=notes[0], note="X", octave=0, dot=dots[0])
+                note_obj = Note(time=notes[0], note="X", octave=0, dot=dots[0], tuning=self.tuning)
                 phrase.add_end(note_obj)
             
             # Process the syllable notes (indices 1 to original_notes_count)
             # Use "A" in octave 4 as default (because is just rythmic, not melodic yet):
             for idx in range(1, original_notes_count + 1):
-                note_obj = Note(time=notes[idx], note="A", octave=4, dot=dots[idx])
+                note_obj = Note(time=notes[idx], note="A", octave=4, dot=dots[idx], tuning=self.tuning)
                 phrase.add_end(note_obj)
             
             # Process the final rest (last index);
             # For rests, use "X" in octave 0:
             if notes[-1] != 0:
-                note_obj = Note(time=notes[-1], note="X", octave=0, dot=dots[-1])
+                note_obj = Note(time=notes[-1], note="X", octave=0, dot=dots[-1], tuning=self.tuning)
                 phrase.add_end(note_obj)
             
             # Process the extra silence coins:
             for fig, dot in extra_silences:
-                note_obj = Note(time=fig, note="X", octave=0, dot=dot)
+                note_obj = Note(time=fig, note="X", octave=0, dot=dot, tuning=self.tuning)
                 phrase.add_end(note_obj)
             
             return phrase

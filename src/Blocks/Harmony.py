@@ -13,7 +13,7 @@ class Harmony(Staff):
             - key_name [str]: Name of the key
             - key_type [int]: Name of the type of scale; Example: "major", "minor", "lydian", minor melodic"
             - upbeat [int]: Times occupied by the upbeat; Default: 0 (no upbeat)
-            - tuning [int]: Tuning frequency; Default: 440 (A4=440Hz)
+            - tuning [int | float]: Tuning frequency; Default: 440 (A4=440Hz)
         """
         super().__init__(signature, key_name, key_type, upbeat, tuning)
         if self._anacrusis:
@@ -64,7 +64,7 @@ class Harmony(Staff):
             "\nHarmony(\n"
             f"    signature={self._signature},\n"
             f"    key={self._key},\n"
-            f"    tuning={self._tuning},\n"
+            f"    tuning=A4[{self._tuning}Hz],\n"
             f"    upbeat={self._upbeat},\n"
             f"    anacrusis={self._anacrusis},\n"
             f"    space={self._space},\n"

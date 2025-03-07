@@ -3,7 +3,7 @@ from Data.harmony.chords import patterns
 
 class Chord:
 
-    def __init__(self, name: str, ctype: str, inversion: int, octave: int, time: int, dot: bool = False, degree: str = "", tuning: int = 440):
+    def __init__(self, name: str, ctype: str, inversion: int, octave: int, time: int, dot: bool = False, degree: str = "", tuning: int | float = 440):
         """
             Paremeters:
             - name [str]: Indicates the name of the chord based on the root note.
@@ -109,8 +109,8 @@ class Chord:
         self._dot = dot
 
         #? Chord tuning:
-        if tuning not in [440, 432]:
-            raise ValueError(f"\"tuning\" must be either 440 or 432, but given {tuning}")
+        if not isinstance(tuning, (int, float)):
+            raise ValueError(f"\"tuning\" must be int or float for A4 frequency, but given {tuning}")
         self._tuning = tuning
 
         #? Calculated:
@@ -276,8 +276,8 @@ class Chord:
 
     @tuning.setter
     def tuning(self, value: int):
-        if value not in [440, 432]:
-            raise ValueError(f"\"tuning\" must be either 440 or 432, but given {value}")
+        if not isinstance(value, (int, float)):
+            raise ValueError(f"\"tuning\" must be int for A4 frequency, but given {tuning}")
         if value != self._tuning:
             self._tuning = value
             self._calculate_notes()

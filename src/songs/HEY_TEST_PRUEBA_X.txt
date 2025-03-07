@@ -1,0 +1,84 @@
+
+MIA Harmfirst b.0.3.0 COMPOSITION
+Date: 26/02/2025 at 11:22:05
+
+Title: HEY TEST PRUEBA X
+Composer: ARH MIA
+
+
+Melody(
+    signature=(4, 4),
+    key=('A', 'major'),
+    tuning=440,
+    upbeat=1,
+    anacrusis=True,
+    space=255.98,
+    bars_amount=3.9996875,
+    phrases=[
+        
+	Phrase(
+	    space=64.0,
+	    notes=[
+		    Note(note=A, octave=4, frequency=440.0 Hz, time=4, name=Quarter dot=False space=16, tuning=440 Hz),
+		    Note(note=A, octave=4, frequency=440.0 Hz, time=2, name=Half dot=True space=48.0, tuning=440 Hz)
+    		]
+	),
+        
+	Phrase(
+	    space=64,
+	    notes=[
+		    Note(note=A, octave=4, frequency=440.0 Hz, time=4, name=Quarter dot=False space=16, tuning=440 Hz),
+		    Note(note=A, octave=4, frequency=440.0 Hz, time=4, name=Quarter dot=False space=16, tuning=440 Hz),
+		    Note(note=A, octave=4, frequency=440.0 Hz, time=4, name=Quarter dot=False space=16, tuning=440 Hz),
+		    Note(note=A, octave=4, frequency=440.0 Hz, time=4, name=Quarter dot=False space=16, tuning=440 Hz)
+    		]
+	),
+        
+	Phrase(
+	    space=63.97999999999999,
+	    notes=[
+		    Note(note=A, octave=4, frequency=440.0 Hz, time=2, name=Half dot=False space=32, tuning=440 Hz),
+		    Note(note=A, octave=4, frequency=440.0 Hz, time=6, name=Quarter Triplet dot=False space=10.66, tuning=440 Hz),
+		    Note(note=A, octave=4, frequency=440.0 Hz, time=6, name=Quarter Triplet dot=False space=10.66, tuning=440 Hz),
+		    Note(note=A, octave=4, frequency=440.0 Hz, time=6, name=Quarter Triplet dot=False space=10.66, tuning=440 Hz)
+    		]
+	),
+        
+	Phrase(
+	    space=64,
+	    notes=[
+		    Note(note=A, octave=4, frequency=440.0 Hz, time=4, name=Quarter dot=False space=16, tuning=440 Hz),
+		    Note(note=A, octave=4, frequency=440.0 Hz, time=8, name=Eighth dot=False space=8, tuning=440 Hz),
+		    Note(note=A, octave=4, frequency=440.0 Hz, time=8, name=Eighth dot=False space=8, tuning=440 Hz),
+		    Note(note=A, octave=4, frequency=440.0 Hz, time=8, name=Eighth dot=False space=8, tuning=440 Hz),
+		    Note(note=A, octave=4, frequency=440.0 Hz, time=8, name=Eighth dot=False space=8, tuning=440 Hz),
+		    Note(note=A, octave=4, frequency=440.0 Hz, time=8, name=Eighth dot=False space=8, tuning=440 Hz),
+		    Note(note=A, octave=4, frequency=440.0 Hz, time=8, name=Eighth dot=False space=8, tuning=440 Hz)
+    		]
+	)
+    ]
+)
+Harmony(
+    signature=(4, 4),
+    key=('A', 'major'),
+    tuning=440,
+    upbeat=1,
+    anacrusis=True,
+    space=272.0,
+    bars_amount=4.25,
+    chords=[
+
+        Chord(name=X, ctype=None, inversion=None, octave=None, degree=, time=4, space=16, dot=False notes=[Note(note=X, octave=0, frequency=0 Hz, time=4, name=Quarter dot=False space=16, tuning=440 Hz)], notes_str=[]),
+
+        Chord(name=G, ctype=, inversion=0, octave=3, degree=*#VI, time=1, space=64, dot=False notes=[Note(note=G, octave=3, frequency=195.998 Hz, time=1, name=Whole dot=False space=64, tuning=440 Hz), Note(note=B, octave=3, frequency=246.942 Hz, time=1, name=Whole dot=False space=64, tuning=440 Hz), Note(note=D, octave=4, frequency=293.665 Hz, time=1, name=Whole dot=False space=64, tuning=440 Hz)], notes_str=['G3', 'B3', 'D4']),
+
+        Chord(name=D, ctype=, inversion=1, octave=3, degree=IV, time=1, space=64, dot=False notes=[Note(note=F#, octave=3, frequency=184.997 Hz, time=1, name=Whole dot=False space=64, tuning=440 Hz), Note(note=A, octave=3, frequency=220.0 Hz, time=1, name=Whole dot=False space=64, tuning=440 Hz), Note(note=D, octave=4, frequency=293.665 Hz, time=1, name=Whole dot=False space=64, tuning=440 Hz)], notes_str=['F#3', 'A3', 'D4']),
+
+        Chord(name=A, ctype=, inversion=2, octave=2, degree=I, time=1, space=64, dot=False notes=[Note(note=E, octave=3, frequency=164.814 Hz, time=1, name=Whole dot=False space=64, tuning=440 Hz), Note(note=A, octave=3, frequency=220.0 Hz, time=1, name=Whole dot=False space=64, tuning=440 Hz), Note(note=C#, octave=4, frequency=277.183 Hz, time=1, name=Whole dot=False space=64, tuning=440 Hz)], notes_str=['E3', 'A3', 'C#4']),
+
+        Chord(name=E, ctype=7, inversion=2, octave=3, degree=V7, time=4, space=16, dot=False notes=[Note(note=B, octave=3, frequency=246.942 Hz, time=4, name=Quarter dot=False space=16, tuning=440 Hz), Note(note=D, octave=4, frequency=293.665 Hz, time=4, name=Quarter dot=False space=16, tuning=440 Hz), Note(note=E, octave=4, frequency=329.628 Hz, time=4, name=Quarter dot=False space=16, tuning=440 Hz), Note(note=G#, octave=4, frequency=415.305 Hz, time=4, name=Quarter dot=False space=16, tuning=440 Hz)], notes_str=['B3', 'D4', 'E4', 'G#4']),
+
+        Chord(name=A, ctype=, inversion=1, octave=3, degree=I, time=2, space=48.0, dot=True notes=[Note(note=C#, octave=4, frequency=277.183 Hz, time=2, name=Half dot=True space=48.0, tuning=440 Hz), Note(note=E, octave=4, frequency=329.628 Hz, time=2, name=Half dot=True space=48.0, tuning=440 Hz), Note(note=A, octave=4, frequency=440.0 Hz, time=2, name=Half dot=True space=48.0, tuning=440 Hz)], notes_str=['C#4', 'E4', 'A4'])
+
+    ]
+)

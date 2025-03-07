@@ -582,7 +582,7 @@ class GeneticProgression:
 
 
 
-def build_harmony(chords_per_sentence: list, chords_durations: list, chords_progression: list, params: dict, signature: tuple, upbeat: int, key: str, scale: str, chords_octave: int):
+def build_harmony(chords_per_sentence: list, chords_durations: list, chords_progression: list, params: dict, signature: tuple, upbeat: int, key: str, scale: str, chords_octave: int, tuning: int | float = 440):
     """
         Builds a Harmony object for a chord progression given
 
@@ -607,6 +607,8 @@ def build_harmony(chords_per_sentence: list, chords_durations: list, chords_prog
             - key [str], scale [str]: Key name and scale type (for Harmony)
             
             - chords_octave [int]: Octave in which chords should be rendered
+
+            - tuning [int | float]: Tuning frequency for A4
             
             The function uses the Rythm.fit method (with for_chords=True) to generate, for each phrase,
             a chord rhythm that is padded with extra silences (if needed) so that the total effective duration
@@ -616,13 +618,13 @@ def build_harmony(chords_per_sentence: list, chords_durations: list, chords_prog
         Returns:
             A Harmony object with the assembled chord progression
     """
-    rythm_harmony = Rythm(signature=signature, upbeat=upbeat, params=params, for_chords=True)
+    rythm_harmony = Rythm(signature=signature, upbeat=upbeat, params=params, for_chords=True, tuning=tuning)
     
     # Process each phrase: for each phrase, generate a chord sentence;
     # The number of phrases is the length of chords_per_sentence (which should match the length of chords_durations):
 
     #? Construct the Harmony object:
-    harmony = Harmony(signature=signature, key_name=key, key_type=scale, upbeat=upbeat)
+    harmony = Harmony(signature=signature, key_name=key, key_type=scale, upbeat=upbeat, tuning=tuning)
 
     processes_chords = 0
     last_non_silent_chord = None
@@ -662,7 +664,8 @@ def build_harmony(chords_per_sentence: list, chords_durations: list, chords_prog
                 inversion=chord_info[3],
                 octave=chords_octave,
                 time=fig,
-                dot=dot_flag
+                dot=dot_flag,
+                tuning=tuning
             )
             # For chords beyond the first, adjust octave for optimal voice leading:
             if processes_chords > 0 and chord_obj.name != "X" and \
@@ -683,7 +686,8 @@ def build_harmony(chords_per_sentence: list, chords_durations: list, chords_prog
                     inversion=0,
                     octave=0,
                     time=coin[0],
-                    dot=coin[1]
+                    dot=coin[1],
+                    tuning=tuning
                 )
                 harmony.add_element(chord_obj)
     

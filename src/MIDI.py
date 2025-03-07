@@ -56,6 +56,11 @@ class MIDI:
         # Track 0: Melody, Track 1: Harmony:
         midi = MIDIFile(2)
 
+        #* Tuning:
+        # Note 69 is A4:
+        midi.changeNoteTuning(0, [(69, self.melody.tuning)])
+        midi.changeNoteTuning(1, [(69, self.harmony.tuning)])
+
         #* Tempo:
         midi.addTempo(0, 0, self.tempo)
         midi.addTempo(1, 0, self.tempo)
