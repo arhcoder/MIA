@@ -183,10 +183,17 @@ class Staff:
             Returns:
                 - time [int]: The time value corresponding to the space
         """
-        
+        # First, try to find an exact (undotted) match:
         for time, (_, space) in TIMES.items():
             if abs(space - space_required) < 1e-2:
-                return time
+                return time, False
+        
+        # If not found, try dotted values: space increased by 50% (i.e., space * 1.5):
+        for time, (_, space) in TIMES.items():
+            dotted_space = space * 1.5
+            if abs(dotted_space - space_required) < 1e-2:
+                return time, True
+
         raise ValueError(f"No matching time found for space: {space_required}")
     
 

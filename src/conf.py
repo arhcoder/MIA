@@ -66,23 +66,23 @@ genetic_progression_params = {
         "last_chord_is_dominant": 4,
         "last_chord_not_dominant_penalty": 0,
         "first_last_combined_bonus": 10,
-        "tonic_on_last_bonus": 5,
+        "tonic_on_last_bonus": 4,
         "secondary_dominants": 10,
         "cadence": 30,
-        "scale_membership_multiplier": 25,
+        "scale_membership_multiplier": 17,
         "diversity_multiplier": 30,
         "voice_leading_multiplier": 10,
-        "sus_before_major": 20,
+        "sus_before_major": 10,
         "sus_nonresolution_penalty": 8,
-        "complexity_penalty_factor": 30,
-        "dominant_seventh_bonus": 15,
+        "complexity_penalty_factor": 17,
+        "dominant_seventh_bonus": 17,
         "tension_resolution": 10,
-        "leading_tone_resolution_bonus": 8,
+        "leading_tone_resolution_bonus": 5,
 
         # Extra cadences structures:
-        "cadence_deceptive": 10,
-        "cadence_64": 8,
+        "cadence_deceptive": 12,
+        "cadence_64": 10,
         "cadence_semicadence": 4,
-        "picardy_third_bonus": 4,
+        "picardy_third_bonus": 6
     }
 }

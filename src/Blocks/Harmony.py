@@ -25,7 +25,7 @@ class Harmony(Staff):
         """
         space_required = self._upbeat * get_times(self._signature[1])[1]
         try:
-            time = self._get_time_from_space(space_required)
+            time, dot = self._get_time_from_space(space_required)
         except ValueError as error:
             raise ValueError(f"Cannot create upbeat chord: {error}")
         
@@ -35,7 +35,7 @@ class Harmony(Staff):
             inversion=0,
             octave=0,
             time=time,
-            dot=False,
+            dot=dot,
             tuning=self._tuning
         )
         self._content.append(silent_chord)
