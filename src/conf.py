@@ -26,16 +26,16 @@ simulated_annealing_phrases_params = {
     "beat_on_strong_beats_reward": 100,
     "initial_rest_duration_reward": 10,
     "initial_rest_anacrusis_penalty": -100,
-    "final_rest_duration_reward": 60,
-    "large_last_note_reward": 60,
+    "final_rest_duration_reward": 40,
+    "large_last_note_reward": 80,
 
     #? This probabilities just set between 0 and 100:
     "probability_find_initial_rest": 20,
-    "probability_find_final_rest": 60,
+    "probability_find_final_rest": 20,
 
     #? Uniformity is the grade on which there are
     #? repetitive use of notes figures:
-    "uniformity": 20
+    "uniformity": 50
 }
 
 
@@ -61,26 +61,26 @@ genetic_progression_params = {
     "scoring_prefs": {
 
         # Basic preferences:
-        "first_chord_is_tonic": 4,
+        "first_chord_is_tonic": 2,
         "first_chord_not_tonic_penalty": 0,
-        "last_chord_is_dominant": 4,
+        "last_chord_is_dominant": 2,
         "last_chord_not_dominant_penalty": 0,
-        "first_last_combined_bonus": 10,
-        "tonic_on_last_bonus": 4,
+        "first_last_combined_bonus": 5,
+        "tonic_on_last_bonus": 2,
         "secondary_dominants": 10,
         "cadence": 30,
-        "scale_membership_multiplier": 17,
-        "diversity_multiplier": 30,
+        "scale_membership_multiplier": 20,
+        "diversity_multiplier": 40,
         "voice_leading_multiplier": 10,
         "sus_before_major": 10,
         "sus_nonresolution_penalty": 8,
         "complexity_penalty_factor": 17,
         "dominant_seventh_bonus": 17,
-        "tension_resolution": 10,
+        "tension_resolution": 20,
         "leading_tone_resolution_bonus": 5,
 
         # Extra cadences structures:
-        "cadence_deceptive": 12,
+        "cadence_deceptive": 17,
         "cadence_64": 10,
         "cadence_semicadence": 4,
         "picardy_third_bonus": 6
