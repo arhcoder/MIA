@@ -100,7 +100,7 @@ class Note:
 
             # A4 is note 69:
             semitone_diff = midi_number - 69
-            self._frequency = self._tuning * (2 ** (semitone_diff / 12))
+            self._frequency = round(self._tuning * (2 ** (semitone_diff / 12)), 4)
     
 
     #/ SETTERS:
