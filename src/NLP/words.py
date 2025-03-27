@@ -1,5 +1,6 @@
 import pandas as pd
 import random
+import re
 import os
 
 base_path = "Data/pos/"
@@ -7,7 +8,7 @@ base_path = "Data/pos/"
 def complete_sentence(categories_string):
     """
         Generates a sentence with its attributes based on PartOfSpeech string sentence
-        Example of input: "Det Sus Adj VConj Adv"
+        Example input: "Det Sus Adj V,singular,regular,transitivo_intransitivo,conjugado,presente_indicativo,yo Adv"
 
         Parameters:
             - categories_string [str]: String with the sentence in which PoS are separated by spaces
@@ -26,12 +27,8 @@ def complete_sentence(categories_string):
                     - "PronDem": Demostrative Pronouns
                     - "PronIntExc": Interrogative Exclamative Pronouns
                     - "PronRel": Relative Pronouns
-                - Verbs:
-                    - "VTran": Transitive Verb
-                    - "VIntra": Intransitive Verb
-                    - "VCop": Copulaive Verb
-                    - "VConj": Conjugated Verb
-                    - "VImp": Imperative Verb
+                - Verbs: Each verb has the following format:
+                    - "V,<number>,<regularity>,<transitivity>,<conjugation>,<time>,<person>"
         
         Returns:
             - [list[dict]]: List of dictionaries of the selected words, and its characteristics
@@ -49,30 +46,49 @@ def complete_sentence(categories_string):
     sentence = []
     categories = categories_string.upper().split()
     for category in categories:
-        file_map = {
-            "ADJ": "adjectives.csv",
-            "ADV": "adverbs.csv",
-            "CON": "conjunctions.csv",
-            "DET": "determinants.csv",
-            "INT": "interjections.csv",
-            "SUS": "nouns.csv",
-            "PREP": "prepositions.csv",
-            "PRONPER": "pronouns.csv",
-            "PRONREF": "pronouns.csv",
-            "PRONPREP": "pronouns.csv",
-            "PRONDEM": "pronouns.csv",
-            "PRONINTEXC": "pronouns.csv",
-            "PRONREL": "pronouns.csv",
-            "VTRAN": "verbs.csv",
-            "VINTRA": "verbs.csv",
-            "VCOP": "verbs.csv",
-            "VCONJ": "verbs.csv",
-            "VIMP": "verbs.csv",
-        }
 
-        # If it is valid category:
-        if category not in file_map:
-            raise ValueError(f"Uknowkn PoS Category: {category}")
+        # If it is a verb:
+        if category.startswith("V,"):
+            category = category.lower()
+            file_path = os.path.join(base_path, "verbs.csv")
+            parts = category.split(",")
+            category = "V"
+            if len(parts) != 7:
+                raise ValueError(f"Verb incorrect format: {category}")
+            file_map = {
+                "V": "verbs.csv"
+            }
+            
+            # parts[0] es "V", luego number, regularity, transitivity, conjugation, time, person:
+            filters = {
+                "number": parts[1],
+                "regularity": parts[2],
+                "transitivity": parts[3],
+                "conjugation": parts[4],
+                "time": parts[5],
+                "person": parts[6]
+            }
+        else:
+            file_map = {
+                "ADJ": "adjectives.csv",
+                "ADV": "adverbs.csv",
+                "CON": "conjunctions.csv",
+                "DET": "determinants.csv",
+                "INT": "interjections.csv",
+                "SUS": "nouns.csv",
+                "PREP": "prepositions.csv",
+                "PRONPER": "pronouns.csv",
+                "PRONREF": "pronouns.csv",
+                "PRONPREP": "pronouns.csv",
+                "PRONDEM": "pronouns.csv",
+                "PRONINTEXC": "pronouns.csv",
+                "PRONREL": "pronouns.csv",
+                "V": "verbs.csv"
+            }
+
+            # If it is valid category:
+            if category not in file_map:
+                raise ValueError(f"Uknowkn PoS Category: {category}")
         
         # PoS dictionaries path:
         file_path = os.path.join(base_path, file_map[category])
@@ -93,15 +109,6 @@ def complete_sentence(categories_string):
             }[category]
             filters["genre"] = gender
             filters["number"] = number
-        elif category.startswith("V"):
-            filters["type"] = {
-                "VTRAN": "transitivo",
-                "VINTRA": "intransitivo",
-                "VCOP": "copulativo",
-                "VCONJ": "conjugado",
-                "VIMP": "imperativo",
-            }[category]
-            filters["number"] = number
 
         # Gets the correct dictionary:
         df = pd.read_csv(file_path)
@@ -119,8 +126,8 @@ def complete_sentence(categories_string):
         row = df.sample().iloc[0]
         word_data = {
             "word": row["word"],
-            "tonic": int(row["tonic"]-1),
-            "syllables": row["syllables"].split(),
+            "tonic": int(row["tonic"] - 1),
+            "syllables": re.sub(r"[^\w\s]", "", row["syllables"]).split()
         }
         sentence.append(word_data)
 

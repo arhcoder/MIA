@@ -9,6 +9,5 @@ for sentence_type in [1, 2, 3, 4]:
 
     #? Generates 10 random sentences:
     for _ in range(10):
-        gen_sentence = grammar.generate()
-        sentence = " ".join([word["word"] for word in gen_sentence])
+        sentence, _ = grammar.generate()
         print("*", sentence.capitalize())

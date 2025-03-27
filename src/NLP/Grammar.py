@@ -18,12 +18,14 @@ class Grammar:
                     - 4: Imperative Sentences
             
             Methods:
-                - generate(): Returns a random sentence
-                    [list[dict]]: List of dictionaries of the selected words, and its characteristics
-                    Each element contains:
-                        - "word" [str]: Selected word
-                        - "syllables" [list[str]]: List of words syllables as string 
-                        - "tonic" [int]: Number of the tonic syllable (NOTATION STARTING FROM 0)
+                - generate(): Returns a random sentence in two formats:
+                    - [str]: Sentence as capitalized text
+                    - [list[str]]: Sentence as list of syllables:
+                        - If syllable contains "*" it is a tonic
+                        - If syllable is a "", it is a space between words
+                    Example of output:
+                        - "Juanito alimaña come manzanas"
+                        - ["Jua", "ni*", "to", "", "a", "li", "ma*", "ña", "", "co*", "me", "", "man", "za*", "nas"]
         """
 
         #? Validations:
@@ -63,4 +65,22 @@ class Grammar:
         #/ Example of return: "Det Sus Adj VConj Adv"
         sentence = generate_random(self.grammar.start())
 
-        return complete_sentence(" ".join(sentence))
+        #? Gets a sentence with words and syllables:
+        sentence_words = complete_sentence(" ".join(sentence))
+
+        #* Sentece as text:
+        sentence_text = " ".join([word["word"] for word in sentence_words]).capitalize()
+
+        #* Sentence as syllables:
+        sentence_syllables = []
+        for word in sentence_words:
+            syllables = word["syllables"]
+            tonic_index = word["tonic"]
+            syllables[tonic_index] = syllables[tonic_index] + "*"
+            sentence_syllables.extend(syllables)
+            sentence_syllables.append("")
+        # Removes the last space:
+        sentence_syllables.pop()
+        sentence_syllables[0] = sentence_syllables[0].capitalize()
+
+        return sentence_text, sentence_syllables

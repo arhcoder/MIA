@@ -1,6 +1,6 @@
 from NLP.words import complete_sentence
 
-categories = "Det Sus Adj VConj Det Sus"
+categories = "Det Sus Adj V,singular,regular,transitivo_intransitivo,conjugado,presente_indicativo,él Det Sus"
 oracion = complete_sentence(categories)
 
 palabras = [palabra["word"] for palabra in oracion]

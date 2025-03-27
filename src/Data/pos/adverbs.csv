@@ -1,21 +1,2169 @@
-word,category,tonic,syllables
-bien,adverbio,1,bien
-mal,adverbio,1,mal
-hoy,adverbio,1,hoy
-ayer,adverbio,2,a yer
-siempre,adverbio,1,siem pre
-nunca,adverbio,1,nun ca
-aquí,adverbio,2,a qúi
-allí,adverbio,2,a llí
-cerca,adverbio,1,cer ca
-lejos,adverbio,1,le jos
-muy,adverbio,1,muy
-poco,adverbio,1,po co
-bastante,adverbio,2,bas tan te
-demasiado,adverbio,3,de ma sia do
-tarde,adverbio,1,tar de
-temprano,adverbio,2,tem pra no
-a menudo,adverbio,3,a me nu do
-rápidamente,adverbio,1,rá pi da men te
-lento,adverbio,1,len to
-seguramente,adverbio,4,se gu ra men te
+word,category,syllables,tonic
+abajo,adverbio,a ba jo,2
+abdicativamente,adverbio,ab di ca ti va men te,6
+abiertamente,adverbio,a bier ta men te,4
+abierto,adverbio,a bier to,2
+abreviadamente,adverbio,a bre via da men te,5
+absolutamente,adverbio,ab so lu ta men te,5
+abstractamente,adverbio,abs trac ta men te,4
+abundantemente,adverbio,a bun dan te men te,5
+aburridamente,adverbio,a bu rri da men te,5
+acá,adverbio,a cá,2
+académicamente,adverbio,a ca dé mi ca men te,3
+acaloradamente,adverbio,a ca lo ra da men te,6
+acaso,adverbio,a ca so,2
+accesoriamente,adverbio,ac ce so ria men te,5
+accidentalmente,adverbio,ac ci den tal men te,5
+aceleradamente,adverbio,a ce le ra da men te,6
+acertadamente,adverbio,a cer ta da men te,5
+acordemente,adverbio,a cor de men te,4
+acremente,adverbio,a cre men te,3
+activamente,adverbio,ac ti va men te,4
+actualmente,adverbio,ac tual men te,3
+acuciosamente,adverbio,a cu cio sa men te,5
+acullá,adverbio,a cu llá,3
+adagio,adverbio,a da gio,2
+adecuadamente,adverbio,a de cua da men te,5
+adelante,adverbio,a de lan te,3
+además,adverbio,a de más,3
+adentro,adverbio,a den tro,2
+administrativamente,adverbio,ad mi nis tra ti va men te,7
+adonde,adverbio,a don de,2
+adónde,adverbio,a dón de,2
+adondequiera,adverbio,a don de quie ra,4
+adrede,adverbio,a dre de,2
+advertidamente,adverbio,ad ver ti da men te,5
+afablemente,adverbio,a fa ble men te,4
+afanosamente,adverbio,a fa no sa men te,5
+afirmativamente,adverbio,a fir ma ti va men te,6
+afligidamente,adverbio,a fli gi da men te,5
+afluentemente,adverbio,a fluen te men te,4
+afortunadamente,adverbio,a for tu na da men te,6
+afuera,adverbio,a fue ra,2
+agradablemente,adverbio,a gra da ble men te,5
+agresivamente,adverbio,a gre si va men te,5
+agriamente,adverbio,a gria men te,3
+agudamente,adverbio,a gu da men te,4
+ahí,adverbio,a hí,2
+ahora,adverbio,a ho ra,2
+ahorita,adverbio,a ho ri ta,3
+airadamente,adverbio,ai ra da men te,4
+airosamente,adverbio,ai ro sa men te,4
+aisladamente,adverbio,ais la da men te,4
+ajustadamente,adverbio,a jus ta da men te,5
+aldeanamente,adverbio,al de a na men te,5
+alderredor,adverbio,al de rre dor,4
+aleatoriamente,adverbio,a le a to ria men te,6
+alegremente,adverbio,a le gre men te,4
+alegreto,adverbio,a le gre to,3
+alegro,adverbio,a le gro,2
+alentadamente,adverbio,a len ta da men te,5
+alerta,adverbio,a ler ta,2
+alfabéticamente,adverbio,al fa bé ti ca men te,3
+algo,adverbio,al go,1
+alias,adverbio,a lias,1
+allá,adverbio,a llá,2
+allende,adverbio,a llen de,2
+allí,adverbio,a llí,2
+alocadamente,adverbio,a lo ca da men te,5
+alrededor,adverbio,al re de dor,4
+altamente,adverbio,al ta men te,3
+alternadamente,adverbio,al ter na da men te,5
+alternativamente,adverbio,al ter na ti va men te,6
+alto,adverbio,al to,1
+alzadamente,adverbio,al za da men te,4
+amablemente,adverbio,a ma ble men te,4
+amargamente,adverbio,a mar ga men te,4
+amarteladamente,adverbio,a mar te la da men te,6
+ambiciosamente,adverbio,am bi cio sa men te,5
+ambiguamente,adverbio,am bi gua men te,4
+amigablemente,adverbio,a mi ga ble men te,5
+amontonadamente,adverbio,a mon to na da men te,6
+amorosamente,adverbio,a mo ro sa men te,5
+ampliamente,adverbio,am plia men te,3
+analíticamente,adverbio,a na lí ti ca men te,3
+análogamente,adverbio,a ná lo ga men te,2
+andante,adverbio,an dan te,2
+andantino,adverbio,an dan ti no,3
+andrajosamente,adverbio,an dra jo sa men te,5
+angelicalmente,adverbio,an ge li cal men te,5
+angostamente,adverbio,an gos ta men te,4
+animosamente,adverbio,a ni mo sa men te,5
+anoche,adverbio,a no che,2
+antaño,adverbio,an ta ño,2
+anteanoche,adverbio,an te a no che,4
+anteayer,adverbio,an te a yer,4
+antemeridiano,adverbio,an te me ri dia no,5
+antenoche,adverbio,an te no che,3
+anteriormente,adverbio,an te rior men te,4
+antes,adverbio,an tes,1
+anticipadamente,adverbio,an ti ci pa da men te,6
+antier,adverbio,an tier,2
+antiguamente,adverbio,an ti gua men te,4
+antojadizamente,adverbio,an to ja di za men te,6
+anualmente,adverbio,a nual men te,3
+apaciblemente,adverbio,a pa ci ble men te,5
+aparatosamente,adverbio,a pa ra to sa men te,6
+aparentemente,adverbio,a pa ren te men te,5
+aparte,adverbio,a par te,2
+apasionadamente,adverbio,a pa sio na da men te,6
+apenas,adverbio,a pe nas,2
+apocadamente,adverbio,a po ca da men te,5
+apremiantemente,adverbio,a pre mian te men te,5
+apretadamente,adverbio,a pre ta da men te,5
+apriesa,adverbio,a prie sa,2
+aprisa,adverbio,a pri sa,2
+apropiadamente,adverbio,a pro pia da men te,5
+aproximadamente,adverbio,a pro xi ma da men te,6
+aquende,adverbio,a quen de,2
+aquí,adverbio,a quí,2
+arbitrariamente,adverbio,ar bi tra ria men te,5
+ardientemente,adverbio,ar dien te men te,4
+ardorosamente,adverbio,ar do ro sa men te,5
+arduamente,adverbio,ar dua men te,3
+armónicamente,adverbio,ar mó ni ca men te,2
+armoniosamente,adverbio,ar mo nio sa men te,5
+arrebatadamente,adverbio,a rre ba ta da men te,6
+arreo,adverbio,a rre o,2
+arriba,adverbio,a rri ba,2
+artificialmente,adverbio,ar ti fi cial men te,5
+asaz,adverbio,a saz,2
+así,adverbio,a sí,2
+asimismo,adverbio,a si mis mo,3
+asín,adverbio,a sín,2
+asina,adverbio,a si na,2
+ásperamente,adverbio,ás pe ra men te,1
+atentamente,adverbio,a ten ta men te,4
+atrás,adverbio,a trás,2
+atropelladamente,adverbio,a tro pe lla da men te,6
+augustamente,adverbio,au gus ta men te,4
+aun,adverbio,aun,1
+aún,adverbio,a ún,2
+automáticamente,adverbio,au to má ti ca men te,3
+autorizadamente,adverbio,au to ri za da men te,6
+avante,adverbio,a van te,2
+avariciosamente,adverbio,a va ri cio sa men te,6
+aventureramente,adverbio,a ven tu re ra men te,6
+aviesamente,adverbio,a vie sa men te,4
+ayer,adverbio,a yer,2
+azarosamente,adverbio,a za ro sa men te,5
+bajamano,adverbio,ba ja ma no,3
+bajamente,adverbio,ba ja men te,3
+bajo,adverbio,ba jo,1
+barato,adverbio,ba ra to,2
+básicamente,adverbio,bá si ca men te,1
+bastante,adverbio,bas tan te,2
+bastantemente,adverbio,bas tan te men te,4
+bellamente,adverbio,be lla men te,3
+benévolamente,adverbio,be né vo la men te,2
+benignamente,adverbio,be nig na men te,4
+bien,adverbio,bien,1
+bienalmente,adverbio,bie nal men te,3
+bis,adverbio,bis,1
+bizarramente,adverbio,bi za rra men te,4
+blandamente,adverbio,blan da men te,3
+blando,adverbio,blan do,1
+bobamente,adverbio,bo ba men te,3
+bocabajo,adverbio,bo ca ba jo,3
+bravamente,adverbio,bra va men te,3
+breve,adverbio,bre ve,1
+brillantemente,adverbio,bri llan te men te,4
+briosamente,adverbio,brio sa men te,3
+bruscamente,adverbio,brus ca men te,3
+brutalmente,adverbio,bru tal men te,3
+buenamente,adverbio,bue na men te,3
+bulliciosamente,adverbio,bu lli cio sa men te,5
+burdamente,adverbio,bur da men te,3
+cabal,adverbio,ca bal,2
+caballerosamente,adverbio,ca ba lle ro sa men te,6
+cabalmente,adverbio,ca bal men te,3
+cabezudamente,adverbio,ca be zu da men te,5
+cadenciosamente,adverbio,ca den cio sa men te,5
+caducamente,adverbio,ca du ca men te,4
+calamitosamente,adverbio,ca la mi to sa men te,6
+calladamente,adverbio,ca lla da men te,4
+callandico,adverbio,ca llan di co,3
+callandito,adverbio,ca llan di to,3
+callando,adverbio,ca llan do,2
+calumniosamente,adverbio,ca lum nio sa men te,5
+calurosamente,adverbio,ca lu ro sa men te,5
+campechanamente,adverbio,cam pe cha na men te,5
+caninamente,adverbio,ca ni na men te,4
+canónicamente,adverbio,ca nó ni ca men te,2
+cansadamente,adverbio,can sa da men te,4
+cantidad,adverbio,can ti dad,3
+cañón,adverbio,ca ñón,2
+capazmente,adverbio,ca paz men te,3
+capitularmente,adverbio,ca pi tu lar men te,5
+característicamente,adverbio,ca rac te rís ti ca men te,4
+carnalmente,adverbio,car nal men te,3
+caro,adverbio,ca ro,1
+casi,adverbio,ca si,1
+castellanamente,adverbio,cas te lla na men te,5
+castizamente,adverbio,cas ti za men te,4
+casualmente,adverbio,ca sual men te,3
+categóricamente,adverbio,ca te gó ri ca men te,3
+caudalosamente,adverbio,cau da lo sa men te,5
+cavilosamente,adverbio,ca vi lo sa men te,5
+celestialmente,adverbio,ce les tial men te,4
+celosamente,adverbio,ce lo sa men te,4
+cerca,adverbio,cer ca,1
+cercanamente,adverbio,cer ca na men te,4
+cercen,adverbio,cer cen,1
+cerquita,adverbio,cer qui ta,2
+chistosamente,adverbio,chis to sa men te,4
+chuscamente,adverbio,chus ca men te,3
+ciegamente,adverbio,cie ga men te,3
+científicamente,adverbio,cien tí fi ca men te,2
+ciertamente,adverbio,cier ta men te,3
+cierto,adverbio,cier to,1
+cifradamente,adverbio,ci fra da men te,4
+circularmente,adverbio,cir cu lar men te,4
+circunferencialmente,adverbio,cir cun fe ren cial men te,6
+civilmente,adverbio,ci vil men te,3
+clandestinamente,adverbio,clan des ti na men te,5
+claramente,adverbio,cla ra men te,3
+claro,adverbio,cla ro,1
+clericalmente,adverbio,cle ri cal men te,4
+cochinamente,adverbio,co chi na men te,4
+colegiadamente,adverbio,co le gia da men te,5
+colegialmente,adverbio,co le gial men te,4
+comercialmente,adverbio,co mer cial men te,4
+como,adverbio,co mo,1
+cómo,adverbio,có mo,1
+cómodamente,adverbio,có mo da men te,1
+comoquiera,adverbio,co mo quie ra,3
+comparativamente,adverbio,com pa ra ti va men te,6
+compasadamente,adverbio,com pa sa da men te,5
+compendiosamente,adverbio,com pen dio sa men te,5
+competentemente,adverbio,com pe ten te men te,5
+completamente,adverbio,com ple ta men te,4
+comunalmente,adverbio,co mu nal men te,4
+comúnmente,adverbio,co mún men te,2
+concertadamente,adverbio,con cer ta da men te,5
+concienzudamente,adverbio,con cien zu da men te,5
+concomitantemente,adverbio,con co mi tan te men te,6
+condicionalmente,adverbio,con di cio nal men te,5
+confiadamente,adverbio,con fia da men te,4
+confidencialmente,adverbio,con fi den cial men te,5
+conforme,adverbio,con for me,2
+conformemente,adverbio,con for me men te,4
+confortablemente,adverbio,con for ta ble men te,5
+confusamente,adverbio,con fu sa men te,4
+conjuntamente,adverbio,con jun ta men te,4
+connaturalmente,adverbio,con na tu ral men te,5
+conocidamente,adverbio,co no ci da men te,5
+consecuentemente,adverbio,con se cuen te men te,5
+consecutivamente,adverbio,con se cu ti va men te,6
+considerablemente,adverbio,con si de ra ble men te,6
+consiguientemente,adverbio,con si guien te men te,5
+consistentemente,adverbio,con sis ten te men te,5
+consistorialmente,adverbio,con sis to rial men te,5
+constantemente,adverbio,cons tan te men te,4
+constitucionalmente,adverbio,cons ti tu cio nal men te,6
+contemporáneamente,adverbio,con tem po rá ne a men te,4
+contiguamente,adverbio,con ti gua men te,4
+continuadamente,adverbio,con ti nua da men te,5
+continuamente,adverbio,con ti nua men te,4
+continuo,adverbio,con ti nuo,2
+contrariamente,adverbio,con tra ria men te,4
+contumazmente,adverbio,con tu maz men te,4
+convencionalmente,adverbio,con ven cio nal men te,5
+convenido,adverbio,con ve ni do,3
+convenientemente,adverbio,con ve nien te men te,5
+convincentemente,adverbio,con vin cen te men te,5
+cooperativamente,adverbio,co o pe ra ti va men te,7
+coordinadamente,adverbio,co or di na da men te,6
+copiosamente,adverbio,co pio sa men te,4
+cordialmente,adverbio,cor dial men te,3
+corporalmente,adverbio,cor po ral men te,4
+corporativamente,adverbio,cor po ra ti va men te,6
+correccionalmente,adverbio,co rrec cio nal men te,5
+correctamente,adverbio,co rrec ta men te,4
+correlativamente,adverbio,co rre la ti va men te,6
+correspondientemente,adverbio,co rres pon dien te men te,6
+corriente,adverbio,co rrien te,2
+corrientemente,adverbio,co rrien te men te,4
+corrompidamente,adverbio,co rrom pi da men te,5
+corruptamente,adverbio,co rrup ta men te,4
+cortamente,adverbio,cor ta men te,3
+costosamente,adverbio,cos to sa men te,4
+cotidianamente,adverbio,co ti dia na men te,5
+crasamente,adverbio,cra sa men te,3
+criminalmente,adverbio,cri mi nal men te,4
+críticamente,adverbio,crí ti ca men te,1
+cronológicamente,adverbio,cro no ló gi ca men te,3
+crudamente,adverbio,cru da men te,3
+cruelmente,adverbio,cruel men te,2
+cruentamente,adverbio,cruen ta men te,3
+cual,adverbio,cual,1
+cuál,adverbio,cuál,1
+cuan,adverbio,cuan,1
+cuán,adverbio,cuán,1
+cuándo,adverbio,cuán do,1
+cuanto,adverbio,cuan to,1
+cuasi,adverbio,cua si,1
+cuerdamente,adverbio,cuer da men te,3
+cuidadosamente,adverbio,cui da do sa men te,5
+culpablemente,adverbio,cul pa ble men te,4
+cultamente,adverbio,cul ta men te,3
+culto,adverbio,cul to,1
+culturalmente,adverbio,cul tu ral men te,4
+cumplidamente,adverbio,cum pli da men te,4
+curiosamente,adverbio,cu rio sa men te,4
+debajo,adverbio,de ba jo,2
+debidamente,adverbio,de bi da men te,4
+débilmente,adverbio,dé bil men te,1
+decentemente,adverbio,de cen te men te,4
+decididamente,adverbio,de ci di da men te,5
+declaradamente,adverbio,de cla ra da men te,5
+definitivamente,adverbio,de fi ni ti va men te,6
+delante,adverbio,de lan te,2
+delgadamente,adverbio,del ga da men te,4
+deliberadamente,adverbio,de li be ra da men te,6
+delicadamente,adverbio,de li ca da men te,5
+demás,adverbio,de más,2
+demasiadamente,adverbio,de ma sia da men te,5
+demasiado,adverbio,de ma sia do,3
+dentro,adverbio,den tro,1
+deprisa,adverbio,de pri sa,2
+derechamente,adverbio,de re cha men te,4
+derechito,adverbio,de re chi to,3
+derecho,adverbio,de re cho,2
+desabridamente,adverbio,de sa bri da men te,5
+desacertadamente,adverbio,de sa cer ta da men te,6
+desaconsejadamente,adverbio,de sa con se ja da men te,7
+desacordadamente,adverbio,de sa cor da da men te,6
+desacostumbradamente,adverbio,de sa cos tum bra da men te,7
+desagradablemente,adverbio,de sa gra da ble men te,6
+desairadamente,adverbio,de sai ra da men te,5
+desanimadamente,adverbio,de sa ni ma da men te,6
+desapaciblemente,adverbio,de sa pa ci ble men te,6
+desapasionadamente,adverbio,de sa pa sio na da men te,7
+desastradamente,adverbio,de sas tra da men te,5
+desatentadamente,adverbio,de sa ten ta da men te,6
+desatinadamente,adverbio,de sa ti na da men te,6
+desbaratadamente,adverbio,des ba ra ta da men te,6
+descaradamente,adverbio,des ca ra da men te,5
+descomedidamente,adverbio,des co me di da men te,6
+descompuestamente,adverbio,des com pues ta men te,5
+descomunalmente,adverbio,des co mu nal men te,5
+desconfiadamente,adverbio,des con fia da men te,5
+desconsideradamente,adverbio,des con si de ra da men te,7
+desconsoladamente,adverbio,des con so la da men te,6
+descubiertamente,adverbio,des cu bier ta men te,5
+descuidadamente,adverbio,des cui da da men te,5
+desdichadamente,adverbio,des di cha da men te,5
+desembarazadamente,adverbio,de sem ba ra za da men te,7
+desenvueltamente,adverbio,de sen vuel ta men te,5
+desfavorablemente,adverbio,des fa vo ra ble men te,6
+desgraciadamente,adverbio,des gra cia da men te,5
+deshonestamente,adverbio,des ho nes ta men te,5
+desmedidamente,adverbio,des me di da men te,5
+desmesuradamente,adverbio,des me su ra da men te,6
+desnudamente,adverbio,des nu da men te,4
+desordenadamente,adverbio,de sor de na da men te,6
+despacio,adverbio,des pa cio,2
+despaciosamente,adverbio,des pa cio sa men te,5
+despacito,adverbio,des pa ci to,3
+despectivamente,adverbio,des pec ti va men te,5
+despiertamente,adverbio,des pier ta men te,4
+desprevenidamente,adverbio,des pre ve ni da men te,6
+después,adverbio,des pués,2
+destructivamente,adverbio,des truc ti va men te,5
+desusadamente,adverbio,de su sa da men te,5
+desvergonzadamente,adverbio,des ver gon za da men te,6
+detalladamente,adverbio,de ta lla da men te,5
+detenidamente,adverbio,de te ni da men te,5
+detrás,adverbio,de trás,2
+diagonalmente,adverbio,dia go nal men te,4
+diametralmente,adverbio,dia me tral men te,4
+diariamente,adverbio,dia ria men te,3
+diatónicamente,adverbio,dia tó ni ca men te,2
+dichosamente,adverbio,di cho sa men te,4
+diestramente,adverbio,dies tra men te,3
+diferente,adverbio,di fe ren te,3
+diferentemente,adverbio,di fe ren te men te,5
+difícilmente,adverbio,di fí cil men te,2
+dificultosamente,adverbio,di fi cul to sa men te,6
+difusamente,adverbio,di fu sa men te,4
+dignamente,adverbio,dig na men te,3
+dilatadamente,adverbio,di la ta da men te,5
+diligentemente,adverbio,di li gen te men te,5
+diminutamente,adverbio,di mi nu ta men te,5
+diminutivamente,adverbio,di mi nu ti va men te,6
+directamente,adverbio,di rec ta men te,4
+discretamente,adverbio,dis cre ta men te,4
+disimuladamente,adverbio,di si mu la da men te,6
+disparado,adverbio,dis pa ra do,3
+disparatadamente,adverbio,dis pa ra ta da men te,6
+disyuntivamente,adverbio,di syun ti va men te,5
+diversamente,adverbio,di ver sa men te,4
+divinamente,adverbio,di vi na men te,4
+do,adverbio,do,1
+doble,adverbio,do ble,1
+doblemente,adverbio,do ble men te,3
+dócilmente,adverbio,dó cil men te,1
+doctamente,adverbio,doc ta men te,3
+dogmáticamente,adverbio,dog má ti ca men te,2
+dolorosamente,adverbio,do lo ro sa men te,5
+donde,adverbio,don de,1
+dónde,adverbio,dón de,1
+dondequiera,adverbio,don de quie ra,3
+doquier,adverbio,do quier,2
+doquiera,adverbio,do quie ra,2
+doy,adverbio,doy,1
+dramáticamente,adverbio,dra má ti ca men te,2
+dudosamente,adverbio,du do sa men te,4
+dulce,adverbio,dul ce,1
+dulcemente,adverbio,dul ce men te,3
+duraderamente,adverbio,du ra de ra men te,5
+duramente,adverbio,du ra men te,3
+duro,adverbio,du ro,1
+económicamente,adverbio,e co nó mi ca men te,3
+efectivamente,adverbio,e fec ti va men te,5
+eficazmente,adverbio,e fi caz men te,4
+eficientemente,adverbio,e fi cien te men te,5
+egregiamente,adverbio,e gre gia men te,4
+ejecutivamente,adverbio,e je cu ti va men te,6
+ejemplarmente,adverbio,e jem plar men te,4
+electrónicamente,adverbio,e lec tró ni ca men te,3
+elegantemente,adverbio,e le gan te men te,5
+elementalmente,adverbio,e le men tal men te,5
+elevadamente,adverbio,e le va da men te,5
+elocuentemente,adverbio,e lo cuen te men te,5
+embarazosamente,adverbio,em ba ra zo sa men te,6
+embozadamente,adverbio,em bo za da men te,5
+eminencialmente,adverbio,e mi nen cial men te,5
+eminentemente,adverbio,e mi nen te men te,5
+emocionalmente,adverbio,e mo cio nal men te,5
+empeñosamente,adverbio,em pe ño sa men te,5
+empíricamente,adverbio,em pí ri ca men te,2
+enamoradamente,adverbio,e na mo ra da men te,6
+enante,adverbio,e nan te,2
+encarecidamente,adverbio,en ca re ci da men te,6
+encarnizadamente,adverbio,en car ni za da men te,6
+encima,adverbio,en ci ma,2
+encubiertamente,adverbio,en cu bier ta men te,5
+ende,adverbio,en de,1
+endiabladamente,adverbio,en dia bla da men te,5
+enérgicamente,adverbio,e nér gi ca men te,2
+enfadosamente,adverbio,en fa do sa men te,5
+enfáticamente,adverbio,en fá ti ca men te,2
+enfrente,adverbio,en fren te,2
+engañosamente,adverbio,en ga ño sa men te,5
+enhorabuena,adverbio,e nho ra bue na,4
+enhoramala,adverbio,e nho ra ma la,4
+enigmáticamente,adverbio,e nig má ti ca men te,3
+enojosamente,adverbio,e no jo sa men te,5
+enormemente,adverbio,e nor me men te,4
+enseguida,adverbio,en se gui da,3
+enteramente,adverbio,en te ra men te,4
+enternecidamente,adverbio,en ter ne ci da men te,6
+entonce,adverbio,en ton ce,2
+entonces,adverbio,en ton ces,2
+entrañablemente,adverbio,en tra ña ble men te,5
+entretanto,adverbio,en tre tan to,3
+épicamente,adverbio,é pi ca men te,1
+episódicamente,adverbio,e pi só di ca men te,3
+equilicuá,adverbio,e qui li cuá,4
+equitativamente,adverbio,e qui ta ti va men te,6
+equivalentemente,adverbio,e qui va len te men te,6
+equivocadamente,adverbio,e qui vo ca da men te,6
+erradamente,adverbio,e rra da men te,4
+erróneamente,adverbio,e rró ne a men te,2
+eruditamente,adverbio,e ru di ta men te,5
+escabrosamente,adverbio,es ca bro sa men te,5
+escandalosamente,adverbio,es can da lo sa men te,6
+escapado,adverbio,es ca pa do,3
+escasamente,adverbio,es ca sa men te,4
+escatimosamente,adverbio,es ca ti mo sa men te,6
+escondidamente,adverbio,es con di da men te,5
+escrupulosamente,adverbio,es cru pu lo sa men te,6
+escuderilmente,adverbio,es cu de ril men te,5
+escuetamente,adverbio,es cue ta men te,4
+esencialmente,adverbio,e sen cial men te,4
+esforzadamente,adverbio,es for za da men te,5
+esmeradamente,adverbio,es me ra da men te,5
+espaciosamente,adverbio,es pa cio sa men te,5
+espantablemente,adverbio,es pan ta ble men te,5
+espantosamente,adverbio,es pan to sa men te,5
+especial,adverbio,es pe cial,3
+especialmente,adverbio,es pe cial men te,4
+específicamente,adverbio,es pe cí fi ca men te,3
+especulativamente,adverbio,es pe cu la ti va men te,7
+espesamente,adverbio,es pe sa men te,4
+espiritosamente,adverbio,es pi ri to sa men te,6
+espiritualmente,adverbio,es pi ri tual men te,5
+espléndidamente,adverbio,es plén di da men te,2
+esplendorosamente,adverbio,es plen do ro sa men te,6
+espontáneamente,adverbio,es pon tá ne a men te,3
+esquemáticamente,adverbio,es que má ti ca men te,3
+establemente,adverbio,es ta ble men te,4
+estéticamente,adverbio,es té ti ca men te,2
+estoicamente,adverbio,es toi ca men te,4
+estrafalariamente,adverbio,es tra fa la ria men te,6
+estratégicamente,adverbio,es tra té gi ca men te,3
+estrechamente,adverbio,es tre cha men te,4
+estrepitosamente,adverbio,es tre pi to sa men te,6
+estrictamente,adverbio,es tric ta men te,4
+estropajosamente,adverbio,es tro pa jo sa men te,6
+estruendosamente,adverbio,es truen do sa men te,5
+estudiosamente,adverbio,es tu dio sa men te,5
+estupendamente,adverbio,es tu pen da men te,5
+estupendo,adverbio,es tu pen do,3
+estúpidamente,adverbio,es tú pi da men te,2
+eternamente,adverbio,e ter na men te,4
+eventualmente,adverbio,e ven tual men te,4
+evidentemente,adverbio,e vi den te men te,5
+exactamente,adverbio,e xac ta men te,4
+exacto,adverbio,e xac to,2
+exageradamente,adverbio,e xa ge ra da men te,6
+exagerativamente,adverbio,e xa ge ra ti va men te,7
+excelentemente,adverbio,ex ce len te men te,5
+excelsamente,adverbio,ex cel sa men te,4
+excesivamente,adverbio,ex ce si va men te,5
+exclusivamente,adverbio,ex clu si va men te,5
+exclusive,adverbio,ex clu si ve,3
+exentamente,adverbio,e xen ta men te,4
+exhaustivamente,adverbio,e xhaus ti va men te,5
+exorbitantemente,adverbio,e xor bi tan te men te,6
+experimentalmente,adverbio,ex pe ri men tal men te,6
+expertamente,adverbio,ex per ta men te,4
+explicablemente,adverbio,ex pli ca ble men te,5
+expresamente,adverbio,ex pre sa men te,4
+expresivamente,adverbio,ex pre si va men te,5
+expreso,adverbio,ex pre so,2
+exquisitamente,adverbio,ex qui si ta men te,5
+extensamente,adverbio,ex ten sa men te,4
+extensivamente,adverbio,ex ten si va men te,5
+exteriormente,adverbio,ex te rior men te,4
+externamente,adverbio,ex ter na men te,4
+extrajudicialmente,adverbio,ex tra ju di cial men te,6
+extramuros,adverbio,ex tra mu ros,3
+extrañamente,adverbio,ex tra ña men te,4
+extraoficialmente,adverbio,ex tra o fi cial men te,6
+extraordinariamente,adverbio,ex tra or di na ria men te,7
+extremadamente,adverbio,ex tre ma da men te,5
+extremamente,adverbio,ex tre ma men te,4
+fabulosamente,adverbio,fa bu lo sa men te,5
+fácil,adverbio,fá cil,1
+fácilmente,adverbio,fá cil men te,1
+facultativamente,adverbio,fa cul ta ti va men te,6
+falazmente,adverbio,fa laz men te,3
+falsamente,adverbio,fal sa men te,3
+familiarmente,adverbio,fa mi liar men te,4
+fanáticamente,adverbio,fa ná ti ca men te,2
+fantásticamente,adverbio,fan tás ti ca men te,2
+fastidiosamente,adverbio,fas ti dio sa men te,5
+fastuosamente,adverbio,fas tuo sa men te,4
+fatal,adverbio,fa tal,2
+fatalmente,adverbio,fa tal men te,3
+fatigosamente,adverbio,fa ti go sa men te,5
+favorablemente,adverbio,fa vo ra ble men te,5
+fe,adverbio,fe,1
+feamente,adverbio,fe a men te,3
+feblemente,adverbio,fe ble men te,3
+febrilmente,adverbio,fe bril men te,3
+fecundamente,adverbio,fe cun da men te,4
+felizmente,adverbio,fe liz men te,3
+fenomenal,adverbio,fe no me nal,4
+fenómeno,adverbio,fe nó me no,2
+ferozmente,adverbio,fe roz men te,3
+fervientemente,adverbio,fer vien te men te,4
+fervorosamente,adverbio,fer vo ro sa men te,5
+festivamente,adverbio,fes ti va men te,4
+fielmente,adverbio,fiel men te,2
+fieramente,adverbio,fie ra men te,3
+figuradamente,adverbio,fi gu ra da men te,5
+figurativamente,adverbio,fi gu ra ti va men te,6
+fijamente,adverbio,fi ja men te,3
+filialmente,adverbio,fi lial men te,3
+filosofalmente,adverbio,fi lo so fal men te,5
+finalmente,adverbio,fi nal men te,3
+finamente,adverbio,fi na men te,3
+fingidamente,adverbio,fin gi da men te,4
+firme,adverbio,fir me,1
+firmemente,adverbio,fir me men te,3
+físicamente,adverbio,fí si ca men te,1
+flacamente,adverbio,fla ca men te,3
+flojamente,adverbio,flo ja men te,3
+floridamente,adverbio,flo ri da men te,4
+fluidamente,adverbio,flui da men te,3
+foralmente,adverbio,fo ral men te,3
+foras,adverbio,fo ras,1
+formalmente,adverbio,for mal men te,3
+fortuitamente,adverbio,for tui ta men te,4
+forzadamente,adverbio,for za da men te,4
+forzado,adverbio,for za do,2
+forzosamente,adverbio,for zo sa men te,4
+forzudamente,adverbio,for zu da men te,4
+fotográficamente,adverbio,fo to grá fi ca men te,3
+francamente,adverbio,fran ca men te,3
+fraternalmente,adverbio,fra ter nal men te,4
+fraudulentamente,adverbio,frau du len ta men te,5
+frecuentemente,adverbio,fre cuen te men te,4
+frenéticamente,adverbio,fre né ti ca men te,2
+frente,adverbio,fren te,1
+frescamente,adverbio,fres ca men te,3
+fríamente,adverbio,frí a men te,1
+fructuosamente,adverbio,fruc tuo sa men te,4
+frugalmente,adverbio,fru gal men te,3
+fuera,adverbio,fue ra,1
+fuerte,adverbio,fuer te,1
+fuertemente,adverbio,fuer te men te,3
+fugazmente,adverbio,fu gaz men te,3
+fundamentalmente,adverbio,fun da men tal men te,5
+funestamente,adverbio,fu nes ta men te,4
+furiosamente,adverbio,fu rio sa men te,4
+furtivamente,adverbio,fur ti va men te,4
+galantemente,adverbio,ga lan te men te,4
+gallardamente,adverbio,ga llar da men te,4
+garbosamente,adverbio,gar bo sa men te,4
+generalmente,adverbio,ge ne ral men te,4
+genéricamente,adverbio,ge né ri ca men te,2
+generosamente,adverbio,ge ne ro sa men te,5
+genial,adverbio,ge nial,2
+genialmente,adverbio,ge nial men te,3
+gentilmente,adverbio,gen til men te,3
+geográficamente,adverbio,ge o grá fi ca men te,3
+geopolíticamente,adverbio,ge o po lí ti ca men te,4
+gitanamente,adverbio,gi ta na men te,4
+glacialmente,adverbio,gla cial men te,3
+gloriosamente,adverbio,glo rio sa men te,4
+golosamente,adverbio,go lo sa men te,4
+gozosamente,adverbio,go zo sa men te,4
+graciosamente,adverbio,gra cio sa men te,4
+gradualmente,adverbio,gra dual men te,3
+gráficamente,adverbio,grá fi ca men te,1
+gramaticalmente,adverbio,gra ma ti cal men te,5
+grandemente,adverbio,gran de men te,3
+grandiosamente,adverbio,gran dio sa men te,4
+gratamente,adverbio,gra ta men te,3
+gratis,adverbio,gra tis,1
+gratuitamente,adverbio,gra tui ta men te,4
+gravemente,adverbio,gra ve men te,3
+groseramente,adverbio,gro se ra men te,4
+grotescamente,adverbio,gro tes ca men te,4
+gruesamente,adverbio,grue sa men te,3
+gubernativamente,adverbio,gu ber na ti va men te,6
+guerreramente,adverbio,gue rre ra men te,4
+gustosamente,adverbio,gus to sa men te,4
+guturalmente,adverbio,gu tu ral men te,4
+hábilmente,adverbio,há bil men te,1
+habitualmente,adverbio,ha bi tual men te,4
+harto,adverbio,har to,1
+hastiosamente,adverbio,has tio sa men te,4
+he,adverbio,he,1
+hediondamente,adverbio,he dion da men te,4
+hermanablemente,adverbio,her ma na ble men te,5
+herméticamente,adverbio,her mé ti ca men te,2
+hermosamente,adverbio,her mo sa men te,4
+heroicamente,adverbio,he roi ca men te,4
+hidalgamente,adverbio,hi dal ga men te,4
+hiperbólicamente,adverbio,hi per bó li ca men te,3
+hipotéticamente,adverbio,hi po té ti ca men te,3
+historialmente,adverbio,his to rial men te,4
+históricamente,adverbio,his tó ri ca men te,2
+hogaño,adverbio,ho ga ño,2
+holgadamente,adverbio,hol ga da men te,4
+homogéneamente,adverbio,ho mo gé ne a men te,3
+hondamente,adverbio,hon da men te,3
+honestamente,adverbio,ho nes ta men te,4
+honoríficamente,adverbio,ho no rí fi ca men te,3
+honradamente,adverbio,hon ra da men te,4
+honrosamente,adverbio,hon ro sa men te,4
+hora,adverbio,ho ra,1
+horizontalmente,adverbio,ho ri zon tal men te,5
+horrendamente,adverbio,ho rren da men te,4
+horriblemente,adverbio,ho rri ble men te,4
+horror,adverbio,ho rror,2
+horrorosamente,adverbio,ho rro ro sa men te,5
+hospitalariamente,adverbio,hos pi ta la ria men te,6
+hostilmente,adverbio,hos til men te,3
+hoy,adverbio,hoy,1
+humanamente,adverbio,hu ma na men te,4
+humildemente,adverbio,hu mil de men te,4
+idealmente,adverbio,i de al men te,4
+idénticamente,adverbio,i dén ti ca men te,2
+ignominiosamente,adverbio,ig no mi nio sa men te,6
+ignorantemente,adverbio,ig no ran te men te,5
+igual,adverbio,i gual,2
+igualmente,adverbio,i gual men te,3
+ilegalmente,adverbio,i le gal men te,4
+ilícitamente,adverbio,i lí ci ta men te,2
+ilimitadamente,adverbio,i li mi ta da men te,6
+ilusamente,adverbio,i lu sa men te,4
+ilustremente,adverbio,i lus tre men te,4
+imaginariamente,adverbio,i ma gi na ria men te,6
+impacientemente,adverbio,im pa cien te men te,5
+imparcialmente,adverbio,im par cial men te,4
+impasiblemente,adverbio,im pa si ble men te,5
+impensadamente,adverbio,im pen sa da men te,5
+imperativamente,adverbio,im pe ra ti va men te,6
+imperceptiblemente,adverbio,im per cep ti ble men te,6
+imperdonablemente,adverbio,im per do na ble men te,6
+imperfectamente,adverbio,im per fec ta men te,5
+imperiosamente,adverbio,im pe rio sa men te,5
+impersonalmente,adverbio,im per so nal men te,5
+impertinentemente,adverbio,im per ti nen te men te,6
+imperturbablemente,adverbio,im per tur ba ble men te,6
+impetuosamente,adverbio,im pe tuo sa men te,5
+impíamente,adverbio,im pí a men te,2
+implacablemente,adverbio,im pla ca ble men te,5
+implícitamente,adverbio,im plí ci ta men te,2
+imponderablemente,adverbio,im pon de ra ble men te,6
+importunadamente,adverbio,im por tu na da men te,6
+imposiblemente,adverbio,im po si ble men te,5
+improbablemente,adverbio,im pro ba ble men te,5
+impropiamente,adverbio,im pro pia men te,4
+improvisadamente,adverbio,im pro vi sa da men te,6
+improvisamente,adverbio,im pro vi sa men te,5
+imprudentemente,adverbio,im pru den te men te,5
+impúdicamente,adverbio,im pú di ca men te,2
+impunemente,adverbio,im pu ne men te,4
+impuramente,adverbio,im pu ra men te,4
+inaccesiblemente,adverbio,i nac ce si ble men te,6
+inadvertidamente,adverbio,i nad ver ti da men te,6
+inalterablemente,adverbio,i nal te ra ble men te,6
+incansablemente,adverbio,in can sa ble men te,5
+incautamente,adverbio,in cau ta men te,4
+incesablemente,adverbio,in ce sa ble men te,5
+incesantemente,adverbio,in ce san te men te,5
+incestuosamente,adverbio,in ces tuo sa men te,5
+incidentalmente,adverbio,in ci den tal men te,5
+incidentemente,adverbio,in ci den te men te,5
+inciertamente,adverbio,in cier ta men te,4
+incivilmente,adverbio,in ci vil men te,4
+inclusivamente,adverbio,in clu si va men te,5
+inclusive,adverbio,in clu si ve,3
+incluso,adverbio,in clu so,2
+incoherentemente,adverbio,in co he ren te men te,6
+incómodamente,adverbio,in có mo da men te,2
+incomparablemente,adverbio,in com pa ra ble men te,6
+incompletamente,adverbio,in com ple ta men te,5
+incomprensiblemente,adverbio,in com pren si ble men te,6
+incondicionalmente,adverbio,in con di cio nal men te,6
+incongruentemente,adverbio,in con gruen te men te,5
+inconscientemente,adverbio,in cons cien te men te,5
+inconsideradamente,adverbio,in con si de ra da men te,7
+inconsolablemente,adverbio,in con so la ble men te,6
+inconstantemente,adverbio,in cons tan te men te,5
+incontinente,adverbio,in con ti nen te,4
+incontinentemente,adverbio,in con ti nen te men te,6
+incontinenti,adverbio,in con ti nen ti,4
+incontrastablemente,adverbio,in con tras ta ble men te,6
+incorrectamente,adverbio,in co rrec ta men te,5
+increíblemente,adverbio,in cre í ble men te,3
+incruentamente,adverbio,in cruen ta men te,4
+incultamente,adverbio,in cul ta men te,4
+indebidamente,adverbio,in de bi da men te,5
+indecentemente,adverbio,in de cen te men te,5
+indeciblemente,adverbio,in de ci ble men te,5
+indecorosamente,adverbio,in de co ro sa men te,6
+indefectiblemente,adverbio,in de fec ti ble men te,6
+indefinidamente,adverbio,in de fi ni da men te,6
+indeleblemente,adverbio,in de le ble men te,5
+indeliberadamente,adverbio,in de li be ra da men te,7
+independiente,adverbio,in de pen dien te,4
+independientemente,adverbio,in de pen dien te men te,6
+indeterminadamente,adverbio,in de ter mi na da men te,7
+indiferentemente,adverbio,in di fe ren te men te,6
+indignamente,adverbio,in dig na men te,4
+indirectamente,adverbio,in di rec ta men te,5
+indiscretamente,adverbio,in dis cre ta men te,5
+indiscriminadamente,adverbio,in dis cri mi na da men te,7
+indisolublemente,adverbio,in di so lu ble men te,6
+indispensablemente,adverbio,in dis pen sa ble men te,6
+indistintamente,adverbio,in dis tin ta men te,5
+individualmente,adverbio,in di vi dual men te,5
+indivisiblemente,adverbio,in di vi si ble men te,6
+indolentemente,adverbio,in do len te men te,5
+indudablemente,adverbio,in du da ble men te,5
+indulgentemente,adverbio,in dul gen te men te,5
+inefablemente,adverbio,i ne fa ble men te,5
+ineficazmente,adverbio,i ne fi caz men te,5
+ineludiblemente,adverbio,i ne lu di ble men te,6
+ineptamente,adverbio,i nep ta men te,4
+inequívocamente,adverbio,i ne quí vo ca men te,3
+inesperadamente,adverbio,i nes pe ra da men te,6
+inevitablemente,adverbio,i ne vi ta ble men te,6
+inexactamente,adverbio,i ne xac ta men te,5
+inexcusablemente,adverbio,i nex cu sa ble men te,6
+inexorablemente,adverbio,i ne xo ra ble men te,6
+inexplicablemente,adverbio,i nex pli ca ble men te,6
+infaliblemente,adverbio,in fa li ble men te,5
+infatigablemente,adverbio,in fa ti ga ble men te,6
+infaustamente,adverbio,in faus ta men te,4
+infelizmente,adverbio,in fe liz men te,4
+infielmente,adverbio,in fiel men te,3
+infinitamente,adverbio,in fi ni ta men te,5
+infinito,adverbio,in fi ni to,3
+inflexiblemente,adverbio,in fle xi ble men te,5
+informalmente,adverbio,in for mal men te,4
+infortunadamente,adverbio,in for tu na da men te,6
+infructuosamente,adverbio,in fruc tuo sa men te,5
+infundadamente,adverbio,in fun da da men te,5
+ingeniosamente,adverbio,in ge nio sa men te,5
+ingenuamente,adverbio,in ge nua men te,4
+ingratamente,adverbio,in gra ta men te,4
+inhumanamente,adverbio,i nhu ma na men te,5
+inicialmente,adverbio,i ni cial men te,4
+inicuamente,adverbio,i ni cua men te,4
+injuriosamente,adverbio,in ju rio sa men te,5
+injustamente,adverbio,in jus ta men te,4
+injustificadamente,adverbio,in jus ti fi ca da men te,7
+inmaculadamente,adverbio,in ma cu la da men te,6
+inmediatamente,adverbio,in me dia ta men te,5
+inmejorablemente,adverbio,in me jo ra ble men te,6
+inmemorablemente,adverbio,in me mo ra ble men te,6
+inmensamente,adverbio,in men sa men te,4
+inmoderadamente,adverbio,in mo de ra da men te,6
+inmodestamente,adverbio,in mo des ta men te,5
+inmortalmente,adverbio,in mor tal men te,4
+inmotivadamente,adverbio,in mo ti va da men te,6
+innecesariamente,adverbio,in ne ce sa ria men te,6
+innegablemente,adverbio,in ne ga ble men te,5
+innumerablemente,adverbio,in nu me ra ble men te,6
+inocentemente,adverbio,i no cen te men te,5
+inopinadamente,adverbio,i no pi na da men te,6
+inoportunamente,adverbio,i no por tu na men te,6
+inquietamente,adverbio,in quie ta men te,4
+insaciablemente,adverbio,in sa cia ble men te,5
+inseguramente,adverbio,in se gu ra men te,5
+insensiblemente,adverbio,in sen si ble men te,5
+inseparablemente,adverbio,in se pa ra ble men te,6
+insidiosamente,adverbio,in si dio sa men te,5
+insignemente,adverbio,in sig ne men te,4
+insistentemente,adverbio,in sis ten te men te,5
+insolentemente,adverbio,in so len te men te,5
+inspiradamente,adverbio,ins pi ra da men te,5
+instantáneamente,adverbio,ins tan tá ne a men te,3
+instintivamente,adverbio,ins tin ti va men te,5
+institucionalmente,adverbio,ins ti tu cio nal men te,6
+instructivamente,adverbio,ins truc ti va men te,5
+instrumentalmente,adverbio,ins tru men tal men te,5
+insubstancialmente,adverbio,in subs tan cial men te,5
+insufriblemente,adverbio,in su fri ble men te,5
+insulsamente,adverbio,in sul sa men te,4
+insustancialmente,adverbio,in sus tan cial men te,5
+integralmente,adverbio,in te gral men te,4
+íntegramente,adverbio,ín te gra men te,1
+intelectualmente,adverbio,in te lec tual men te,5
+inteligiblemente,adverbio,in te li gi ble men te,6
+intempestivamente,adverbio,in tem pes ti va men te,6
+intencionadamente,adverbio,in ten cio na da men te,6
+intencionalmente,adverbio,in ten cio nal men te,5
+intensamente,adverbio,in ten sa men te,4
+intensivamente,adverbio,in ten si va men te,5
+ínter,adverbio,ín ter,1
+interesadamente,adverbio,in te re sa da men te,6
+ínterin,adverbio,ín te rin,1
+interinamente,adverbio,in te ri na men te,5
+interiormente,adverbio,in te rior men te,4
+internamente,adverbio,in ter na men te,4
+interpretativamente,adverbio,in ter pre ta ti va men te,7
+interrogativamente,adverbio,in te rro ga ti va men te,7
+íntimamente,adverbio,ín ti ma men te,1
+intramuros,adverbio,in tra mu ros,3
+intrépidamente,adverbio,in tré pi da men te,2
+intrincadamente,adverbio,in trin ca da men te,5
+intrínsecamente,adverbio,in trín se ca men te,2
+intrusamente,adverbio,in tru sa men te,4
+intuitivamente,adverbio,in tui ti va men te,5
+inusitadamente,adverbio,i nu si ta da men te,6
+inútilmente,adverbio,i nú til men te,2
+inválidamente,adverbio,in vá li da men te,2
+invariablemente,adverbio,in va ria ble men te,5
+invenciblemente,adverbio,in ven ci ble men te,5
+inversamente,adverbio,in ver sa men te,4
+inviolablemente,adverbio,in vio la ble men te,5
+invisiblemente,adverbio,in vi si ble men te,5
+involuntariamente,adverbio,in vo lun ta ria men te,6
+irónicamente,adverbio,i ró ni ca men te,2
+irracionalmente,adverbio,i rra cio nal men te,5
+irreductiblemente,adverbio,i rre duc ti ble men te,6
+irreflexivamente,adverbio,i rre fle xi va men te,6
+irregularmente,adverbio,i rre gu lar men te,5
+irremediablemente,adverbio,i rre me dia ble men te,6
+irremisiblemente,adverbio,i rre mi si ble men te,6
+irreparablemente,adverbio,i rre pa ra ble men te,6
+irreprensiblemente,adverbio,i rre pren si ble men te,6
+irresistiblemente,adverbio,i rre sis ti ble men te,6
+irrespetuosamente,adverbio,i rres pe tuo sa men te,6
+irreverentemente,adverbio,i rre ve ren te men te,6
+irrevocablemente,adverbio,i rre vo ca ble men te,6
+irrisoriamente,adverbio,i rri so ria men te,5
+ítem,adverbio,í tem,1
+jactanciosamente,adverbio,jac tan cio sa men te,5
+jamás,adverbio,ja más,2
+jocosamente,adverbio,jo co sa men te,4
+jovialmente,adverbio,jo vial men te,3
+jubilosamente,adverbio,ju bi lo sa men te,5
+judicialmente,adverbio,ju di cial men te,4
+juiciosamente,adverbio,jui cio sa men te,4
+juntamente,adverbio,jun ta men te,3
+junto,adverbio,jun to,1
+jurídicamente,adverbio,ju rí di ca men te,2
+justamente,adverbio,jus ta men te,3
+justificadamente,adverbio,jus ti fi ca da men te,6
+justo,adverbio,jus to,1
+laboriosamente,adverbio,la bo rio sa men te,5
+lacónicamente,adverbio,la có ni ca men te,2
+lacrimosamente,adverbio,la cri mo sa men te,5
+ladinamente,adverbio,la di na men te,4
+ladronamente,adverbio,la dro na men te,4
+lamentablemente,adverbio,la men ta ble men te,5
+lánguidamente,adverbio,lán gui da men te,1
+largamente,adverbio,lar ga men te,3
+largo,adverbio,lar go,1
+lascivamente,adverbio,las ci va men te,4
+lastimeramente,adverbio,las ti me ra men te,5
+lastimosamente,adverbio,las ti mo sa men te,5
+latamente,adverbio,la ta men te,3
+lateralmente,adverbio,la te ral men te,4
+laudablemente,adverbio,lau da ble men te,4
+lealmente,adverbio,le al men te,3
+legalmente,adverbio,le gal men te,3
+legítimamente,adverbio,le gí ti ma men te,2
+lejitos,adverbio,le ji tos,2
+lejos,adverbio,le jos,1
+lentamente,adverbio,len ta men te,3
+lento,adverbio,len to,1
+levemente,adverbio,le ve men te,3
+liberalmente,adverbio,li be ral men te,4
+libidinosamente,adverbio,li bi di no sa men te,6
+libremente,adverbio,li bre men te,3
+licenciosamente,adverbio,li cen cio sa men te,5
+lícitamente,adverbio,lí ci ta men te,1
+ligeramente,adverbio,li ge ra men te,4
+limitadamente,adverbio,li mi ta da men te,5
+limpiamente,adverbio,lim pia men te,3
+limpio,adverbio,lim pio,1
+lindamente,adverbio,lin da men te,3
+líquidamente,adverbio,lí qui da men te,1
+lisamente,adverbio,li sa men te,3
+lisonjeramente,adverbio,li son je ra men te,5
+literalmente,adverbio,li te ral men te,4
+literariamente,adverbio,li te ra ria men te,5
+livianamente,adverbio,li via na men te,4
+llanamente,adverbio,lla na men te,3
+llenamente,adverbio,lle na men te,3
+llorosamente,adverbio,llo ro sa men te,4
+loablemente,adverbio,lo a ble men te,4
+locamente,adverbio,lo ca men te,3
+lógicamente,adverbio,ló gi ca men te,1
+longitudinalmente,adverbio,lon gi tu di nal men te,6
+lozanamente,adverbio,lo za na men te,4
+lucidamente,adverbio,lu ci da men te,4
+lúcidamente,adverbio,lú ci da men te,1
+luego,adverbio,lue go,1
+lúgubremente,adverbio,lú gu bre men te,1
+lujosamente,adverbio,lu jo sa men te,4
+lujuriosamente,adverbio,lu ju rio sa men te,5
+luminosamente,adverbio,lu mi no sa men te,5
+lustrosamente,adverbio,lus tro sa men te,4
+maestramente,adverbio,ma es tra men te,4
+mágicamente,adverbio,má gi ca men te,1
+magistralmente,adverbio,ma gis tral men te,4
+magníficamente,adverbio,mag ní fi ca men te,2
+majestuosamente,adverbio,ma jes tuo sa men te,5
+mal,adverbio,mal,1
+malamente,adverbio,ma la men te,3
+malavez,adverbio,ma la vez,3
+malditamente,adverbio,mal di ta men te,4
+maliciosamente,adverbio,ma li cio sa men te,5
+malignamente,adverbio,ma lig na men te,4
+malvadamente,adverbio,mal va da men te,4
+mancomunadamente,adverbio,man co mu na da men te,6
+manifiestamente,adverbio,ma ni fies ta men te,5
+mansamente,adverbio,man sa men te,3
+mansito,adverbio,man si to,2
+manteniente,adverbio,man te nien te,3
+manualmente,adverbio,ma nual men te,3
+mañana,adverbio,ma ña na,2
+mañosamente,adverbio,ma ño sa men te,4
+maquinalmente,adverbio,ma qui nal men te,4
+maravillosamente,adverbio,ma ra vi llo sa men te,6
+marcadamente,adverbio,mar ca da men te,4
+más,adverbio,más,1
+matemáticamente,adverbio,ma te má ti ca men te,3
+materialmente,adverbio,ma te rial men te,4
+matrimonialmente,adverbio,ma tri mo nial men te,5
+máxime,adverbio,má xi me,1
+mayoritariamente,adverbio,ma yo ri ta ria men te,6
+mayormente,adverbio,ma yor men te,3
+mecánicamente,adverbio,me cá ni ca men te,2
+medianamente,adverbio,me dia na men te,4
+mediatamente,adverbio,me dia ta men te,4
+medicinalmente,adverbio,me di ci nal men te,5
+medio,adverbio,me dio,1
+mediocremente,adverbio,me dio cre men te,4
+medrosamente,adverbio,me dro sa men te,4
+mejor,adverbio,me jor,2
+melancólicamente,adverbio,me lan có li ca men te,3
+melifluamente,adverbio,me li flua men te,4
+melindrosamente,adverbio,me lin dro sa men te,5
+melodiosamente,adverbio,me lo dio sa men te,5
+menos,adverbio,me nos,1
+menospreciablemente,adverbio,me nos pre cia ble men te,6
+menstrualmente,adverbio,mens trual men te,3
+mensualmente,adverbio,men sual men te,3
+mentalmente,adverbio,men tal men te,3
+mentirosamente,adverbio,men ti ro sa men te,5
+menudamente,adverbio,me nu da men te,4
+menudo,adverbio,me nu do,2
+meramente,adverbio,me ra men te,3
+mercantilmente,adverbio,mer can til men te,4
+merecidamente,adverbio,me re ci da men te,5
+meritoriamente,adverbio,me ri to ria men te,5
+mesuradamente,adverbio,me su ra da men te,5
+metafóricamente,adverbio,me ta fó ri ca men te,3
+metalingüísticamente,adverbio,me ta lin güís ti ca men te,4
+meticulosamente,adverbio,me ti cu lo sa men te,6
+metódicamente,adverbio,me tó di ca men te,2
+mezcladamente,adverbio,mez cla da men te,4
+mezquinamente,adverbio,mez qui na men te,4
+mientra,adverbio,mien tra,1
+mientras,adverbio,mien tras,1
+milagrosamente,adverbio,mi la gro sa men te,5
+militarmente,adverbio,mi li tar men te,4
+mimosamente,adverbio,mi mo sa men te,4
+ministerialmente,adverbio,mi nis te rial men te,5
+minuciosamente,adverbio,mi nu cio sa men te,5
+miserablemente,adverbio,mi se ra ble men te,5
+misericordiosamente,adverbio,mi se ri cor dio sa men te,7
+mismamente,adverbio,mis ma men te,3
+misteriosamente,adverbio,mis te rio sa men te,5
+místicamente,adverbio,mís ti ca men te,1
+moderadamente,adverbio,mo de ra da men te,5
+modernamente,adverbio,mo der na men te,4
+modestamente,adverbio,mo des ta men te,4
+mogollón,adverbio,mo go llón,3
+molestamente,adverbio,mo les ta men te,4
+momentáneamente,adverbio,mo men tá ne a men te,3
+monstruosamente,adverbio,mons truo sa men te,4
+moralmente,adverbio,mo ral men te,3
+mordazmente,adverbio,mor daz men te,3
+morosamente,adverbio,mo ro sa men te,4
+mortalmente,adverbio,mor tal men te,3
+mucho,adverbio,mu cho,1
+musicalmente,adverbio,mu si cal men te,4
+mustiamente,adverbio,mus tia men te,3
+mutuamente,adverbio,mu tua men te,3
+muy,adverbio,muy,1
+nacionalmente,adverbio,na cio nal men te,4
+nada,adverbio,na da,1
+naturalmente,adverbio,na tu ral men te,4
+necesariamente,adverbio,ne ce sa ria men te,5
+necesario,adverbio,ne ce sa rio,3
+neciamente,adverbio,ne cia men te,3
+negativamente,adverbio,ne ga ti va men te,5
+negligentemente,adverbio,ne gli gen te men te,5
+nerviosamente,adverbio,ner vio sa men te,4
+netamente,adverbio,ne ta men te,3
+nimiamente,adverbio,ni mia men te,3
+no,adverbio,no,1
+noblemente,adverbio,no ble men te,3
+nombradamente,adverbio,nom bra da men te,4
+nominalmente,adverbio,no mi nal men te,4
+non,adverbio,non,1
+nones,adverbio,no nes,1
+normalmente,adverbio,nor mal men te,3
+notablemente,adverbio,no ta ble men te,4
+notoriamente,adverbio,no to ria men te,4
+nuevamente,adverbio,nue va men te,3
+nulamente,adverbio,nu la men te,3
+numéricamente,adverbio,nu mé ri ca men te,2
+numerosamente,adverbio,nu me ro sa men te,5
+nunca,adverbio,nun ca,1
+o,adverbio,o,1
+obedientemente,adverbio,o be dien te men te,5
+objetivamente,adverbio,ob je ti va men te,5
+oblicuamente,adverbio,o bli cua men te,4
+obscenamente,adverbio,obs ce na men te,4
+obscuramente,adverbio,obs cu ra men te,4
+obsequiosamente,adverbio,ob se quio sa men te,5
+obstinadamente,adverbio,obs ti na da men te,5
+obviamente,adverbio,ob via men te,3
+ocasionalmente,adverbio,o ca sio nal men te,5
+ociosamente,adverbio,o cio sa men te,4
+ocularmente,adverbio,o cu lar men te,4
+ocultamente,adverbio,o cul ta men te,4
+odiosamente,adverbio,o dio sa men te,4
+ofensivamente,adverbio,o fen si va men te,5
+oficialmente,adverbio,o fi cial men te,4
+oficiosamente,adverbio,o fi cio sa men te,5
+olímpicamente,adverbio,o lím pi ca men te,2
+omnipotentemente,adverbio,om ni po ten te men te,6
+onde,adverbio,on de,1
+opacamente,adverbio,o pa ca men te,4
+operativamente,adverbio,o pe ra ti va men te,6
+oportunamente,adverbio,o por tu na men te,5
+opresivamente,adverbio,o pre si va men te,5
+opuestamente,adverbio,o pues ta men te,4
+opulentamente,adverbio,o pu len ta men te,5
+oralmente,adverbio,o ral men te,3
+oratoriamente,adverbio,o ra to ria men te,5
+ordenadamente,adverbio,or de na da men te,5
+ordinariamente,adverbio,or di na ria men te,5
+orgullosamente,adverbio,or gu llo sa men te,5
+originalmente,adverbio,o ri gi nal men te,5
+originariamente,adverbio,o ri gi na ria men te,6
+osadamente,adverbio,o sa da men te,4
+oscuramente,adverbio,os cu ra men te,4
+ostensiblemente,adverbio,os ten si ble men te,5
+ostentosamente,adverbio,os ten to sa men te,5
+otrora,adverbio,o tro ra,2
+pacientemente,adverbio,pa cien te men te,4
+pacíficamente,adverbio,pa cí fi ca men te,2
+paladinamente,adverbio,pa la di na men te,5
+palmariamente,adverbio,pal ma ria men te,4
+palpablemente,adverbio,pal pa ble men te,4
+paralelamente,adverbio,pa ra le la men te,5
+parcamente,adverbio,par ca men te,3
+parcialmente,adverbio,par cial men te,3
+parlamentariamente,adverbio,par la men ta ria men te,6
+parte,adverbio,par te,1
+particularmente,adverbio,par ti cu lar men te,5
+pasaderamente,adverbio,pa sa de ra men te,5
+pasito,adverbio,pa si to,2
+pasivamente,adverbio,pa si va men te,4
+pasmosamente,adverbio,pas mo sa men te,4
+paso,adverbio,pa so,1
+pastoralmente,adverbio,pas to ral men te,4
+pastorilmente,adverbio,pas to ril men te,4
+patentemente,adverbio,pa ten te men te,4
+paternalmente,adverbio,pa ter nal men te,4
+patéticamente,adverbio,pa té ti ca men te,2
+patológicamente,adverbio,pa to ló gi ca men te,3
+paulatinamente,adverbio,pau la ti na men te,5
+pausadamente,adverbio,pau sa da men te,4
+pausado,adverbio,pau sa do,2
+pavorosamente,adverbio,pa vo ro sa men te,5
+peculiarmente,adverbio,pe cu liar men te,4
+pecuniariamente,adverbio,pe cu nia ria men te,5
+pedantescamente,adverbio,pe dan tes ca men te,5
+peligrosamente,adverbio,pe li gro sa men te,5
+penalmente,adverbio,pe nal men te,3
+peor,adverbio,pe or,2
+perceptiblemente,adverbio,per cep ti ble men te,5
+perdidamente,adverbio,per di da men te,4
+perdurablemente,adverbio,per du ra ble men te,5
+peregrinamente,adverbio,pe re gri na men te,5
+perennemente,adverbio,pe ren ne men te,4
+perentoriamente,adverbio,pe ren to ria men te,5
+perezosamente,adverbio,pe re zo sa men te,5
+perfectamente,adverbio,per fec ta men te,4
+pérfidamente,adverbio,pér fi da men te,1
+pericialmente,adverbio,pe ri cial men te,4
+periódicamente,adverbio,pe rió di ca men te,2
+perjudicialmente,adverbio,per ju di cial men te,5
+permanentemente,adverbio,per ma nen te men te,5
+permisivamente,adverbio,per mi si va men te,5
+perniciosamente,adverbio,per ni cio sa men te,5
+perpendicularmente,adverbio,per pen di cu lar men te,6
+perpetuamente,adverbio,per pe tua men te,4
+perplejamente,adverbio,per ple ja men te,4
+perseverantemente,adverbio,per se ve ran te men te,6
+personalmente,adverbio,per so nal men te,4
+pertinazmente,adverbio,per ti naz men te,4
+pertinentemente,adverbio,per ti nen te men te,5
+perversamente,adverbio,per ver sa men te,4
+pesadamente,adverbio,pe sa da men te,4
+pésimamente,adverbio,pé si ma men te,1
+petulantemente,adverbio,pe tu lan te men te,5
+piadosamente,adverbio,pia do sa men te,4
+piano,adverbio,pia no,1
+picantemente,adverbio,pi can te men te,4
+pipa,adverbio,pi pa,1
+placenteramente,adverbio,pla cen te ra men te,5
+plácidamente,adverbio,plá ci da men te,1
+plausiblemente,adverbio,plau si ble men te,4
+plenamente,adverbio,ple na men te,3
+pobremente,adverbio,po bre men te,3
+poco,adverbio,po co,1
+poderosamente,adverbio,po de ro sa men te,5
+políticamente,adverbio,po lí ti ca men te,2
+pomposamente,adverbio,pom po sa men te,4
+ponderadamente,adverbio,pon de ra da men te,5
+ponderosamente,adverbio,pon de ro sa men te,5
+pontificalmente,adverbio,pon ti fi cal men te,5
+popularmente,adverbio,po pu lar men te,4
+porfiadamente,adverbio,por fia da men te,4
+portentosamente,adverbio,por ten to sa men te,5
+posiblemente,adverbio,po si ble men te,4
+posteriormente,adverbio,pos te rior men te,4
+postreramente,adverbio,pos tre ra men te,4
+potencialmente,adverbio,po ten cial men te,4
+potentemente,adverbio,po ten te men te,4
+prácticamente,adverbio,prác ti ca men te,1
+pragmáticamente,adverbio,prag má ti ca men te,2
+precariamente,adverbio,pre ca ria men te,4
+precavidamente,adverbio,pre ca vi da men te,5
+preceptivamente,adverbio,pre cep ti va men te,5
+preciosamente,adverbio,pre cio sa men te,4
+precipitadamente,adverbio,pre ci pi ta da men te,6
+precipitosamente,adverbio,pre ci pi to sa men te,6
+precisamente,adverbio,pre ci sa men te,4
+predominantemente,adverbio,pre do mi nan te men te,6
+preferentemente,adverbio,pre fe ren te men te,5
+preferiblemente,adverbio,pre fe ri ble men te,5
+preliminarmente,adverbio,pre li mi nar men te,5
+prematuramente,adverbio,pre ma tu ra men te,5
+premeditadamente,adverbio,pre me di ta da men te,6
+premiosamente,adverbio,pre mio sa men te,4
+preocupadamente,adverbio,pre o cu pa da men te,6
+preparatoriamente,adverbio,pre pa ra to ria men te,6
+presencialmente,adverbio,pre sen cial men te,4
+prestamente,adverbio,pres ta men te,3
+presto,adverbio,pres to,1
+presuntamente,adverbio,pre sun ta men te,4
+presuntivamente,adverbio,pre sun ti va men te,5
+presuntuosamente,adverbio,pre sun tuo sa men te,5
+presurosamente,adverbio,pre su ro sa men te,5
+preventivamente,adverbio,pre ven ti va men te,5
+previamente,adverbio,pre via men te,3
+priado,adverbio,pria do,1
+prietamente,adverbio,prie ta men te,3
+primariamente,adverbio,pri ma ria men te,4
+primera,adverbio,pri me ra,2
+primeramente,adverbio,pri me ra men te,4
+primero,adverbio,pri me ro,2
+primitivamente,adverbio,pri mi ti va men te,5
+primo,adverbio,pri mo,1
+primorosamente,adverbio,pri mo ro sa men te,5
+principalmente,adverbio,prin ci pal men te,4
+privadamente,adverbio,pri va da men te,4
+privado,adverbio,pri va do,2
+privativamente,adverbio,pri va ti va men te,5
+probablemente,adverbio,pro ba ble men te,4
+problemáticamente,adverbio,pro ble má ti ca men te,3
+procesalmente,adverbio,pro ce sal men te,4
+procesionalmente,adverbio,pro ce sio nal men te,5
+pródigamente,adverbio,pró di ga men te,1
+prodigiosamente,adverbio,pro di gio sa men te,5
+profanamente,adverbio,pro fa na men te,4
+profesionalmente,adverbio,pro fe sio nal men te,5
+profundamente,adverbio,pro fun da men te,4
+profusamente,adverbio,pro fu sa men te,4
+progresivamente,adverbio,pro gre si va men te,5
+prolijamente,adverbio,pro li ja men te,4
+prontamente,adverbio,pron ta men te,3
+pronto,adverbio,pron to,1
+propiamente,adverbio,pro pia men te,3
+propiciamente,adverbio,pro pi cia men te,4
+propietariamente,adverbio,pro pie ta ria men te,5
+proporcionadamente,adverbio,pro por cio na da men te,6
+proporcionalmente,adverbio,pro por cio nal men te,5
+prosaicamente,adverbio,pro sai ca men te,4
+prósperamente,adverbio,prós pe ra men te,1
+provechosamente,adverbio,pro ve cho sa men te,5
+proverbialmente,adverbio,pro ver bial men te,4
+providencialmente,adverbio,pro vi den cial men te,5
+provisionalmente,adverbio,pro vi sio nal men te,5
+próximamente,adverbio,pró xi ma men te,1
+prudencialmente,adverbio,pru den cial men te,4
+prudentemente,adverbio,pru den te men te,4
+públicamente,adverbio,pú bli ca men te,1
+puercamente,adverbio,puer ca men te,3
+puerilmente,adverbio,pue ril men te,3
+pues,adverbio,pues,1
+pujantemente,adverbio,pu jan te men te,4
+pulidamente,adverbio,pu li da men te,4
+pundonorosamente,adverbio,pun do no ro sa men te,6
+puntualmente,adverbio,pun tual men te,3
+puramente,adverbio,pu ra men te,3
+qué,adverbio,qué,1
+quedamente,adverbio,que da men te,3
+quedito,adverbio,que di to,2
+quedo,adverbio,que do,1
+quejosamente,adverbio,que jo sa men te,4
+quietamente,adverbio,quie ta men te,3
+quijotescamente,adverbio,qui jo tes ca men te,5
+químicamente,adverbio,quí mi ca men te,1
+quizá,adverbio,qui zá,2
+quizás,adverbio,qui zás,2
+rabiosamente,adverbio,ra bio sa men te,4
+racionalmente,adverbio,ra cio nal men te,4
+radicalmente,adverbio,ra di cal men te,4
+rápidamente,adverbio,rá pi da men te,1
+rápido,adverbio,rá pi do,1
+raramente,adverbio,ra ra men te,3
+rastreramente,adverbio,ras tre ra men te,4
+raudamente,adverbio,rau da men te,3
+razonablemente,adverbio,ra zo na ble men te,5
+razonadamente,adverbio,ra zo na da men te,5
+realmente,adverbio,re al men te,3
+recatadamente,adverbio,re ca ta da men te,5
+reciamente,adverbio,re cia men te,3
+recién,adverbio,re cién,2
+recientemente,adverbio,re cien te men te,4
+recio,adverbio,re cio,1
+recíprocamente,adverbio,re cí pro ca men te,2
+recomendablemente,adverbio,re co men da ble men te,6
+reconociblemente,adverbio,re co no ci ble men te,6
+rectamente,adverbio,rec ta men te,3
+redro,adverbio,re dro,1
+reflexivamente,adverbio,re fle xi va men te,5
+regiamente,adverbio,re gia men te,3
+reglamentariamente,adverbio,re gla men ta ria men te,6
+regocijadamente,adverbio,re go ci ja da men te,6
+regular,adverbio,re gu lar,3
+regularmente,adverbio,re gu lar men te,4
+reiteradamente,adverbio,rei te ra da men te,5
+relajadamente,adverbio,re la ja da men te,5
+relativamente,adverbio,re la ti va men te,5
+religiosamente,adverbio,re li gio sa men te,5
+rematadamente,adverbio,re ma ta da men te,5
+remisivamente,adverbio,re mi si va men te,5
+remotamente,adverbio,re mo ta men te,4
+rencorosamente,adverbio,ren co ro sa men te,5
+rendidamente,adverbio,ren di da men te,4
+repente,adverbio,re pen te,2
+repentinamente,adverbio,re pen ti na men te,5
+repetidamente,adverbio,re pe ti da men te,5
+reposadamente,adverbio,re po sa da men te,5
+reproductivamente,adverbio,re pro duc ti va men te,6
+requetebién,adverbio,re que te bién,4
+reservadamente,adverbio,re ser va da men te,5
+resignadamente,adverbio,re sig na da men te,5
+resolutamente,adverbio,re so lu ta men te,5
+resolutivamente,adverbio,re so lu ti va men te,6
+resolutoriamente,adverbio,re so lu to ria men te,6
+respectivamente,adverbio,res pec ti va men te,5
+respetuosamente,adverbio,res pe tuo sa men te,5
+restrictivamente,adverbio,res tric ti va men te,5
+resueltamente,adverbio,re suel ta men te,4
+resumidamente,adverbio,re su mi da men te,5
+retenidamente,adverbio,re te ni da men te,5
+retóricamente,adverbio,re tó ri ca men te,2
+reverentemente,adverbio,re ve ren te men te,5
+revocablemente,adverbio,re vo ca ble men te,5
+revueltamente,adverbio,re vuel ta men te,4
+ricamente,adverbio,ri ca men te,3
+ridículamente,adverbio,ri dí cu la men te,2
+rígidamente,adverbio,rí gi da men te,1
+rigurosamente,adverbio,ri gu ro sa men te,5
+robustamente,adverbio,ro bus ta men te,4
+roncamente,adverbio,ron ca men te,3
+rotundamente,adverbio,ro tun da men te,4
+ruborosamente,adverbio,ru bo ro sa men te,5
+rudamente,adverbio,ru da men te,3
+rudimentariamente,adverbio,ru di men ta ria men te,6
+ruidosamente,adverbio,rui do sa men te,4
+ruinmente,adverbio,ruin men te,2
+rumbosamente,adverbio,rum bo sa men te,4
+ruralmente,adverbio,ru ral men te,3
+rústicamente,adverbio,rús ti ca men te,1
+rutinariamente,adverbio,ru ti na ria men te,5
+sabiamente,adverbio,sa bia men te,3
+sabrosamente,adverbio,sa bro sa men te,4
+sacramentalmente,adverbio,sa cra men tal men te,5
+sagazmente,adverbio,sa gaz men te,3
+saludablemente,adverbio,sa lu da ble men te,5
+salvante,adverbio,sal van te,2
+salvo,adverbio,sal vo,1
+sanamente,adverbio,sa na men te,3
+sangrientamente,adverbio,san grien ta men te,4
+sarcásticamente,adverbio,sar cás ti ca men te,2
+satisfactoriamente,adverbio,sa tis fac to ria men te,6
+secamente,adverbio,se ca men te,3
+secretamente,adverbio,se cre ta men te,4
+secreto,adverbio,se cre to,2
+secundariamente,adverbio,se cun da ria men te,5
+seglarmente,adverbio,se glar men te,3
+seguidamente,adverbio,se gui da men te,4
+seguido,adverbio,se gui do,2
+seguramente,adverbio,se gu ra men te,4
+seguro,adverbio,se gu ro,2
+semanalmente,adverbio,se ma nal men te,4
+semejantemente,adverbio,se me jan te men te,5
+semestralmente,adverbio,se mes tral men te,4
+sencillamente,adverbio,sen ci lla men te,4
+sensatamente,adverbio,sen sa ta men te,4
+sensiblemente,adverbio,sen si ble men te,4
+sensualmente,adverbio,sen sual men te,3
+sentenciosamente,adverbio,sen ten cio sa men te,5
+sentidamente,adverbio,sen ti da men te,4
+sentimentalmente,adverbio,sen ti men tal men te,5
+señaladamente,adverbio,se ña la da men te,5
+separadamente,adverbio,se pa ra da men te,5
+seriamente,adverbio,se ria men te,3
+serpentinamente,adverbio,ser pen ti na men te,5
+servicialmente,adverbio,ser vi cial men te,4
+servilmente,adverbio,ser vil men te,3
+sesgadamente,adverbio,ses ga da men te,4
+sesudamente,adverbio,se su da men te,4
+severamente,adverbio,se ve ra men te,4
+sexualmente,adverbio,se xual men te,3
+sí,adverbio,sí,1
+sic,adverbio,sic,1
+siempre,adverbio,siem pre,1
+sigilosamente,adverbio,si gi lo sa men te,5
+significativamente,adverbio,sig ni fi ca ti va men te,7
+silenciosamente,adverbio,si len cio sa men te,5
+simbólicamente,adverbio,sim bó li ca men te,2
+simétricamente,adverbio,si mé tri ca men te,2
+simplemente,adverbio,sim ple men te,3
+simultáneamente,adverbio,si mul tá ne a men te,3
+sinceramente,adverbio,sin ce ra men te,4
+singularmente,adverbio,sin gu lar men te,4
+siniestramente,adverbio,si nies tra men te,4
+sintéticamente,adverbio,sin té ti ca men te,2
+siquiera,adverbio,si quie ra,2
+sistemáticamente,adverbio,sis te má ti ca men te,3
+so,adverbio,so,1
+soberanamente,adverbio,so be ra na men te,5
+soberbiamente,adverbio,so ber bia men te,4
+sobradamente,adverbio,so bra da men te,4
+sobrado,adverbio,so bra do,2
+sobremanera,adverbio,so bre ma ne ra,4
+sobremesa,adverbio,so bre me sa,3
+sobremodo,adverbio,so bre mo do,3
+sobrenaturalmente,adverbio,so bre na tu ral men te,6
+sobrepeine,adverbio,so bre pei ne,3
+sobriamente,adverbio,so bria men te,3
+socarronamente,adverbio,so ca rro na men te,5
+socolor,adverbio,so co lor,3
+sol,adverbio,sol,1
+solamente,adverbio,so la men te,3
+solapadamente,adverbio,so la pa da men te,5
+solemnemente,adverbio,so lem ne men te,4
+solícitamente,adverbio,so lí ci ta men te,2
+sólidamente,adverbio,só li da men te,1
+solidariamente,adverbio,so li da ria men te,5
+solitariamente,adverbio,so li ta ria men te,5
+solo,adverbio,so lo,1
+sólo,adverbio,só lo,1
+someramente,adverbio,so me ra men te,4
+sonoramente,adverbio,so no ra men te,4
+sordamente,adverbio,sor da men te,3
+sosamente,adverbio,so sa men te,3
+sosegadamente,adverbio,so se ga da men te,5
+sospechosamente,adverbio,sos pe cho sa men te,5
+suave,adverbio,sua ve,1
+suavemente,adverbio,sua ve men te,3
+súbitamente,adverbio,sú bi ta men te,1
+súbito,adverbio,sú bi to,1
+subordinadamente,adverbio,su bor di na da men te,6
+subrepticiamente,adverbio,su brep ti cia men te,5
+subsidiariamente,adverbio,sub si dia ria men te,5
+substancialmente,adverbio,subs tan cial men te,4
+sucesivamente,adverbio,su ce si va men te,5
+suciamente,adverbio,su cia men te,3
+sucintamente,adverbio,su cin ta men te,4
+sucio,adverbio,su cio,1
+suculentamente,adverbio,su cu len ta men te,5
+suficientemente,adverbio,su fi cien te men te,5
+sumamente,adverbio,su ma men te,3
+sumariamente,adverbio,su ma ria men te,4
+sumisamente,adverbio,su mi sa men te,4
+suntuosamente,adverbio,sun tuo sa men te,4
+superabundantemente,adverbio,su pe ra bun dan te men te,7
+superficialmente,adverbio,su per fi cial men te,5
+superfluamente,adverbio,su per flua men te,4
+superiormente,adverbio,su pe rior men te,4
+superlativamente,adverbio,su per la ti va men te,6
+supersticiosamente,adverbio,su pers ti cio sa men te,6
+supremamente,adverbio,su pre ma men te,4
+suso,adverbio,su so,1
+suspicazmente,adverbio,sus pi caz men te,4
+sustancialmente,adverbio,sus tan cial men te,4
+sutilmente,adverbio,su til men te,3
+tácitamente,adverbio,tá ci ta men te,1
+tácticamente,adverbio,tác ti ca men te,1
+tal,adverbio,tal,1
+talmente,adverbio,tal men te,2
+también,adverbio,tam bién,2
+tampoco,adverbio,tam po co,2
+tan,adverbio,tan,1
+tanto,adverbio,tan to,1
+tarde,adverbio,tar de,1
+tardíamente,adverbio,tar dí a men te,2
+tasadamente,adverbio,ta sa da men te,4
+taxativamente,adverbio,ta xa ti va men te,5
+teatralmente,adverbio,te a tral men te,4
+técnicamente,adverbio,téc ni ca men te,1
+tecnológicamente,adverbio,tec no ló gi ca men te,3
+tela,adverbio,te la,1
+telefónicamente,adverbio,te le fó ni ca men te,3
+telegráficamente,adverbio,te le grá fi ca men te,3
+temerariamente,adverbio,te me ra ria men te,5
+temerosamente,adverbio,te me ro sa men te,5
+temperadamente,adverbio,tem pe ra da men te,5
+tempestivamente,adverbio,tem pes ti va men te,5
+tempestuosamente,adverbio,tem pes tuo sa men te,5
+templadamente,adverbio,tem pla da men te,4
+temporalmente,adverbio,tem po ral men te,4
+tempranamente,adverbio,tem pra na men te,4
+tempranito,adverbio,tem pra ni to,3
+temprano,adverbio,tem pra no,2
+tenebrosamente,adverbio,te ne bro sa men te,5
+tentativamente,adverbio,ten ta ti va men te,5
+teóricamente,adverbio,te ó ri ca men te,2
+ter,adverbio,ter,1
+tercamente,adverbio,ter ca men te,3
+terminantemente,adverbio,ter mi nan te men te,5
+terriblemente,adverbio,te rri ble men te,4
+territorialmente,adverbio,te rri to rial men te,5
+textualmente,adverbio,tex tual men te,3
+tibiamente,adverbio,ti bia men te,3
+tieso,adverbio,tie so,1
+tiesto,adverbio,ties to,1
+tímidamente,adverbio,tí mi da men te,1
+todavía,adverbio,to da ví a,3
+todo,adverbio,to do,1
+tolerablemente,adverbio,to le ra ble men te,5
+tontamente,adverbio,ton ta men te,3
+torcidamente,adverbio,tor ci da men te,4
+torpemente,adverbio,tor pe men te,3
+tortuosamente,adverbio,tor tuo sa men te,4
+toscamente,adverbio,tos ca men te,3
+total,adverbio,to tal,2
+totalmente,adverbio,to tal men te,3
+trabajosamente,adverbio,tra ba jo sa men te,5
+tradicionalmente,adverbio,tra di cio nal men te,5
+trágicamente,adverbio,trá gi ca men te,1
+traidoramente,adverbio,trai do ra men te,4
+tranquilamente,adverbio,tran qui la men te,4
+transitoriamente,adverbio,tran si to ria men te,5
+transversalmente,adverbio,trans ver sal men te,4
+trasanteayer,adverbio,tra san te a yer,5
+trestanto,adverbio,tres tan to,2
+triangularmente,adverbio,trian gu lar men te,4
+trimestralmente,adverbio,tri mes tral men te,4
+tristemente,adverbio,tris te men te,3
+triunfalmente,adverbio,triun fal men te,3
+triunfantemente,adverbio,triun fan te men te,4
+trivialmente,adverbio,tri vial men te,3
+trocadamente,adverbio,tro ca da men te,4
+tumultuariamente,adverbio,tu mul tua ria men te,5
+tumultuosamente,adverbio,tu mul tuo sa men te,5
+turbadamente,adverbio,tur ba da men te,4
+turbiamente,adverbio,tur bia men te,3
+turbulentamente,adverbio,tur bu len ta men te,5
+ufanamente,adverbio,u fa na men te,4
+ulteriormente,adverbio,ul te rior men te,4
+últimamente,adverbio,úl ti ma men te,1
+último,adverbio,úl ti mo,1
+ultra,adverbio,ul tra,1
+ultratumba,adverbio,ul tra tum ba,3
+unánimemente,adverbio,u ná ni me men te,2
+únicamente,adverbio,ú ni ca men te,1
+unidamente,adverbio,u ni da men te,4
+uniformemente,adverbio,u ni for me men te,5
+universalmente,adverbio,u ni ver sal men te,5
+urbanamente,adverbio,ur ba na men te,4
+urgentemente,adverbio,ur gen te men te,4
+usualmente,adverbio,u sual men te,3
+usurariamente,adverbio,u su ra ria men te,5
+útilmente,adverbio,ú til men te,1
+vagamente,adverbio,va ga men te,3
+valerosamente,adverbio,va le ro sa men te,5
+válidamente,adverbio,vá li da men te,1
+valientemente,adverbio,va lien te men te,4
+vanagloriosamente,adverbio,va na glo rio sa men te,6
+vanamente,adverbio,va na men te,3
+variablemente,adverbio,va ria ble men te,4
+varonilmente,adverbio,va ro nil men te,4
+vehementemente,adverbio,ve he men te men te,5
+velozmente,adverbio,ve loz men te,3
+venerablemente,adverbio,ve ne ra ble men te,5
+venialmente,adverbio,ve nial men te,3
+ventajosamente,adverbio,ven ta jo sa men te,5
+venturosamente,adverbio,ven tu ro sa men te,5
+verbalmente,adverbio,ver bal men te,3
+verbigracia,adverbio,ver bi gra cia,3
+verdaderamente,adverbio,ver da de ra men te,5
+vergonzosamente,adverbio,ver gon zo sa men te,5
+verosímilmente,adverbio,ve ro sí mil men te,3
+verticalmente,adverbio,ver ti cal men te,4
+vertiginosamente,adverbio,ver ti gi no sa men te,6
+viceversa,adverbio,vi ce ver sa,3
+viciosamente,adverbio,vi cio sa men te,4
+victoriosamente,adverbio,vic to rio sa men te,5
+vigorosamente,adverbio,vi go ro sa men te,5
+villanamente,adverbio,vi lla na men te,4
+vilmente,adverbio,vil men te,2
+violentamente,adverbio,vio len ta men te,4
+virilmente,adverbio,vi ril men te,3
+virtualmente,adverbio,vir tual men te,3
+virtuosamente,adverbio,vir tuo sa men te,4
+visiblemente,adverbio,vi si ble men te,4
+vistosamente,adverbio,vis to sa men te,4
+visualmente,adverbio,vi sual men te,3
+vivamente,adverbio,vi va men te,3
+vocalmente,adverbio,vo cal men te,3
+volando,adverbio,vo lan do,2
+voluntariamente,adverbio,vo lun ta ria men te,5
+voluntariosamente,adverbio,vo lun ta rio sa men te,6
+voluptuosamente,adverbio,vo lup tuo sa men te,5
+vorazmente,adverbio,vo raz men te,3
+vulgarmente,adverbio,vul gar men te,3
+vulgo,adverbio,vul go,1
+y,adverbio,y,1
+ya,adverbio,ya,1
+yunto,adverbio,yun to,1
+yuso,adverbio,yu so,1
+zafiamente,adverbio,za fia men te,3
+zaga,adverbio,za ga,1
+zarrapastrosamente,adverbio,za rra pas tro sa men te,6
+chévere,adverbio,ché ve re,1
+dizque,adverbio,diz que,1
+chévere,adverbio,ché ve re,1
+enantes,adverbio,e nan tes,2
+hasta,adverbio,has ta,1
+dizque,adverbio,diz que,1
+hasta,adverbio,has ta,1
+dizque,adverbio,diz que,1
+nomás,adverbio,no más,2
+hasta,adverbio,has ta,1
+chupi,adverbio,chu pi,1
+guay,adverbio,guay,1
+chévere,adverbio,ché ve re,1
+dizque,adverbio,diz que,1
+hasta,adverbio,has ta,1
+nomás,adverbio,no más,2
+chévere,adverbio,ché ve re,1
+dizque,adverbio,diz que,1
+enantes,adverbio,e nan tes,2
+dizque,adverbio,diz que,1
+enantes,adverbio,e nan tes,2
+dizque,adverbio,diz que,1
+hasta,adverbio,has ta,1
+chévere,adverbio,ché ve re,1
+dizque,adverbio,diz que,1
+chévere,adverbio,ché ve re,1
+dizque,adverbio,diz que,1
+enantes,adverbio,e nan tes,2
+sabroso,adverbio,sa bro so,2
+dizque,adverbio,diz que,1
+dizque,adverbio,diz que,1
+nomás,adverbio,no más,2
+hasta,adverbio,has ta,1
+dizque,adverbio,diz que,1
+dizque,adverbio,diz que,1
+sabroso,adverbio,sa bro so,2
+dizque,adverbio,diz que,1
+regio,adverbio,re gio,1
+dizque,adverbio,diz que,1
+dizque,adverbio,diz que,1
+nomás,adverbio,no más,2
+hasta,adverbio,has ta,1
+dizque,adverbio,diz que,1
+nomás,adverbio,no más,2
+dizque,adverbio,diz que,1
+nomás,adverbio,no más,2
+regio,adverbio,re gio,1
+abandonadamente,adverbio,a ban do na da men te,6
+abarrotadamente,adverbio,a ba rro ta da men te,6
+aberrantemente,adverbio,a be rran te men te,5
+abismalmente,adverbio,a bis mal men te,4
+abrumadoramente,adverbio,a bru ma do ra men te,6
+abruptamente,adverbio,a brup ta men te,4
+abultadamente,adverbio,a bul ta da men te,5
+abundosamente,adverbio,a bun do sa men te,5
+acarameladamente,adverbio,a ca ra me la da men te,7
+acartonadamente,adverbio,a car to na da men te,6
+acerosamente,adverbio,a ce ro sa men te,5
+ácidamente,adverbio,á ci da men te,1
+acobardadamente,adverbio,a co bar da da men te,6
+acojonadamente,adverbio,a co jo na da men te,6
+acongojadamente,adverbio,a con go ja da men te,6
+acusativamente,adverbio,a cu sa ti va men te,6
+acusatoriamente,adverbio,a cu sa to ria men te,6
+adicionalmente,adverbio,a di cio nal men te,5
+admirablemente,adverbio,ad mi ra ble men te,5
+afanadamente,adverbio,a fa na da men te,5
+afectuosamente,adverbio,a fec tuo sa men te,5
+afrutadamente,adverbio,a fru ta da men te,5
+agitadamente,adverbio,a gi ta da men te,5
+ahincadamente,adverbio,ahin ca da men te,4
+ahogadamente,adverbio,a ho ga da men te,5
+alambicadamente,adverbio,a lam bi ca da men te,6
+alardosamente,adverbio,a lar do sa men te,5
+alargadamente,adverbio,a lar ga da men te,5
+alborotadamente,adverbio,al bo ro ta da men te,6
+alemanamente,adverbio,a le ma na men te,5
+alentadoramente,adverbio,a len ta do ra men te,6
+alquitranadamente,adverbio,al qui tra na da men te,6
+altaneramente,adverbio,al ta ne ra men te,5
+altivamente,adverbio,al ti va men te,4
+amaderadamente,adverbio,a ma de ra da men te,6
+amaneradamente,adverbio,a ma ne ra da men te,6
+amenazadoramente,adverbio,a me na za do ra men te,7
+amistosamente,adverbio,a mis to sa men te,5
+amuermadamente,adverbio,a muer ma da men te,5
+analmente,adverbio,a nal men te,3
+angélicamente,adverbio,an gé li ca men te,2
+animadamente,adverbio,a ni ma da men te,5
+anónimamente,adverbio,a nó ni ma men te,2
+anormalmente,adverbio,a nor mal men te,4
+ansiosamente,adverbio,an sio sa men te,4
+apabullantemente,adverbio,a pa bu llan te men te,6
+apáticamente,adverbio,a pá ti ca men te,2
+aplastantemente,adverbio,a plas tan te men te,5
+apreciativamente,adverbio,a pre cia ti va men te,6
+apresuradamente,adverbio,a pre su ra da men te,6
+arrogantemente,adverbio,a rro gan te men te,5
+arteramente,adverbio,ar te ra men te,4
+artísticamente,adverbio,ar tís ti ca men te,2
+aseguradamente,adverbio,a se gu ra da men te,6
+asexualmente,adverbio,a se xual men te,4
+asiduamente,adverbio,a si dua men te,4
+asoladoramente,adverbio,a so la do ra men te,6
+astutamente,adverbio,as tu ta men te,4
+atentadamente,adverbio,a ten ta da men te,5
+atentísimamente,adverbio,a ten tí si ma men te,3
+aterradoramente,adverbio,a te rra do ra men te,6
+atolondradamente,adverbio,a to lon dra da men te,6
+atontadamente,adverbio,a ton ta da men te,5
+atrozmente,adverbio,a troz men te,3
+auditivamente,adverbio,au di ti va men te,5
+auricularmente,adverbio,au ri cu lar men te,5
+auténticamente,adverbio,au tén ti ca men te,2
+autónomamente,adverbio,au tó no ma men te,2
+autoritariamente,adverbio,au to ri ta ria men te,6
+ávidamente,adverbio,á vi da men te,1
+avinagradamente,adverbio,a vi na gra da men te,6
+axialmente,adverbio,a xial men te,3
+bailonamente,adverbio,bai lo na men te,4
+balbuceantemente,adverbio,bal bu ce an te men te,6
+bárbaramente,adverbio,bár ba ra men te,1
+barbudamente,adverbio,bar bu da men te,4
+basalmente,adverbio,ba sal men te,3
+beatíficamente,adverbio,be a tí fi ca men te,3
+benditamente,adverbio,ben di ta men te,4
+bestialmente,adverbio,bes tial men te,3
+bienintencionadamente,adverbio,bie nin ten cio na da men te,7
+biológicamente,adverbio,bio ló gi ca men te,2
+blancamente,adverbio,blan ca men te,3
+bondadosamente,adverbio,bon da do sa men te,5
+bonitamente,adverbio,bo ni ta men te,4
+borrosamente,adverbio,bo rro sa men te,4
+brevemente,adverbio,bre ve men te,3
+bucalmente,adverbio,bu cal men te,3
+burlonamente,adverbio,bur lo na men te,4
+cabezonamente,adverbio,ca be zo na men te,5
+cabizbajamente,adverbio,ca biz ba ja men te,5
+cacofónicamente,adverbio,ca co fó ni ca men te,3
+calcadamente,adverbio,cal ca da men te,4
+calenturientamente,adverbio,ca len tu rien ta men te,6
+calientemente,adverbio,ca lien te men te,4
+calmadamente,adverbio,cal ma da men te,4
+cambiadamente,adverbio,cam bia da men te,4
+cambiantemente,adverbio,cam bian te men te,4
+cándidamente,adverbio,cán di da men te,1
+candorosamente,adverbio,can do ro sa men te,5
+cansinamente,adverbio,can si na men te,4
+cañeramente,adverbio,ca ñe ra men te,4
+capciosamente,adverbio,cap cio sa men te,4
+caprichosamente,adverbio,ca pri cho sa men te,5
+carbónicamente,adverbio,car bó ni ca men te,2
+cargadamente,adverbio,car ga da men te,4
+cariñosamente,adverbio,ca ri ño sa men te,5
+carraspeantemente,adverbio,ca rras pe an te men te,6
+casposamente,adverbio,cas po sa men te,4
+castamente,adverbio,cas ta men te,3
+catastróficamente,adverbio,ca tas tró fi ca men te,3
+católicamente,adverbio,ca tó li ca men te,2
+caústicamente,adverbio,ca ús ti ca men te,2
+cautelosamente,adverbio,cau te lo sa men te,5
+cazurramente,adverbio,ca zu rra men te,4
+ceceantemente,adverbio,ce ce an te men te,5
+célebremente,adverbio,cé le bre men te,1
+centralmente,adverbio,cen tral men te,3
+ceremoniosamente,adverbio,ce re mo nio sa men te,6
+certeramente,adverbio,cer te ra men te,4
+chapuceramente,adverbio,cha pu ce ra men te,5
+chirriantemente,adverbio,chi rrian te men te,4
+chocantemente,adverbio,cho can te men te,4
+cínicamente,adverbio,cí ni ca men te,1
+clarividentemente,adverbio,cla ri vi den te men te,6
+cobardemente,adverbio,co bar de men te,4
+coincidentemente,adverbio,coin ci den te men te,5
+cojonudamente,adverbio,co jo nu da men te,5
+colectivamente,adverbio,co lec ti va men te,5
+coloquialmente,adverbio,co lo quial men te,4
+comedidamente,adverbio,co me di da men te,5
+cómicamente,adverbio,có mi ca men te,1
+complementariamente,adverbio,com ple men ta ria men te,6
+compungidamente,adverbio,com pun gi da men te,5
+concadenadamente,adverbio,con ca de na da men te,6
+concatenadamente,adverbio,con ca te na da men te,6
+concéntricamente,adverbio,con cén tri ca men te,2
+conceptualmente,adverbio,con cep tual men te,4
+concretamente,adverbio,con cre ta men te,4
+condenadamente,adverbio,con de na da men te,5
+conscientemente,adverbio,cons cien te men te,4
+consumadamente,adverbio,con su ma da men te,5
+contentadamente,adverbio,con ten ta da men te,5
+contentamente,adverbio,con ten ta men te,4
+convulsivamente,adverbio,con vul si va men te,5
+cortadamente,adverbio,cor ta da men te,4
+cortesísimamente,adverbio,cor te sí si ma men te,3
+cortésmente,adverbio,cor tés men te,2
+criptográficamente,adverbio,crip to grá fi ca men te,3
+cristalinamente,adverbio,cris ta li na men te,5
+cristianamente,adverbio,cris tia na men te,4
+cualitativamente,adverbio,cua li ta ti va men te,6
+cuánticamente,adverbio,cuán ti ca men te,1
+cuestionablemente,adverbio,cues tio na ble men te,5
+cuidadamente,adverbio,cui da da men te,4
+curtidamente,adverbio,cur ti da men te,4
+dactilarmente,adverbio,dac ti lar men te,4
+dantescamente,adverbio,dan tes ca men te,4
+decimalmente,adverbio,de ci mal men te,4
+decisivamente,adverbio,de ci si va men te,5
+decorativamente,adverbio,de co ra ti va men te,6
+decorosamente,adverbio,de co ro sa men te,5
+dedicadamente,adverbio,de di ca da men te,5
+deductivamente,adverbio,de duc ti va men te,5
+deliciosamente,adverbio,de li cio sa men te,5
+democráticamente,adverbio,de mo crá ti ca men te,3
+densamente,adverbio,den sa men te,3
+deportivamente,adverbio,de por ti va men te,5
+desaboridamente,adverbio,de sa bo ri da men te,6
+desaforadamente,adverbio,de sa fo ra da men te,6
+desafortunadamente,adverbio,de sa for tu na da men te,7
+desahogadamente,adverbio,de sa ho ga da men te,6
+desalmadamente,adverbio,de sal ma da men te,5
+desalumbradamente,adverbio,de sa lum bra da men te,6
+desbarajustadamente,adverbio,des ba ra jus ta da men te,7
+descabelladamente,adverbio,des ca be lla da men te,6
+descansadamente,adverbio,des can sa da men te,5
+desconcertantemente,adverbio,des con cer tan te men te,6
+desdeñablemente,adverbio,des de ña ble men te,5
+desdeñosamente,adverbio,des de ño sa men te,5
+desenfadadamente,adverbio,de sen fa da da men te,6
+desenfrenadamente,adverbio,de sen fre na da men te,6
+desesperadamente,adverbio,de ses pe ra da men te,6
+desganadamente,adverbio,des ga na da men te,5
+desgastadamente,adverbio,des gas ta da men te,5
+desoladamente,adverbio,de so la da men te,5
+desoladoramente,adverbio,de so la do ra men te,6
+despiadadamente,adverbio,des pia da da men te,5
+despilfarradoramente,adverbio,des pil fa rra do ra men te,7
+despóticamente,adverbio,des pó ti ca men te,2
+despreocupadamente,adverbio,des pre o cu pa da men te,7
+desproporcionadamente,adverbio,des pro por cio na da men te,7
+devotamente,adverbio,de vo ta men te,4
+diabólicamente,adverbio,dia bó li ca men te,2
+didácticamente,adverbio,di dác ti ca men te,2
+digitalmente,adverbio,di gi tal men te,4
+discrecionalmente,adverbio,dis cre cio nal men te,5
+discursivamente,adverbio,dis cur si va men te,5
+dispersamente,adverbio,dis per sa men te,4
+distantemente,adverbio,dis tan te men te,4
+distendidamente,adverbio,dis ten di da men te,5
+distintamente,adverbio,dis tin ta men te,4
+distraídamente,adverbio,dis tra í da men te,3
+doblegadamente,adverbio,do ble ga da men te,5
+documentalmente,adverbio,do cu men tal men te,5
+dorsalmente,adverbio,dor sal men te,3
+drásticamente,adverbio,drás ti ca men te,1
+dubitosamente,adverbio,du bi to sa men te,5
+ducalmente,adverbio,du cal men te,3
+ebriamente,adverbio,e bria men te,3
+edulcoradamente,adverbio,e dul co ra da men te,6
+efusivamente,adverbio,e fu si va men te,5
+egoístamente,adverbio,e go ís ta men te,3
+elaboradamente,adverbio,e la bo ra da men te,6
+elásticamente,adverbio,e lás ti ca men te,2
+eléctricamente,adverbio,e léc tri ca men te,2
+elongadamente,adverbio,e lon ga da men te,5
+emparejadamente,adverbio,em pa re ja da men te,6
+empáticamente,adverbio,em pá ti ca men te,2
+empecinadamente,adverbio,em pe ci na da men te,6
+empeñadamente,adverbio,em pe ña da men te,5
+emprendedoramente,adverbio,em pren de do ra men te,6
+encandiladamente,adverbio,en can di la da men te,6
+encantadoramente,adverbio,en can ta do ra men te,6
+encasilladamente,adverbio,en ca si lla da men te,6
+endemoniadamente,adverbio,en de mo nia da men te,6
+enervantemente,adverbio,e ner van te men te,5
+enfadadamente,adverbio,en fa da da men te,5
+enrredosamente,adverbio,en rre do sa men te,5
+enternecedoramente,adverbio,en ter ne ce do ra men te,7
+entretenidamente,adverbio,en tre te ni da men te,6
+entusiastamente,adverbio,en tu sias ta men te,5
+ergonómicamente,adverbio,er go nó mi ca men te,3
+erráticamente,adverbio,e rrá ti ca men te,2
+escatológicamente,adverbio,es ca to ló gi ca men te,4
+esclarecidamente,adverbio,es cla re ci da men te,6
+espartanamente,adverbio,es par ta na men te,5
+espasmódicamente,adverbio,es pas mó di ca men te,3
+espectacularmente,adverbio,es pec ta cu lar men te,6
+espinosamente,adverbio,es pi no sa men te,5
+esporádicamente,adverbio,es po rá di ca men te,3
+estacionalmente,adverbio,es ta cio nal men te,5
+estereoscópicamente,adverbio,es te re os có pi ca men te,5
+estilísticamente,adverbio,es ti lís ti ca men te,3
+estrambóticamente,adverbio,es tram bó ti ca men te,3
+estrechísimamente,adverbio,es tre chí si ma men te,3
+estructuralmente,adverbio,es truc tu ral men te,5
+étnicamente,adverbio,ét ni ca men te,1
+evasivamente,adverbio,e va si va men te,5
+excepcionalmente,adverbio,ex cep cio nal men te,5
+execrablemente,adverbio,e xe cra ble men te,5
+exhuberantemente,adverbio,e xhu be ran te men te,6
+exitosamente,adverbio,e xi to sa men te,5
+exóticamente,adverbio,e xó ti ca men te,2
+expectantemente,adverbio,ex pec tan te men te,5
+expedientemente,adverbio,ex pe dien te men te,5
+explícitamente,adverbio,ex plí ci ta men te,2
+exponencialmente,adverbio,ex po nen cial men te,5
+exultantemente,adverbio,e xul tan te men te,5
+factiblemente,adverbio,fac ti ble men te,4
+fácticamente,adverbio,fác ti ca men te,1
+famosamente,adverbio,fa mo sa men te,4
+fanfarronamente,adverbio,fan fa rro na men te,5
+fascinantemente,adverbio,fas ci nan te men te,5
+fehacientemente,adverbio,fe ha cien te men te,5
+felicísimamente,adverbio,fe li cí si ma men te,3
+femeninamente,adverbio,fe me ni na men te,5
+férreamente,adverbio,fé rre a men te,1
+filosóficamente,adverbio,fi lo só fi ca men te,3
+financieramente,adverbio,fi nan cie ra men te,5
+fisgonamente,adverbio,fis go na men te,4
+floralmente,adverbio,flo ral men te,3
+fogosamente,adverbio,fo go sa men te,4
+folclóricamente,adverbio,fol cló ri ca men te,2
+fonéticamente,adverbio,fo né ti ca men te,2
+fortísimamente,adverbio,for tí si ma men te,2
+fracasadamente,adverbio,fra ca sa da men te,5
+fraccionariamente,adverbio,frac cio na ria men te,5
+francesamente,adverbio,fran ce sa men te,4
+frígidamente,adverbio,frí gi da men te,1
+frontalmente,adverbio,fron tal men te,3
+fulminantemente,adverbio,ful mi nan te men te,5
+funcionalmente,adverbio,fun cio nal men te,4
+futbolísticamente,adverbio,fut bo lís ti ca men te,3
+futilmente,adverbio,fu til men te,3
+galvánicamente,adverbio,gal vá ni ca men te,2
+gatunamente,adverbio,ga tu na men te,4
+genéticamente,adverbio,ge né ti ca men te,2
+geológicamente,adverbio,ge o ló gi ca men te,3
+gesticulantemente,adverbio,ges ti cu lan te men te,6
+globalmente,adverbio,glo bal men te,3
+gravitacionalmente,adverbio,gra vi ta cio nal men te,6
+guapamente,adverbio,gua pa men te,3
+guarramente,adverbio,gua rra men te,3
+hambrientamente,adverbio,ham brien ta men te,4
+hereditariamente,adverbio,he re di ta ria men te,6
+hidráulicamente,adverbio,hi dráu li ca men te,2
+hipócritamente,adverbio,hi pó cri ta men te,2
+histriónicamente,adverbio,his trió ni ca men te,2
+humillantemente,adverbio,hu mi llan te men te,5
+identificativamente,adverbio,i den ti fi ca ti va men te,8
+ideológicamente,adverbio,i de o ló gi ca men te,4
+idolatradamente,adverbio,i do la tra da men te,6
+idóneamente,adverbio,i dó ne a men te,2
+igualitariamente,adverbio,i gua li ta ria men te,6
+imparablemente,adverbio,im pa ra ble men te,5
+impecablemente,adverbio,im pe ca ble men te,5
+impensablemente,adverbio,im pen sa ble men te,5
+imponentemente,adverbio,im po nen te men te,5
+impulsivamente,adverbio,im pul si va men te,5
+indiscutiblemente,adverbio,in dis cu ti ble men te,6
+indómitamente,adverbio,in dó mi ta men te,2
+indubitablemente,adverbio,in du bi ta ble men te,6
+ingénitamente,adverbio,in gé ni ta men te,2
+inherentemente,adverbio,i nhe ren te men te,5
+ininterrumpidamente,adverbio,i nin te rrum pi da men te,7
+innoblemente,adverbio,in no ble men te,4
+insalubremente,adverbio,in sa lu bre men te,5
+insensatamente,adverbio,in sen sa ta men te,5
+insólitamente,adverbio,in só li ta men te,2
+inteligentemente,adverbio,in te li gen te men te,6
+intermitentemente,adverbio,in ter mi ten te men te,6
+internacionalmente,adverbio,in ter na cio nal men te,6
+intricadamente,adverbio,in tri ca da men te,5
+introspectivamente,adverbio,in tros pec ti va men te,6
+inusualmente,adverbio,i nu sual men te,4
+inverosímilmente,adverbio,in ve ro sí mil men te,4
+jesuíticamente,adverbio,je suí ti ca men te,2
+justicieramente,adverbio,jus ti cie ra men te,5
+juvenilmente,adverbio,ju ve nil men te,4
+laceradamente,adverbio,la ce ra da men te,5
+licántropamente,adverbio,li cán tro pa men te,2
+licantrópicamente,adverbio,li can tró pi ca men te,3
+ligítimamente,adverbio,li gí ti ma men te,2
+linealmente,adverbio,li ne al men te,4
+lingüísticamente,adverbio,lin güís ti ca men te,2
+listamente,adverbio,lis ta men te,3
+localmente,adverbio,lo cal men te,3
+locuazmente,adverbio,lo cuaz men te,3
+logísticamente,adverbio,lo gís ti ca men te,2
+maduramente,adverbio,ma du ra men te,4
+mafiosamente,adverbio,ma fio sa men te,4
+magnánimamente,adverbio,mag ná ni ma men te,2
+majamente,adverbio,ma ja men te,3
+malhabladamente,adverbio,ma lha bla da men te,5
+malísimamente,adverbio,ma lí si ma men te,2
+malpagadamente,adverbio,mal pa ga da men te,5
+malsonantemente,adverbio,mal so nan te men te,5
+maniatadamente,adverbio,ma nia ta da men te,5
+marítimamente,adverbio,ma rí ti ma men te,2
+masivamente,adverbio,ma si va men te,4
+masoquísticamente,adverbio,ma so quís ti ca men te,3
+matinalmente,adverbio,ma ti nal men te,4
+máximamente,adverbio,má xi ma men te,1
+medicalmente,adverbio,me di cal men te,4
+médicamente,adverbio,mé di ca men te,1
+menguantemente,adverbio,men guan te men te,4
+méritamente,adverbio,mé ri ta men te,1
+mermadamente,adverbio,mer ma da men te,4
+metálicamente,adverbio,me tá li ca men te,2
+mínimamente,adverbio,mí ni ma men te,1
+míseramente,adverbio,mí se ra men te,1
+mojadamente,adverbio,mo ja da men te,4
+monamente,adverbio,mo na men te,3
+morfológicamente,adverbio,mor fo ló gi ca men te,3
+muellemente,adverbio,mue lle men te,3
+mundialmente,adverbio,mun dial men te,3
+narcisísticamente,adverbio,nar ci sís ti ca men te,3
+navalmente,adverbio,na val men te,3
+neblinosamente,adverbio,ne bli no sa men te,5
+nebulosamente,adverbio,ne bu lo sa men te,5
+nefariamente,adverbio,ne fa ria men te,4
+nefastamente,adverbio,ne fas ta men te,4
+negadamente,adverbio,ne ga da men te,4
+negramente,adverbio,ne gra men te,3
+nítidamente,adverbio,ní ti da men te,1
+noctámbulamente,adverbio,noc tám bu la men te,2
+nocturnamente,adverbio,noc tur na men te,4
+novelescamente,adverbio,no ve les ca men te,5
+nuclearmente,adverbio,nu cle ar men te,4
+obligadamente,adverbio,o bli ga da men te,5
+obligatoriamente,adverbio,o bli ga to ria men te,6
+olfativamente,adverbio,ol fa ti va men te,5
+opcionalmente,adverbio,op cio nal men te,4
+orgánicamente,adverbio,or gá ni ca men te,2
+organizadamente,adverbio,or ga ni za da men te,6
+orgásmicamente,adverbio,or gás mi ca men te,2
+ostentatoriamente,adverbio,os ten ta to ria men te,6
+pandémicamente,adverbio,pan dé mi ca men te,2
+paradójicamente,adverbio,pa ra dó ji ca men te,3
+partisanamente,adverbio,par ti sa na men te,5
+pasajeramente,adverbio,pa sa je ra men te,5
+pasitamente,adverbio,pa si ta men te,4
+penosamente,adverbio,pe no sa men te,4
+perrunamente,adverbio,pe rru na men te,4
+pictóricamente,adverbio,pic tó ri ca men te,2
+podridamente,adverbio,po dri da men te,4
+pontíficamente,adverbio,pon tí fi ca men te,2
+positivamente,adverbio,po si ti va men te,5
+póstumamente,adverbio,pós tu ma men te,1
+precozmente,adverbio,pre coz men te,3
+presumiblemente,adverbio,pre su mi ble men te,5
+primigeniamente,adverbio,pri mi ge nia men te,5
+primordialmente,adverbio,pri mor dial men te,4
+principescamente,adverbio,prin ci pes ca men te,5
+pringosamente,adverbio,prin go sa men te,4
+profundísimamente,adverbio,pro fun dí si ma men te,3
+provisoriamente,adverbio,pro vi so ria men te,5
+psicológicamente,adverbio,psi co ló gi ca men te,3
+punzantemente,adverbio,pun zan te men te,4
+quirúrgicamente,adverbio,qui rúr gi ca men te,2
+radiantemente,adverbio,ra dian te men te,4
+reaccionariamente,adverbio,re ac cio na ria men te,6
+reaciamente,adverbio,re a cia men te,4
+recalcitrantemente,adverbio,re cal ci tran te men te,6
+recogidamente,adverbio,re co gi da men te,5
+regaladamente,adverbio,re ga la da men te,5
+resonadamente,adverbio,re so na da men te,5
+respetusamente,adverbio,res pe tu sa men te,5
+respondonamente,adverbio,res pon do na men te,5
+retiradamente,adverbio,re ti ra da men te,5
+rimbombantemente,adverbio,rim bom ban te men te,5
+rítmicamente,adverbio,rít mi ca men te,1
+rocambolescamente,adverbio,ro cam bo les ca men te,6
+sabiondamente,adverbio,sa bion da men te,4
+sagradamente,adverbio,sa gra da men te,4
+saladamente,adverbio,sa la da men te,4
+salientemente,adverbio,sa lien te men te,4
+salvadamente,adverbio,sal va da men te,4
+salvajemente,adverbio,sal va je men te,4
+sangrantemente,adverbio,san gran te men te,4
+santamente,adverbio,san ta men te,3
+santificadamente,adverbio,san ti fi ca da men te,6
+santísimamente,adverbio,san tí si ma men te,2
+sañudamente,adverbio,sa ñu da men te,4
+sardónicamente,adverbio,sar dó ni ca men te,2
+sarnosamente,adverbio,sar no sa men te,4
+satisfechamente,adverbio,sa tis fe cha men te,5
+selectivamente,adverbio,se lec ti va men te,5
+sensacionalistamente,adverbio,sen sa cio na lis ta men te,7
+sensacionalísticamente,adverbio,sen sa cio na lís ti ca men te,5
+sensorialmente,adverbio,sen so rial men te,4
+separatistamente,adverbio,se pa ra tis ta men te,6
+sepulcralmente,adverbio,se pul cral men te,4
+serenamente,adverbio,se re na men te,4
+severísimamente,adverbio,se ve rí si ma men te,3
+sibaríticamente,adverbio,si ba rí ti ca men te,3
+similarmente,adverbio,si mi lar men te,4
+sinérgicamente,adverbio,si nér gi ca men te,2
+sinuosamente,adverbio,si nuo sa men te,4
+sobresalientemente,adverbio,so bre sa lien te men te,6
+socialmente,adverbio,so cial men te,3
+sombríamente,adverbio,som brí a men te,2
+sorprendentemente,adverbio,sor pren den te men te,5
+sorpresivamente,adverbio,sor pre si va men te,5
+sotilmente,adverbio,so til men te,3
+suavísimamente,adverbio,sua ví si ma men te,2
+subjetivamente,adverbio,sub je ti va men te,5
+sublimemente,adverbio,su bli me men te,4
+submarinamente,adverbio,sub ma ri na men te,5
+subsecuentemente,adverbio,sub se cuen te men te,5
+sudorosamente,adverbio,su do ro sa men te,5
+sufridamente,adverbio,su fri da men te,4
+suplementariamente,adverbio,su ple men ta ria men te,6
+supuestamente,adverbio,su pues ta men te,4
+supurantemente,adverbio,su pu ran te men te,5
+susurrantemente,adverbio,su su rran te men te,5
+táctilmente,adverbio,tác til men te,1
+tajantemente,adverbio,ta jan te men te,4
+tambaleantemente,adverbio,tam ba le an te men te,6
+tangencialmente,adverbio,tan gen cial men te,4
+tangiblemente,adverbio,tan gi ble men te,4
+tartamudeantemente,adverbio,tar ta mu de an te men te,7
+temblorosamente,adverbio,tem blo ro sa men te,5
+tenazmente,adverbio,te naz men te,3
+tensamente,adverbio,ten sa men te,3
+tenuamente,adverbio,te nua men te,3
+tenuemente,adverbio,te nue men te,3
+tergiversadamente,adverbio,ter gi ver sa da men te,6
+tergiversadoramente,adverbio,ter gi ver sa do ra men te,7
+tergiversantemente,adverbio,ter gi ver san te men te,6
+ternísimamente,adverbio,ter ní si ma men te,2
+tersamente,adverbio,ter sa men te,3
+testarudamente,adverbio,tes ta ru da men te,5
+tetudamente,adverbio,te tu da men te,4
+tiernamente,adverbio,tier na men te,3
+típicamente,adverbio,tí pi ca men te,1
+titubeantemente,adverbio,ti tu be an te men te,6
+tórridamente,adverbio,tó rri da men te,1
+torvamente,adverbio,tor va men te,3
+tozudamente,adverbio,to zu da men te,4
+traicioneramente,adverbio,trai cio ne ra men te,5
+tremendamente,adverbio,tre men da men te,4
+truculentamente,adverbio,tru cu len ta men te,5
+unicamente,adverbio,u ni ca men te,4
+unilateralmente,adverbio,u ni la te ral men te,6
+vacíamente,adverbio,va cí a men te,2
+vacilantemente,adverbio,va ci lan te men te,5
+vaginalmente,adverbio,va gi nal men te,4
+valentísimamente,adverbio,va len tí si ma men te,3
+valiosamente,adverbio,va lio sa men te,4
+vanidosamente,adverbio,va ni do sa men te,5
+ventralmente,adverbio,ven tral men te,3
+verídicamente,adverbio,ve rí di ca men te,2
+vespertinamente,adverbio,ves per ti na men te,5
+virulentamente,adverbio,vi ru len ta men te,5
+vivazmente,adverbio,vi vaz men te,3
+vociferantemente,adverbio,vo ci fe ran te men te,6
+volcánicamente,adverbio,vol cá ni ca men te,2
+volublemente,adverbio,vo lu ble men te,4
+vulcánicamente,adverbio,vul cá ni ca men te,2
