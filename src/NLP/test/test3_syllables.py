@@ -7,4 +7,4 @@ for i in range(10):
     sentence_text, sentence_syllables = grammar.generate()
     print(f"\nORACIÓN {i+1}:")
     print(" *", sentence_text)
-    print(" *", sentence_syllables)    
+    print(" *", sentence_syllables)

@@ -5,7 +5,7 @@ from NLP.words import complete_sentence
 
 class Grammar:
 
-    def __init__(self, sentence_type):
+    def __init__(self, sentence_type: int):
         """
             Creates a Free-Context Grammar capable of generate sentences based on the type of sentence
             FOR NOW BASED PURELY ON SPANISH SENTENCES
@@ -35,7 +35,7 @@ class Grammar:
         #? Starts the grammar:
         self.title, grammar_rules = sentences_rules[sentence_type - 1]
         self.grammar = CFG.fromstring(grammar_rules)
-        self.sentence_type = sentence_type
+        self._sentence_type = sentence_type
     
 
     def generate(self):
@@ -84,3 +84,16 @@ class Grammar:
         sentence_syllables[0] = sentence_syllables[0].capitalize()
 
         return sentence_text, sentence_syllables
+    
+    #? TUNING:
+    @property
+    def sentence_type(self):
+        return self._tuning
+
+    @sentence_type.setter
+    def sentence_type(self, value: int):
+        if not (1 <= value <= len(sentences_rules)):
+            raise ValueError(f"\"sentence_type\" must be an integer between 1 and {len(sentences_rules)}")
+        self.title, grammar_rules = sentences_rules[value - 1]
+        self.grammar = CFG.fromstring(grammar_rules)
+        self._sentence_type = value
