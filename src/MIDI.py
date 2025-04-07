@@ -13,7 +13,7 @@ from Data.key.scales import diatonics, major_key_signatures, minor_key_signature
 class MIDI:
 
     #? CONSTRUCTOR:
-    def __init__(self, melody: Melody, harmony: Harmony, tempo: int, title: str = "Untitled"):
+    def __init__(self, melody: Melody, harmony: Harmony, tempo: int, title: str = "Untitled", logs: str = "No logs."):
         """
             To convert a song in melody/harmony MIA classes notation into a MIDI file
 
@@ -21,7 +21,8 @@ class MIDI:
                 - melody [Melody]: Instance of Melody (with attributes such as .phrases, .signature, .upbeat, .key)
                 - harmony [Harmony]: Instance of Harmony (with attributes such as .chords, .signature, .upbeat)
                 - tempo [int]: Tempo in BPM
-                - title: Title for the song
+                - title [str]: Title for the song
+                - logs [str]: Texto to add into the txt to understand the structure of the piece
             
             Methods:
                 - save (directory [str]): Receives a directory path and saves the song as MIDI file and a TXT
@@ -31,6 +32,7 @@ class MIDI:
         self.harmony = harmony
         self.tempo = tempo
         self.title = title
+        self.logs = logs
     
     #? SAVE:
     def save(self, directory="songs/"):
@@ -205,7 +207,7 @@ class MIDI:
         
         
         #? SAVES TXT FILE:
-        with open(filename.replace(".mid", ".txt"), "w") as f:
+        with open(filename.replace(".mid", ".txt"), "w", encoding="utf-8") as f:
             f.write("\nMIA Harmfirst b.0.3.0 COMPOSITION\n")
             date_str = datetime.datetime.now().strftime("%d/%m/%Y at %H:%M:%S")
             f.write(f"Date: {date_str}\n\n")
@@ -213,6 +215,8 @@ class MIDI:
             f.write(f"Composer: ARH MIA\n\n")
             f.write(str(self.melody))
             f.write(str(self.harmony))
+            f.write("\nLOGS:\n")
+            f.write(self.logs)
             print(f"\nText file saved as {filename.replace('.mid', '.txt')}")
 
         print(f"MIDI file saved as {filename}")

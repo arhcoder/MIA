@@ -78,7 +78,7 @@ class Grammar:
             tonic_index = word["tonic"]
             syllables[tonic_index] = syllables[tonic_index] + "*"
             sentence_syllables.extend(syllables)
-            sentence_syllables.append("")
+            sentence_syllables.append(" ")
         # Removes the last space:
         sentence_syllables.pop()
         sentence_syllables[0] = sentence_syllables[0].capitalize()
