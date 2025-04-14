@@ -1,0 +1,92 @@
+
+MIA Harmfirst b.0.3.0 COMPOSITION
+Date: 10/04/2025 at 18:20:21
+
+Title: Quién usted
+Composer: ARH MIA
+
+
+Melody(
+    signature=(4, 4),
+    key=('C', 'minor'),
+    tuning=A4[440Hz],
+    upbeat=1,
+    anacrusis=True,
+    space=256.0,
+    bars_amount=4.0,
+    phrases=[
+        
+	Phrase(
+	    space=128,
+	    notes=[
+		    Note(note=C, octave=4, frequency=261.6256Hz, time=8, name=Eighth dot=False space=8, tuning=A4[440Hz]),
+		    Note(note=C, octave=4, frequency=261.6256Hz, time=8, name=Eighth dot=False space=8, tuning=A4[440Hz]),
+		    Note(note=D, octave=4, frequency=293.6648Hz, time=4, name=Quarter dot=False space=16, tuning=A4[440Hz]),
+		    Note(note=G, octave=4, frequency=391.9954Hz, time=2, name=Half dot=False space=32, tuning=A4[440Hz]),
+		    Note(note=A#, octave=3, frequency=233.0819Hz, time=4, name=Quarter dot=False space=16, tuning=A4[440Hz]),
+		    Note(note=A#, octave=4, frequency=466.1638Hz, time=4, name=Quarter dot=False space=16, tuning=A4[440Hz]),
+		    Note(note=D, octave=4, frequency=293.6648Hz, time=2, name=Half dot=False space=32, tuning=A4[440Hz])
+    		]
+	),
+        
+	Phrase(
+	    space=128.0,
+	    notes=[
+		    Note(note=A#, octave=4, frequency=466.1638Hz, time=16, name=Sixteenth dot=False space=4, tuning=A4[440Hz]),
+		    Note(note=D, octave=5, frequency=587.3295Hz, time=16, name=Sixteenth dot=True space=6.0, tuning=A4[440Hz]),
+		    Note(note=G#, octave=5, frequency=830.6094Hz, time=8, name=Eighth dot=False space=8, tuning=A4[440Hz]),
+		    Note(note=F, octave=5, frequency=698.4565Hz, time=8, name=Eighth dot=False space=8, tuning=A4[440Hz]),
+		    Note(note=G, octave=5, frequency=783.9909Hz, time=8, name=Eighth dot=False space=8, tuning=A4[440Hz]),
+		    Note(note=A#, octave=5, frequency=932.3275Hz, time=4, name=Quarter dot=False space=16, tuning=A4[440Hz]),
+		    Note(note=C#, octave=6, frequency=1108.7305Hz, time=16, name=Sixteenth dot=True space=6.0, tuning=A4[440Hz]),
+		    Note(note=B, octave=6, frequency=1975.5332Hz, time=16, name=Sixteenth dot=False space=4, tuning=A4[440Hz]),
+		    Note(note=A, octave=6, frequency=1760.0Hz, time=4, name=Quarter dot=False space=16, tuning=A4[440Hz]),
+		    Note(note=A, octave=6, frequency=1760.0Hz, time=16, name=Sixteenth dot=False space=4, tuning=A4[440Hz]),
+		    Note(note=D, octave=6, frequency=1174.6591Hz, time=8, name=Eighth dot=False space=8, tuning=A4[440Hz]),
+		    Note(note=D#, octave=6, frequency=1244.5079Hz, time=8, name=Eighth dot=False space=8, tuning=A4[440Hz]),
+		    Note(note=C, octave=7, frequency=2093.0045Hz, time=8, name=Eighth dot=False space=8, tuning=A4[440Hz]),
+		    Note(note=G, octave=7, frequency=3135.9635Hz, time=8, name=Eighth dot=False space=8, tuning=A4[440Hz]),
+		    Note(note=D#, octave=7, frequency=2489.0159Hz, time=8, name=Eighth dot=False space=8, tuning=A4[440Hz]),
+		    Note(note=C, octave=7, frequency=2093.0045Hz, time=8, name=Eighth dot=False space=8, tuning=A4[440Hz])
+    		]
+	)
+    ]
+)
+Harmony(
+    signature=(4, 4),
+    key=('C', 'minor'),
+    tuning=A4[440Hz],
+    upbeat=1,
+    anacrusis=True,
+    space=272,
+    bars_amount=4.25,
+    chords=[
+
+        Chord(name=X, ctype=None, inversion=None, octave=None, degree=, time=4, space=16, dot=False notes=[Note(note=X, octave=0, frequency=0Hz, time=4, name=Quarter dot=False space=16, tuning=A4[440Hz])], notes_str=[]),
+
+        Chord(name=D#, ctype=, inversion=1, octave=3, degree=bIII, time=1, space=64, dot=False notes=[Note(note=G, octave=3, frequency=195.9977Hz, time=1, name=Whole dot=False space=64, tuning=A4[440Hz]), Note(note=A#, octave=3, frequency=233.0819Hz, time=1, name=Whole dot=False space=64, tuning=A4[440Hz]), Note(note=D#, octave=4, frequency=311.127Hz, time=1, name=Whole dot=False space=64, tuning=A4[440Hz])], notes_str=['G3', 'A#3', 'D#4']),
+
+        Chord(name=A#, ctype=, inversion=2, octave=2, degree=bVII, time=1, space=64, dot=False notes=[Note(note=F, octave=3, frequency=174.6141Hz, time=1, name=Whole dot=False space=64, tuning=A4[440Hz]), Note(note=A#, octave=3, frequency=233.0819Hz, time=1, name=Whole dot=False space=64, tuning=A4[440Hz]), Note(note=D, octave=4, frequency=293.6648Hz, time=1, name=Whole dot=False space=64, tuning=A4[440Hz])], notes_str=['F3', 'A#3', 'D4']),
+
+        Chord(name=F, ctype=7#5, inversion=3, octave=2, degree=*IV+, time=1, space=64, dot=False notes=[Note(note=D#, octave=3, frequency=155.5635Hz, time=1, name=Whole dot=False space=64, tuning=A4[440Hz]), Note(note=F, octave=3, frequency=174.6141Hz, time=1, name=Whole dot=False space=64, tuning=A4[440Hz]), Note(note=A, octave=3, frequency=220.0Hz, time=1, name=Whole dot=False space=64, tuning=A4[440Hz]), Note(note=C#, octave=4, frequency=277.1826Hz, time=1, name=Whole dot=False space=64, tuning=A4[440Hz])], notes_str=['D#3', 'F3', 'A3', 'C#4']),
+
+        Chord(name=C, ctype=m, inversion=0, octave=3, degree=i, time=1, space=64, dot=False notes=[Note(note=C, octave=3, frequency=130.8128Hz, time=1, name=Whole dot=False space=64, tuning=A4[440Hz]), Note(note=D#, octave=3, frequency=155.5635Hz, time=1, name=Whole dot=False space=64, tuning=A4[440Hz]), Note(note=G, octave=3, frequency=195.9977Hz, time=1, name=Whole dot=False space=64, tuning=A4[440Hz])], notes_str=['C3', 'D#3', 'G3'])
+
+    ]
+)
+LOGS:
+SENTENCES:
+[1]: Quién usted boletares
+  - ['Quién*', ' ', 'us', 'ted*', ' ', 'bo', 'le', 'ta*', 'res']
+  - [ORIGINAL]
+  - Bars: 2
+  - Chords: 2
+  - Shape: arch
+
+[2]: Mucha serpentaria mulatizarás gramalotera
+  - ['Mu*', 'cha', ' ', 'ser', 'pen', 'ta*', 'ria', ' ', 'mu', 'la', 'ti', 'za', 'rás*', ' ', 'gra', 'ma', 'lo', 'te*', 'ra']
+  - [ORIGINAL]
+  - Bars: 2
+  - Chords: 2
+  - Shape: valley
+

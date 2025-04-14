@@ -1,0 +1,123 @@
+
+MIA Harmfirst b.0.3.0 COMPOSITION
+Date: 10/04/2025 at 09:33:37
+
+Title: Inmigrásemos
+Composer: ARH MIA
+
+
+Melody(
+    signature=(4, 4),
+    key=('C', 'major'),
+    tuning=A4[440Hz],
+    upbeat=0,
+    anacrusis=False,
+    space=512.0,
+    bars_amount=8.0,
+    phrases=[
+        
+	Phrase(
+	    space=128.0,
+	    notes=[
+		    Note(note=D, octave=4, frequency=293.6648Hz, time=8, name=Eighth dot=False space=8, tuning=A4[440Hz]),
+		    Note(note=D, octave=4, frequency=293.6648Hz, time=8, name=Eighth dot=False space=8, tuning=A4[440Hz]),
+		    Note(note=C, octave=4, frequency=261.6256Hz, time=8, name=Eighth dot=False space=8, tuning=A4[440Hz]),
+		    Note(note=C, octave=4, frequency=261.6256Hz, time=8, name=Eighth dot=False space=8, tuning=A4[440Hz]),
+		    Note(note=D, octave=4, frequency=293.6648Hz, time=1, name=Whole dot=True space=96.0, tuning=A4[440Hz])
+    		]
+	),
+        
+	Phrase(
+	    space=128.0,
+	    notes=[
+		    Note(note=G, octave=4, frequency=391.9954Hz, time=16, name=Sixteenth dot=False space=4, tuning=A4[440Hz]),
+		    Note(note=C, octave=4, frequency=261.6256Hz, time=8, name=Eighth dot=True space=12.0, tuning=A4[440Hz]),
+		    Note(note=C, octave=3, frequency=130.8128Hz, time=4, name=Quarter dot=False space=16, tuning=A4[440Hz]),
+		    Note(note=F, octave=3, frequency=174.6141Hz, time=4, name=Quarter dot=False space=16, tuning=A4[440Hz]),
+		    Note(note=E, octave=4, frequency=329.6276Hz, time=4, name=Quarter dot=False space=16, tuning=A4[440Hz]),
+		    Note(note=B, octave=4, frequency=493.8833Hz, time=1, name=Whole dot=False space=64, tuning=A4[440Hz])
+    		]
+	),
+        
+	Phrase(
+	    space=128.0,
+	    notes=[
+		    Note(note=E, octave=4, frequency=329.6276Hz, time=8, name=Eighth dot=False space=8, tuning=A4[440Hz]),
+		    Note(note=B, octave=4, frequency=493.8833Hz, time=8, name=Eighth dot=False space=8, tuning=A4[440Hz]),
+		    Note(note=B, octave=4, frequency=493.8833Hz, time=8, name=Eighth dot=False space=8, tuning=A4[440Hz]),
+		    Note(note=B, octave=4, frequency=493.8833Hz, time=8, name=Eighth dot=False space=8, tuning=A4[440Hz]),
+		    Note(note=E, octave=4, frequency=329.6276Hz, time=1, name=Whole dot=True space=96.0, tuning=A4[440Hz])
+    		]
+	),
+        
+	Phrase(
+	    space=128.0,
+	    notes=[
+		    Note(note=G, octave=4, frequency=391.9954Hz, time=16, name=Sixteenth dot=False space=4, tuning=A4[440Hz]),
+		    Note(note=C, octave=4, frequency=261.6256Hz, time=8, name=Eighth dot=True space=12.0, tuning=A4[440Hz]),
+		    Note(note=C, octave=3, frequency=130.8128Hz, time=4, name=Quarter dot=False space=16, tuning=A4[440Hz]),
+		    Note(note=F, octave=3, frequency=174.6141Hz, time=4, name=Quarter dot=False space=16, tuning=A4[440Hz]),
+		    Note(note=E, octave=4, frequency=329.6276Hz, time=4, name=Quarter dot=False space=16, tuning=A4[440Hz]),
+		    Note(note=B, octave=4, frequency=493.8833Hz, time=1, name=Whole dot=False space=64, tuning=A4[440Hz])
+    		]
+	)
+    ]
+)
+Harmony(
+    signature=(4, 4),
+    key=('C', 'major'),
+    tuning=A4[440Hz],
+    upbeat=0,
+    anacrusis=False,
+    space=512,
+    bars_amount=8.0,
+    chords=[
+
+        Chord(name=D, ctype=m, inversion=0, octave=3, degree=ii, time=1, space=64, dot=False notes=[Note(note=D, octave=3, frequency=146.8324Hz, time=1, name=Whole dot=False space=64, tuning=A4[440Hz]), Note(note=F, octave=3, frequency=174.6141Hz, time=1, name=Whole dot=False space=64, tuning=A4[440Hz]), Note(note=A, octave=3, frequency=220.0Hz, time=1, name=Whole dot=False space=64, tuning=A4[440Hz])], notes_str=['D3', 'F3', 'A3']),
+
+        Chord(name=A, ctype=m, inversion=2, octave=2, degree=vi, time=1, space=64, dot=False notes=[Note(note=E, octave=3, frequency=164.8138Hz, time=1, name=Whole dot=False space=64, tuning=A4[440Hz]), Note(note=A, octave=3, frequency=220.0Hz, time=1, name=Whole dot=False space=64, tuning=A4[440Hz]), Note(note=C, octave=4, frequency=261.6256Hz, time=1, name=Whole dot=False space=64, tuning=A4[440Hz])], notes_str=['E3', 'A3', 'C4']),
+
+        Chord(name=E, ctype=m, inversion=2, octave=2, degree=iii, time=1, space=64, dot=False notes=[Note(note=B, octave=2, frequency=123.4708Hz, time=1, name=Whole dot=False space=64, tuning=A4[440Hz]), Note(note=E, octave=3, frequency=164.8138Hz, time=1, name=Whole dot=False space=64, tuning=A4[440Hz]), Note(note=G, octave=3, frequency=195.9977Hz, time=1, name=Whole dot=False space=64, tuning=A4[440Hz])], notes_str=['B2', 'E3', 'G3']),
+
+        Chord(name=A, ctype=m, inversion=0, octave=2, degree=vi, time=1, space=64, dot=False notes=[Note(note=A, octave=2, frequency=110.0Hz, time=1, name=Whole dot=False space=64, tuning=A4[440Hz]), Note(note=C, octave=3, frequency=130.8128Hz, time=1, name=Whole dot=False space=64, tuning=A4[440Hz]), Note(note=E, octave=3, frequency=164.8138Hz, time=1, name=Whole dot=False space=64, tuning=A4[440Hz])], notes_str=['A2', 'C3', 'E3']),
+
+        Chord(name=E, ctype=, inversion=1, octave=2, degree=*III, time=1, space=64, dot=False notes=[Note(note=G#, octave=2, frequency=103.8262Hz, time=1, name=Whole dot=False space=64, tuning=A4[440Hz]), Note(note=B, octave=2, frequency=123.4708Hz, time=1, name=Whole dot=False space=64, tuning=A4[440Hz]), Note(note=E, octave=3, frequency=164.8138Hz, time=1, name=Whole dot=False space=64, tuning=A4[440Hz])], notes_str=['G#2', 'B2', 'E3']),
+
+        Chord(name=G, ctype=7, inversion=1, octave=2, degree=V7, time=1, space=64, dot=False notes=[Note(note=B, octave=2, frequency=123.4708Hz, time=1, name=Whole dot=False space=64, tuning=A4[440Hz]), Note(note=D, octave=3, frequency=146.8324Hz, time=1, name=Whole dot=False space=64, tuning=A4[440Hz]), Note(note=F, octave=3, frequency=174.6141Hz, time=1, name=Whole dot=False space=64, tuning=A4[440Hz]), Note(note=G, octave=3, frequency=195.9977Hz, time=1, name=Whole dot=False space=64, tuning=A4[440Hz])], notes_str=['B2', 'D3', 'F3', 'G3']),
+
+        Chord(name=C, ctype=, inversion=0, octave=3, degree=I, time=2, space=32, dot=False notes=[Note(note=C, octave=3, frequency=130.8128Hz, time=2, name=Half dot=False space=32, tuning=A4[440Hz]), Note(note=E, octave=3, frequency=164.8138Hz, time=2, name=Half dot=False space=32, tuning=A4[440Hz]), Note(note=G, octave=3, frequency=195.9977Hz, time=2, name=Half dot=False space=32, tuning=A4[440Hz])], notes_str=['C3', 'E3', 'G3']),
+
+        Chord(name=G, ctype=, inversion=0, octave=2, degree=V, time=2, space=32, dot=False notes=[Note(note=G, octave=2, frequency=97.9989Hz, time=2, name=Half dot=False space=32, tuning=A4[440Hz]), Note(note=B, octave=2, frequency=123.4708Hz, time=2, name=Half dot=False space=32, tuning=A4[440Hz]), Note(note=D, octave=3, frequency=146.8324Hz, time=2, name=Half dot=False space=32, tuning=A4[440Hz])], notes_str=['G2', 'B2', 'D3']),
+
+        Chord(name=F, ctype=m7b5, inversion=3, octave=2, degree=*iv°, time=2, space=32, dot=False notes=[Note(note=D#, octave=3, frequency=155.5635Hz, time=2, name=Half dot=False space=32, tuning=A4[440Hz]), Note(note=F, octave=3, frequency=174.6141Hz, time=2, name=Half dot=False space=32, tuning=A4[440Hz]), Note(note=G#, octave=3, frequency=207.6523Hz, time=2, name=Half dot=False space=32, tuning=A4[440Hz]), Note(note=B, octave=3, frequency=246.9417Hz, time=2, name=Half dot=False space=32, tuning=A4[440Hz])], notes_str=['D#3', 'F3', 'G#3', 'B3']),
+
+        Chord(name=C, ctype=, inversion=2, octave=2, degree=I, time=2, space=32, dot=False notes=[Note(note=G, octave=2, frequency=97.9989Hz, time=2, name=Half dot=False space=32, tuning=A4[440Hz]), Note(note=C, octave=3, frequency=130.8128Hz, time=2, name=Half dot=False space=32, tuning=A4[440Hz]), Note(note=E, octave=3, frequency=164.8138Hz, time=2, name=Half dot=False space=32, tuning=A4[440Hz])], notes_str=['G2', 'C3', 'E3'])
+
+    ]
+)
+LOGS:
+SENTENCES:
+[1]: Inmigrásemos
+  - ['In', 'mi', 'grá*', 'se', 'mos']
+  - [ORIGINAL]
+  - Bars: 2
+  - Chords: 2
+
+[2]: Atontolinaba
+  - ['A', 'ton', 'to', 'li', 'na*', 'ba']
+  - [ORIGINAL]
+  - Bars: 2
+  - Chords: 2
+
+[3]: Inmigrásemos
+  - ['In', 'mi', 'grá*', 'se', 'mos']
+  - [REPETITION OF SENTENCE 0]
+  - Bars: 2
+  - Chords: 2
+
+[4]: Atontolinaba
+  - ['A', 'ton', 'to', 'li', 'na*', 'ba']
+  - [REPETITION OF RYTHM 1]
+  - Bars: 2
+  - Chords: 4
+

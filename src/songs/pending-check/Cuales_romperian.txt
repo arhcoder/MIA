@@ -1,0 +1,78 @@
+
+MIA Harmfirst b.0.3.0 COMPOSITION
+Date: 10/04/2025 at 18:15:10
+
+Title: Cuáles romperían
+Composer: ARH MIA
+
+
+Melody(
+    signature=(4, 4),
+    key=('C', 'minor'),
+    tuning=A4[440Hz],
+    upbeat=1,
+    anacrusis=True,
+    space=256.0,
+    bars_amount=4.0,
+    phrases=[
+        
+	Phrase(
+	    space=128,
+	    notes=[
+		    Note(note=F#, octave=4, frequency=369.9944Hz, time=2, name=Half dot=False space=32, tuning=A4[440Hz]),
+		    Note(note=C, octave=4, frequency=261.6256Hz, time=4, name=Quarter dot=False space=16, tuning=A4[440Hz]),
+		    Note(note=E, octave=3, frequency=164.8138Hz, time=4, name=Quarter dot=False space=16, tuning=A4[440Hz]),
+		    Note(note=F, octave=2, frequency=87.3071Hz, time=4, name=Quarter dot=False space=16, tuning=A4[440Hz]),
+		    Note(note=F, octave=2, frequency=87.3071Hz, time=4, name=Quarter dot=False space=16, tuning=A4[440Hz]),
+		    Note(note=C, octave=4, frequency=261.6256Hz, time=2, name=Half dot=False space=32, tuning=A4[440Hz])
+    		]
+	),
+        
+	Phrase(
+	    space=128.0,
+	    notes=[
+		    Note(note=F, octave=4, frequency=349.2282Hz, time=4, name=Quarter dot=False space=16, tuning=A4[440Hz]),
+		    Note(note=C, octave=4, frequency=261.6256Hz, time=2, name=Half dot=True space=48.0, tuning=A4[440Hz]),
+		    Note(note=A, octave=4, frequency=440.0Hz, time=1, name=Whole dot=False space=64, tuning=A4[440Hz])
+    		]
+	)
+    ]
+)
+Harmony(
+    signature=(4, 4),
+    key=('C', 'minor'),
+    tuning=A4[440Hz],
+    upbeat=1,
+    anacrusis=True,
+    space=272,
+    bars_amount=4.25,
+    chords=[
+
+        Chord(name=X, ctype=None, inversion=None, octave=None, degree=, time=4, space=16, dot=False notes=[Note(note=X, octave=0, frequency=0Hz, time=4, name=Quarter dot=False space=16, tuning=A4[440Hz])], notes_str=[]),
+
+        Chord(name=A#, ctype=, inversion=2, octave=3, degree=bVII, time=1, space=64, dot=False notes=[Note(note=F, octave=4, frequency=349.2282Hz, time=1, name=Whole dot=False space=64, tuning=A4[440Hz]), Note(note=A#, octave=4, frequency=466.1638Hz, time=1, name=Whole dot=False space=64, tuning=A4[440Hz]), Note(note=D, octave=5, frequency=587.3295Hz, time=1, name=Whole dot=False space=64, tuning=A4[440Hz])], notes_str=['F4', 'A#4', 'D5']),
+
+        Chord(name=F, ctype=m, inversion=0, octave=4, degree=iv, time=1, space=64, dot=False notes=[Note(note=F, octave=4, frequency=349.2282Hz, time=1, name=Whole dot=False space=64, tuning=A4[440Hz]), Note(note=G#, octave=4, frequency=415.3047Hz, time=1, name=Whole dot=False space=64, tuning=A4[440Hz]), Note(note=C, octave=5, frequency=523.2511Hz, time=1, name=Whole dot=False space=64, tuning=A4[440Hz])], notes_str=['F4', 'G#4', 'C5']),
+
+        Chord(name=F, ctype=, inversion=0, octave=4, degree=*IV, time=1, space=64, dot=False notes=[Note(note=F, octave=4, frequency=349.2282Hz, time=1, name=Whole dot=False space=64, tuning=A4[440Hz]), Note(note=A, octave=4, frequency=440.0Hz, time=1, name=Whole dot=False space=64, tuning=A4[440Hz]), Note(note=C, octave=5, frequency=523.2511Hz, time=1, name=Whole dot=False space=64, tuning=A4[440Hz])], notes_str=['F4', 'A4', 'C5']),
+
+        Chord(name=C, ctype=dim, inversion=2, octave=4, degree=*i°, time=1, space=64, dot=False notes=[Note(note=F#, octave=4, frequency=369.9944Hz, time=1, name=Whole dot=False space=64, tuning=A4[440Hz]), Note(note=C, octave=5, frequency=523.2511Hz, time=1, name=Whole dot=False space=64, tuning=A4[440Hz]), Note(note=D#, octave=5, frequency=622.254Hz, time=1, name=Whole dot=False space=64, tuning=A4[440Hz])], notes_str=['F#4', 'C5', 'D#5'])
+
+    ]
+)
+LOGS:
+SENTENCES:
+[1]: Cuáles romperían
+  - ['Cuá*', 'les', ' ', 'rom', 'pe', 'rí*', 'an']
+  - [ORIGINAL]
+  - Bars: 2
+  - Chords: 2
+  - Shape: fall
+
+[2]: Represe
+  - ['Re', 'pre*', 'se']
+  - [ORIGINAL]
+  - Bars: 2
+  - Chords: 2
+  - Shape: rise
+

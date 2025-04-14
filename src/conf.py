@@ -26,8 +26,8 @@ simulated_annealing_phrases_params = {
     "beat_on_strong_beats_reward": 100,
     "initial_rest_duration_reward": 10,
     "initial_rest_anacrusis_penalty": -100,
-    "final_rest_duration_reward": 40,
-    "large_last_note_reward": 80,
+    "final_rest_duration_reward": 20,
+    "large_last_note_reward": 30,
 
     #? This probabilities just set between 0 and 100:
     "probability_find_initial_rest": 20,
@@ -69,7 +69,7 @@ genetic_progression_params = {
         "tonic_on_last_bonus": 2,
         "secondary_dominants": 10,
         "cadence": 30,
-        "scale_membership_multiplier": 20,
+        "scale_membership_multiplier": 50,
         "diversity_multiplier": 40,
         "voice_leading_multiplier": 10,
         "sus_before_major": 10,

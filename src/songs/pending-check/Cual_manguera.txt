@@ -1,0 +1,78 @@
+
+MIA Harmfirst b.0.3.0 COMPOSITION
+Date: 11/04/2025 at 11:59:07
+
+Title: Cuál manguera
+Composer: ARH MIA
+
+
+Melody(
+    signature=(3, 4),
+    key=('C', 'minor'),
+    tuning=A4[440Hz],
+    upbeat=1,
+    anacrusis=True,
+    space=192.0,
+    bars_amount=4.0,
+    phrases=[
+        
+	Phrase(
+	    space=96.0,
+	    notes=[
+		    Note(note=C, octave=4, frequency=261.6256Hz, time=8, name=Eighth dot=False space=8, tuning=A4[440Hz]),
+		    Note(note=A#, octave=3, frequency=233.0819Hz, time=8, name=Eighth dot=False space=8, tuning=A4[440Hz]),
+		    Note(note=D#, octave=3, frequency=155.5635Hz, time=4, name=Quarter dot=False space=16, tuning=A4[440Hz]),
+		    Note(note=G, octave=3, frequency=195.9977Hz, time=2, name=Half dot=False space=32, tuning=A4[440Hz]),
+		    Note(note=F, octave=4, frequency=349.2282Hz, time=8, name=Eighth dot=False space=8, tuning=A4[440Hz]),
+		    Note(note=C, octave=4, frequency=261.6256Hz, time=4, name=Quarter dot=True space=24.0, tuning=A4[440Hz])
+    		]
+	),
+        
+	Phrase(
+	    space=96,
+	    notes=[
+		    Note(note=A#, octave=4, frequency=466.1638Hz, time=4, name=Quarter dot=False space=16, tuning=A4[440Hz]),
+		    Note(note=D#, octave=4, frequency=311.127Hz, time=4, name=Quarter dot=False space=16, tuning=A4[440Hz]),
+		    Note(note=A, octave=4, frequency=440.0Hz, time=1, name=Whole dot=False space=64, tuning=A4[440Hz])
+    		]
+	)
+    ]
+)
+Harmony(
+    signature=(3, 4),
+    key=('C', 'minor'),
+    tuning=A4[440Hz],
+    upbeat=1,
+    anacrusis=True,
+    space=208,
+    bars_amount=4.333333333333333,
+    chords=[
+
+        Chord(name=X, ctype=None, inversion=None, octave=None, degree=, time=4, space=16, dot=False notes=[Note(note=X, octave=0, frequency=0Hz, time=4, name=Quarter dot=False space=16, tuning=A4[440Hz])], notes_str=[]),
+
+        Chord(name=C, ctype=m, inversion=0, octave=3, degree=i, time=1, space=64, dot=False notes=[Note(note=C, octave=3, frequency=130.8128Hz, time=1, name=Whole dot=False space=64, tuning=A4[440Hz]), Note(note=D#, octave=3, frequency=155.5635Hz, time=1, name=Whole dot=False space=64, tuning=A4[440Hz]), Note(note=G, octave=3, frequency=195.9977Hz, time=1, name=Whole dot=False space=64, tuning=A4[440Hz])], notes_str=['C3', 'D#3', 'G3']),
+
+        Chord(name=G, ctype=m, inversion=1, octave=2, degree=v, time=2, space=32, dot=False notes=[Note(note=A#, octave=2, frequency=116.5409Hz, time=2, name=Half dot=False space=32, tuning=A4[440Hz]), Note(note=D, octave=3, frequency=146.8324Hz, time=2, name=Half dot=False space=32, tuning=A4[440Hz]), Note(note=G, octave=3, frequency=195.9977Hz, time=2, name=Half dot=False space=32, tuning=A4[440Hz])], notes_str=['A#2', 'D3', 'G3']),
+
+        Chord(name=F, ctype=aug7, inversion=3, octave=2, degree=*IV+, time=1, space=64, dot=False notes=[Note(note=D#, octave=3, frequency=155.5635Hz, time=1, name=Whole dot=False space=64, tuning=A4[440Hz]), Note(note=F, octave=3, frequency=174.6141Hz, time=1, name=Whole dot=False space=64, tuning=A4[440Hz]), Note(note=A, octave=3, frequency=220.0Hz, time=1, name=Whole dot=False space=64, tuning=A4[440Hz]), Note(note=C#, octave=4, frequency=277.1826Hz, time=1, name=Whole dot=False space=64, tuning=A4[440Hz])], notes_str=['D#3', 'F3', 'A3', 'C#4']),
+
+        Chord(name=C, ctype=, inversion=2, octave=3, degree=*I, time=2, space=32, dot=False notes=[Note(note=G, octave=3, frequency=195.9977Hz, time=2, name=Half dot=False space=32, tuning=A4[440Hz]), Note(note=C, octave=4, frequency=261.6256Hz, time=2, name=Half dot=False space=32, tuning=A4[440Hz]), Note(note=E, octave=4, frequency=329.6276Hz, time=2, name=Half dot=False space=32, tuning=A4[440Hz])], notes_str=['G3', 'C4', 'E4'])
+
+    ]
+)
+LOGS:
+SENTENCES:
+[1]: Cuál manguera piafa
+  - ['Cuál*', ' ', 'man', 'gue*', 'ra', ' ', 'pia*', 'fa']
+  - [ORIGINAL]
+  - Bars: 2
+  - Chords: 2
+  - Shape: arch
+
+[2]: Sobaban
+  - ['So', 'ba*', 'ban']
+  - [ORIGINAL]
+  - Bars: 2
+  - Chords: 2
+  - Shape: valley
+

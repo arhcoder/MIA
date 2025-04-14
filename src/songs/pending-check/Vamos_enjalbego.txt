@@ -1,0 +1,84 @@
+
+MIA Harmfirst b.0.3.0 COMPOSITION
+Date: 10/04/2025 at 17:57:04
+
+Title: Vamos enjalbegó
+Composer: ARH MIA
+
+
+Melody(
+    signature=(4, 4),
+    key=('F', 'minor'),
+    tuning=A4[440Hz],
+    upbeat=0,
+    anacrusis=False,
+    space=256.0,
+    bars_amount=4.0,
+    phrases=[
+        
+	Phrase(
+	    space=128.0,
+	    notes=[
+		    Note(note=C, octave=4, frequency=261.6256Hz, time=4, name=Quarter dot=False space=16, tuning=A4[440Hz]),
+		    Note(note=C, octave=4, frequency=261.6256Hz, time=4, name=Quarter dot=False space=16, tuning=A4[440Hz]),
+		    Note(note=C, octave=4, frequency=261.6256Hz, time=8, name=Eighth dot=False space=8, tuning=A4[440Hz]),
+		    Note(note=C, octave=4, frequency=261.6256Hz, time=8, name=Eighth dot=True space=12.0, tuning=A4[440Hz]),
+		    Note(note=A, octave=3, frequency=220.0Hz, time=8, name=Eighth dot=True space=12.0, tuning=A4[440Hz]),
+		    Note(note=A#, octave=4, frequency=466.1638Hz, time=1, name=Whole dot=False space=64, tuning=A4[440Hz])
+    		]
+	),
+        
+	Phrase(
+	    space=128.0,
+	    notes=[
+		    Note(note=A#, octave=4, frequency=466.1638Hz, time=8, name=Eighth dot=False space=8, tuning=A4[440Hz]),
+		    Note(note=A#, octave=4, frequency=466.1638Hz, time=8, name=Eighth dot=False space=8, tuning=A4[440Hz]),
+		    Note(note=A#, octave=4, frequency=466.1638Hz, time=8, name=Eighth dot=False space=8, tuning=A4[440Hz]),
+		    Note(note=F, octave=5, frequency=698.4565Hz, time=8, name=Eighth dot=False space=8, tuning=A4[440Hz]),
+		    Note(note=C#, octave=6, frequency=1108.7305Hz, time=8, name=Eighth dot=False space=8, tuning=A4[440Hz]),
+		    Note(note=F#, octave=6, frequency=1479.9777Hz, time=16, name=Sixteenth dot=False space=4, tuning=A4[440Hz]),
+		    Note(note=F#, octave=6, frequency=1479.9777Hz, time=8, name=Eighth dot=False space=8, tuning=A4[440Hz]),
+		    Note(note=C, octave=6, frequency=1046.5023Hz, time=4, name=Quarter dot=False space=16, tuning=A4[440Hz]),
+		    Note(note=G#, octave=6, frequency=1661.2188Hz, time=8, name=Eighth dot=False space=8, tuning=A4[440Hz]),
+		    Note(note=F, octave=6, frequency=1396.9129Hz, time=16, name=Sixteenth dot=False space=4, tuning=A4[440Hz]),
+		    Note(note=C, octave=4, frequency=261.6256Hz, time=2, name=Half dot=True space=48.0, tuning=A4[440Hz])
+    		]
+	)
+    ]
+)
+Harmony(
+    signature=(4, 4),
+    key=('F', 'minor'),
+    tuning=A4[440Hz],
+    upbeat=0,
+    anacrusis=False,
+    space=256,
+    bars_amount=4.0,
+    chords=[
+
+        Chord(name=F, ctype=m, inversion=2, octave=3, degree=i, time=1, space=64, dot=False notes=[Note(note=C, octave=4, frequency=261.6256Hz, time=1, name=Whole dot=False space=64, tuning=A4[440Hz]), Note(note=F, octave=4, frequency=349.2282Hz, time=1, name=Whole dot=False space=64, tuning=A4[440Hz]), Note(note=G#, octave=4, frequency=415.3047Hz, time=1, name=Whole dot=False space=64, tuning=A4[440Hz])], notes_str=['C4', 'F4', 'G#4']),
+
+        Chord(name=D#, ctype=, inversion=1, octave=3, degree=bVII, time=1, space=64, dot=False notes=[Note(note=G, octave=3, frequency=195.9977Hz, time=1, name=Whole dot=False space=64, tuning=A4[440Hz]), Note(note=A#, octave=3, frequency=233.0819Hz, time=1, name=Whole dot=False space=64, tuning=A4[440Hz]), Note(note=D#, octave=4, frequency=311.127Hz, time=1, name=Whole dot=False space=64, tuning=A4[440Hz])], notes_str=['G3', 'A#3', 'D#4']),
+
+        Chord(name=A#, ctype=m7b5, inversion=1, octave=3, degree=*iv°, time=1, space=64, dot=False notes=[Note(note=C#, octave=4, frequency=277.1826Hz, time=1, name=Whole dot=False space=64, tuning=A4[440Hz]), Note(note=E, octave=4, frequency=329.6276Hz, time=1, name=Whole dot=False space=64, tuning=A4[440Hz]), Note(note=G#, octave=4, frequency=415.3047Hz, time=1, name=Whole dot=False space=64, tuning=A4[440Hz]), Note(note=A#, octave=4, frequency=466.1638Hz, time=1, name=Whole dot=False space=64, tuning=A4[440Hz])], notes_str=['C#4', 'E4', 'G#4', 'A#4']),
+
+        Chord(name=F, ctype=, inversion=1, octave=3, degree=*I, time=1, space=64, dot=False notes=[Note(note=A, octave=3, frequency=220.0Hz, time=1, name=Whole dot=False space=64, tuning=A4[440Hz]), Note(note=C, octave=4, frequency=261.6256Hz, time=1, name=Whole dot=False space=64, tuning=A4[440Hz]), Note(note=F, octave=4, frequency=349.2282Hz, time=1, name=Whole dot=False space=64, tuning=A4[440Hz])], notes_str=['A3', 'C4', 'F4'])
+
+    ]
+)
+LOGS:
+SENTENCES:
+[1]: Vamos enjalbegó
+  - ['Va*', 'mos', ' ', 'en', 'jal', 'be', 'gó*']
+  - [ORIGINAL]
+  - Bars: 2
+  - Chords: 2
+  - Shape: rise
+
+[2]: Esta autoritarismo principiaran
+  - ['Es*', 'ta', ' ', 'au', 'to', 'ri', 'ta', 'ris*', 'mo', ' ', 'prin', 'ci', 'pia*', 'ran']
+  - [ORIGINAL]
+  - Bars: 2
+  - Chords: 2
+  - Shape: fall
+

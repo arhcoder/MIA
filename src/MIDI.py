@@ -44,8 +44,14 @@ class MIDI:
 
         #? File attributes:
         # Build a clean file name based on title: replace spaces with "_" and remove special characters:
-        base_title = re.sub(r"[^A-Za-z0-9 ]+", "", self.title)
+        replacements = {"á": "a", "é": "e", "í": "i", "ó": "o", "ú": "u", "Á": "a", "É": "e", "Í": "i", "Ó": "o", "Ú": "u", "ñ": "n", "Ñ": "n", "ü": "u", "Ü": "u"}
+        base_title = self.title
+        for old, new in replacements.items():
+            base_title = base_title.replace(old, new)
+        base_title = re.sub(r"[^A-Za-z0-9 ]+", "", base_title)
         file_title = base_title.replace(" ", "_")
+        
+
         filename = os.path.join(directory, f"{file_title}.mid")
         counter = 1
         while os.path.exists(filename):

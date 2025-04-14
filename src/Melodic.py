@@ -1,6 +1,5 @@
 from Blocks.Melody import Melody
 from Blocks.Harmony import Harmony
-from Data.harmony.chords import patterns, classifications
 
 import random
 from Selectors import lwrs, ewrs
@@ -8,312 +7,341 @@ from Key import notes_of_scale
 
 
 class Melodic:
-
+    
     def __init__(self, melody: Melody, harmony: Harmony):
         self.melody = melody
         self.harmony = harmony
-    
 
-    def tune_melody(self, octave: int = 4, verbose: bool = False):
+    def tune_melody(self, shapes: list, octave: int = 4, max_jump: int = 12, verbose: bool = False):
         """
-            Having the melody and the harmony, tunes the melody using the LWRS algorithm
-            [LWRS Algorithm take a list of elements and decide randomly one of them, but
-            giving more probability to be selected according to the order on the list, in
-            which the further up the list you are, the more likely you are to be selected]
+            Tunes the melody based on a revised hierarchical LWRS algorithm that considers
+            contextual importance of each note within a phrase and its harmonic context
 
-            This is a method for Harmfirst models, because the Harmony is made first and the
-            melody depends on it, so it uses the Tonal music principle of hierarchy
-            For select the frequency of a note based on the chord, the steps are:
+            [LWRS Algorithm takes a list of elements and randomly selects one of them, giving
+            higher probability to items at the top of the list]
 
-            1. Preprocessing:
-                - Retrieves a mapping between each audible note and its corresponding chord index 
-                    using "map_note2chords()", along with a list of "sound chords" from the harmony
-                - Obtains the diatonic scale for the current key via "notes_of_scale"
-                - Defines a chromatic scale (12 semitones) to be used for proximity and stepwise motion
+            This function is intended for Harmfirst models, where harmony is generated first
+            and melody adapts to it. The process takes tonal music principles of hierarchy
+            and classifies the notes of the melody by importances:
+                - Structural
+                - Main
+                - Important
+                - Step
 
-            2. Helper Functions:
-                - get_directed_chromatic(last_note, direction):
-                    Builds a directed chromatic sequence from a starting note in a given direction 
-                    ("up" or "down"), ensuring candidate notes remain within an octave (plus one extra note)
-                - order_scale(scale):
-                    Orders the diatonic scale tones by a predefined functional importance
-                - common_tones(chord1, chord2):
-                    Determines the common note names between two chords for smoother voice-leading
+            Notes are classified based on their context within a phrase using 4 properties:
+                - "long": note duration is >= 50% of the bar size
+                - "strong": note begins exactly when a chord changes
+                - "first_of_phrase": is the first note of a phrase
+                - "last_of_phrase": is the last note of a phrase
 
-            3. Segmentation of the Melody:
-                - Groups the melody's audible notes into segments based on the chord mapping
-                - Each segment is characterized by its chord index, the start and end indices in the mapping,
-                    and the "density" (number of notes played over that chord)
-                - Notes that start a new segment are flagged as chord-boundary notes, important for transition
+            The classification hierarchy:
+                1. Structural: if ("strong" and "long") or ("strong" and "first") or ("long" and "last")
+                    - LWRS Selection list: [Chord notes], ordered with highest pitch first
 
-            4. Notes Loop: For each audible note in each phrase:
+                2. Main: if only "strong", or ("strong" and "last")
+                    - LWRS Selection list: [Chord notes + Scale notes excluding duplicates]
+
+                3. Important: if only "long" or only "first" or only "last"
+                    - LWRS Selection list: [Chord notes + Scale notes excluding chord tones]
+
+                4. Step: all others
+                    - LWRS Selection list: [Chord notes + Scale notes excluding chord tones +
+                      Rest of notes not in chromatic scale]
             
-                a. Determine Context:
-                    - Identify the current chord from the mapping. For an anacrusis note (mapping value -1), 
-                        the last chord is used
-                    - Identify if the note is a chord-boundary note (the first note in a segment)
-                    - Retrieve previous and next chord objects if available to support voice-leading across chords
-                    - Retrieve the last assigned note (if any) for proximity considerations
+            Additionally, on the selection it order the elements on the list to favor the proximity to the
+            objective notes, trying to give the direction according to a "shape" that could be:
+                - "arch": up-down-up
+                - "valley": down-up-down
+                - "rise": up-up-up
+                - "fall": down-down-down
+                - "random": Choose one of the previous shapes randomly
 
-                b. Build the candidates List:
-                    The candidates list is built in four groups, then concatenated and passed to the 
-                    weighted random selection function (lwrs):
+            Parameters:
+                - shapes [list[str]]: List of shape names for each phrase: With possible values:
+                    "arch", "valley", "rise", "fall"
+                    NOTE: The length of this list must be equal to the number of phrases in the melody
+                - octave [int]: Initial octave for starting melody generation (default is 4)
+                - max_jump [int]: Maximum allowed interval jump (default is 12 semitones)
+                - verbose [bool]: If True, prints additional information during processing (default is False)
 
-                    - Group A: Current Chord Tones:
-                        * Consists of all tones from the current chord, ordered by proximity relative to 
-                        the last note (if available) using a directed chromatic scale
-                        * For the first note of phrase, an ordering of highest first is used
+            Process:
+                1. Uses "map_note2chords()" to map melody notes to their corresponding chords:
+                    a. mapping_notes [list[int]]: Index list where each entry maps a melody note to a chord index,
+                        [-1, 0, 0, 1, 1] means the first note is upbeat (maps to last chord), next two to chord 0, etc
+                    b. sound_chords [list[Chord]]: Chord objects for each segment with access to .notes (pitch and octave)
 
-                    - Group B: Adjacent Chord Context:
-                        * Includes common tones between the previous chord and the current chord, if available
-                        * For chord-boundary notes, also includes common tones between the current and next chord,
-                        inserted at the beginning of this group to ensure smooth transitions
+                2. Groups notes by phrases
 
-                    - Group C: Diatonic Scale Tones:
-                        * Contains scale tones from the current key, ordered by functional importance and excluding
-                        any candidates already present in Groups A and B
+                3. For each phrase:
 
-                    - Group D: Chromatic Fillers:
-                        * Supplements with additional candidates from a directed chromatic scale
-                        * These fillers are filtered by a maximum allowed leap, which is set more restrictively, so
-                        when the chord density is high (favoring stepwise motion) and more liberally when density is low
+                    4. For each note:
+                        a. Calculates its context using properties: strong, long, first_of_phrase, last_of_phrase
+                        b. Classifies it into one of four categories based on these features
+                        c. Builds selection list using the rules above and sorts items based on pitch distance and direction
 
-                c. Direction Decision:
-                    - A decision on whether the melodic motion should continue upward or downward is made,
-                        potentially using an enhanced version of ewrs to favor continuity or voice-leading cues
+                        d. Applies optional pitch constraints:
+                            - Adjusts target octave relative to prior note to keep within melodic shape
+                            - Applies max jump limit
+                        
+                        e. Uses LWRS to select a note from the list
+                        f. Appends selected (note, octave) tuple to final tune list
 
-                d. Final Selection:
-                    - The fully assembled candidate list is passed to lwrs, which selects one note based on a logarithmic
-                        weighting favoring candidates at the top of the list
-                    - The selected candidate (a (note, octave) tuple) is then assigned to the current note
+                5. After all phrases:
+                    - Iterates over melody notes in the Melody object
+                    - Assigns each selected (note, octave) to replace original values (skipping silences)
 
-            5. Updating the Melody:
-            - Once all phrases and their audible notes have been processed, the melody object is updated with the newly
-                assigned note names and octaves, replacing the original pitches
-
-            Returns:
-             - [Melody]: The updated melody object with tunned notes acoording to the harmony
+                Returns:
+                    - [Melody]: Modified Melody object with tuned note names and octaves applied
         """
 
-        #? 1. Preprocessing: Get chord mapping and sound chords, and the key’s scale:
+        #? 1. Map each melody note to its corresponding chord:
         mapping, sound_chords = self.map_note2chords()
-        scale_notes = notes_of_scale(self.harmony.key[0], self.harmony.key[1])
-        if verbose:
-            print("\nSCALE NOTES:", scale_notes)
-        
-        # Define a standard chromatic scale:
-        chromatic = ["C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B"]
 
-        #? Helpef functions:
-        #* Directed chromatic scale from a starting note in a given direction:
-        def get_directed_chromatic(last_note: tuple, direction: str):
-            start_idx = chromatic.index(last_note[0])
-            candidates = []
-            current_octave = last_note[1]
-            for i in range(12):
-                if direction == "up":
-                    idx = (start_idx + i) % 12
-                    candidate_octave = current_octave + ((start_idx + i) // 12)
-                else:
-                    idx = (start_idx - i) % 12
-                    candidate_octave = current_octave - (1 if i > start_idx else 0)
-                candidates.append((chromatic[idx], candidate_octave))
-            # Cap the movement: add one extra note one octave away:
+        #* Prepare scale and chromatic lookup tables:
+        scale_tones = notes_of_scale(self.harmony.key[0], self.harmony.key[1])
+        chromatic_scale = ["C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B"]
+        semitone_index = {name: idx for idx, name in enumerate(chromatic_scale)}
+
+        #* Helper functions:
+        def get_directed_chromatic_scale(last_pitch: tuple, direction: str):
+            """
+                Builda a chromatic list of (note_name, octave) stepping from last_pitch
+                in "up" or "down" direction, spanning one octave
+            """
+            note_name, note_octave = last_pitch
+            start_idx = chromatic_scale.index(note_name)
+            directed = []
             if direction == "up":
-                candidates.append((last_note[0], last_note[1] + 1))
+                for step in range(13):
+                    idx = (start_idx + step) % 12
+                    octave_shift = (start_idx + step) // 12
+                    directed.append((chromatic_scale[idx], note_octave + octave_shift))
             else:
-                candidates.append((last_note[0], last_note[1] - 1))
-            return candidates
+                for step in range(13):
+                    idx = (start_idx - step) % 12
+                    # floor‑division on a negative numerator gives you -1 once you cross zero:
+                    octave_shift = (start_idx - step) // 12
+                    directed.append((chromatic_scale[idx], note_octave + octave_shift))
+            return directed
 
-        #* Order scale tones by functional importance:
-        def order_scale(scale: list):
-            # ORDER: tonic (0), mediant (2), supertonic (1), subdominant (3), dominant (4), submediant (5), leading-tone (6):
-            importance_order = [0, 2, 1, 3, 4, 5, 6]
-            return [scale[i] for i in importance_order if i < len(scale)]
+        def semitone_distance(pitch_a: tuple, pitch_b: tuple):
+            """
+                Compute absolute semitone distance between two pitches
+            """
+            index_a = pitch_a[1] * 12 + semitone_index[pitch_a[0]]
+            index_b = pitch_b[1] * 12 + semitone_index[pitch_b[0]]
+            return abs(index_a - index_b)
         
-        #* Determine common tones between two chords:
-        def common_tones(chord1, chord2):
-            tones1 = [n.note for n in chord1.notes]
-            tones2 = [n.note for n in chord2.notes]
-            return list(set(tones1) & set(tones2))
         
-        #? 2. Tuning Process:
-        # Group notes by chord segments using the mapping:
-        # Creating a list of segments, each segment is (chord_idx, start_index, end_index, density):
-        segments = []
-        current_chord = None
-        start = 0
-        for i, m in enumerate(mapping):
-            if i == 0:
-                current_chord = m
-            if m != current_chord:
-                segments.append((current_chord, start, i, i - start))
-                current_chord = m
-                start = i
-        # Append final segment:
-        segments.append((current_chord, start, len(mapping), len(mapping) - start))
-        
-        tuned_melody = []
+        def clamp(pitch: tuple):
+            """
+                Ensures notes are always in a limit of octaves
+                Between octaves 2 and 7
+            """
+            name, octv = pitch
+            return (name, max(2, min(7, octv)))
+
+        #? 2. Phrase context metadata for two-pass processing:
         mapping_index = 0
-        
-        # Process each phrase:
+        phrases_info = []
         for phrase in self.melody.phrases:
-            phrase_tuned = []
-            # Extract only audible notes (ignoring rests "X"):
+
+            # Gather only audible (non-rest) notes:
             audible_notes = [n for n in phrase.notes if n.note != "X"]
             if not audible_notes:
+
+                # No audible notes: still record for alignment:
+                phrases_info.append({
+                    "phrase": phrase,
+                    "audible_notes": [],
+                    "chord_sequence": [],
+                    "note_indices": []
+                })
                 continue
 
-            # Process each note in the phrase using its global mapping index:
-            for note_idx, note_obj in enumerate(audible_notes):
-                # Identify current segment by matching mapping_index:
-                # Also get density for current chord:
-                current_segment = None
-                for seg in segments:
-                    if seg[1] <= mapping_index < seg[2]:
-                        current_segment = seg
-                        break
-                
-                # Determine the current chord from mapping:
-                map_val = mapping[mapping_index]
-                
-                # If map_val == -1, it's an anacrusis note: assign last chord:
-                current_chord_obj = sound_chords[-1] if map_val == -1 else sound_chords[map_val]
-                
-                # Decide if this note is at a chord boundary:
-                is_boundary = False
-                if mapping_index == current_segment[1]:
-                    # First note in the segment is a chord entry note:
-                    is_boundary = True
-                
-                # Determine previous chord and next chord contexts (if available):
-                previous_chord_obj = None
-                next_chord_obj = None
-
-                # For previous chord: if not the first segment:
-                seg_index = segments.index(current_segment)
-                if seg_index > 0:
-                    prev_seg = segments[seg_index - 1]
-                    prev_map = prev_seg[0]
-                    previous_chord_obj = sound_chords[-1] if prev_map == -1 else sound_chords[prev_map]
-                
-                # For next chord: if not the last segment:
-                if seg_index < len(segments) - 1:
-                    next_seg = segments[seg_index + 1]
-                    next_map = next_seg[0]
-                    next_chord_obj = sound_chords[-1] if next_map == -1 else sound_chords[next_map]
-                
-                # For the very first note in the melody or phrase;
-                # if there is no last note, we choose a candidate from current chord tones directly:
-                if phrase_tuned:
-                    last_note = phrase_tuned[-1]
-                else:
-                    last_note = None
-                candidate_list = []
-
-                #? Candidate Group A: Primary current chord tones:
-                chord_candidates = [(n.note, octave) for n in current_chord_obj.notes]
-                # Order by proximity if a last_note exists; otherwise, use default order (highest first):
-                if last_note:
-                    # Build a directed chromatic scale from last_note (in the prevailing direction):
-                    # For initial note, choose direction based on a simple random pick:
-                    direction = random.choice(["up", "down"])
-                    directed = get_directed_chromatic(last_note, direction)
-                    
-                    # Reorder chord_candidates based on their appearance in the directed list:
-                    ordered_chord = []
-                    for candidate in directed[:-1]:
-                        if candidate in chord_candidates and candidate not in ordered_chord:
-                            ordered_chord.append(candidate)
-                    
-                    # If some chord tones were not encountered in the directed scale, append them at end:
-                    for c in chord_candidates:
-                        if c not in ordered_chord:
-                            ordered_chord.append(c)
-                    chord_candidates = ordered_chord
-                else:
-                    chord_candidates = chord_candidates[:-1]
-                candidate_list.extend(chord_candidates)
-                
-                #? Candidate Group B: Adjacent chord context (common tones):
-                adjacent_candidates = []
-                if previous_chord_obj:
-                    prev_common = common_tones(previous_chord_obj, current_chord_obj)
-                    # Include these tones in the candidate list, if not already present:
-                    for tone in prev_common:
-                        cand = (tone, octave)
-                        if cand not in candidate_list and cand not in adjacent_candidates:
-                            adjacent_candidates.append(cand)
-                if is_boundary and next_chord_obj:
-                    next_common = common_tones(current_chord_obj, next_chord_obj)
-                    for tone in next_common:
-                        cand = (tone, octave)
-                        # Bump boundary notes: these should be highly favored:
-                        if cand not in candidate_list and cand not in adjacent_candidates:
-                            # Insert at the beginning of this group:
-                            adjacent_candidates.insert(0, cand)
-                # Insert adjacent candidates at the top (but after any explicit boundary treatment):
-                candidate_list = adjacent_candidates + candidate_list
-                
-                #? Candidate Group C: Diatonic scale tones:
-                ordered_scale = order_scale(scale_notes)
-                scale_candidates = [(n, octave) for n in ordered_scale if (n, octave) not in candidate_list]
-                candidate_list.extend(scale_candidates)
-                
-                #? Candidate Group D: Chromatic fillers (with adjustments based on density):
-                # Determine maximum allowed leap: if the chord density is high (many notes), allow only small intervals:
-                density = current_segment[3] if current_segment else 1
-                if density > 3:
-                    # Steps only (a whole tone at most):
-                    max_leap = 2
-                else:
-                    # Allow larger leaps if fewer notes to be played:
-                    max_leap = 5
-                
-                # If is there a last note, get a directed chromatic scale based on the last note and an enhanced direction:
-                if last_note:
-                    # Use ewrs to favor continuation of the previous direction:
-                    # In absence of an explicit previous direction, choose randomly:
-                    direction = random.choice(["up", "down"]) if last_note is None else ewrs([direction, "up" if direction == "down" else "down"], base=1)
-                    chroma_seq = get_directed_chromatic(last_note, direction)
-                    # Filter chromatic fillers: only include those within the max_leap:
-                    filtered = []
-                    # Compute interval steps based on position in the chromatic list:
-                    for i, cand in enumerate(chroma_seq):
-                        if i <= max_leap and cand not in candidate_list:
-                            filtered.append(cand)
-                    candidate_list.extend(filtered)
-                else:
-                    # For the very first note, if no last note exists, add full chromatic fillers:
-                    candidate_list.extend([(c, octave) for c in chromatic if (c, octave) not in candidate_list])
-                
-                # Debug: show candidate list for this note:
-                if verbose:
-                    print(f"\n[NOTE {mapping_index}] Candidate list:")
-                    print(" * Group A (current chord tones):", chord_candidates)
-                    if adjacent_candidates:
-                        print(" * Group B (adjacent chord common tones):", adjacent_candidates)
-                    print(" * Group C (scale tones):", scale_candidates)
-                    print(" * Group D (chromatic fillers, limited by leap):", candidate_list[-len(filtered):] if last_note else "N/A")
-                
-                #? Final Selection: Use lwrs on the assembled candidate list:
-                selected_candidate = lwrs(candidate_list)
-                phrase_tuned.append(selected_candidate)
-
-                if verbose:
-                    print(" * Selected note:", selected_candidate)
-                
+            chord_sequence = []
+            note_indices = []
+            for _ in audible_notes:
+                chord_idx = mapping[mapping_index]
+                chord_obj = sound_chords[-1] if chord_idx == -1 else sound_chords[chord_idx]
+                chord_sequence.append(chord_obj)
+                note_indices.append(mapping_index)
                 mapping_index += 1
+
+            phrases_info.append({
+                "phrase": phrase,
+                "audible_notes": audible_notes,
+                "chord_sequence": chord_sequence,
+                "note_indices": note_indices
+            })
+
+        #? 3. Making pitches for each phrase:
+        all_selected_pitches = []
+        for i, phrase_data in enumerate(phrases_info):
+            audible_notes = phrase_data["audible_notes"]
+            if not audible_notes:
+                continue
+            num_notes = len(audible_notes)
+
+            #? 4. For each audible note:
+            note_roles = []
+            for idx, note_obj in enumerate(audible_notes):
+
+                #* a. Determine characteristics:
+                is_first = (idx == 0)
+                is_last = (idx == num_notes - 1)
+                bar_space = self.melody.space / self.melody.bars_amount
+                is_long = (note_obj.space / bar_space >= 0.5)
+                map_idx = phrase_data["note_indices"][idx]
+                prev_map = mapping[map_idx - 1] if map_idx > 0 else None
+                is_strong = (prev_map is None or mapping[map_idx] != prev_map)
+
+                #* b. Classify each note's role based on context:
+                if (is_strong and is_long) or (is_strong and is_first) or (is_long and is_last):
+                    note_roles.append("structural")
+                elif is_strong or (is_strong and is_last):
+                    note_roles.append("principal")
+                elif is_long or is_first or is_last:
+                    note_roles.append("important")
+                else:
+                    note_roles.append("step")
             
-            tuned_melody.extend(phrase_tuned)
-        
-        # Update the melody notes with the newly tuned notes:
-        tune_index = 0
+            #* Shape of the phrase: 
+            if shapes[i] == "random":
+                contour_shape = random.choice(["arch", "valley", "rise", "fall"])
+            else:
+                contour_shape = shapes[i]
+
+            #* Identify indices of structural notes:
+            structural_indices = [i for i, role in enumerate(note_roles) if role == "structural"]
+
+            #* PASS 1: Place structural anchors according to contour:
+            structural_anchors = {}
+            if structural_indices:
+                for rank, pos in enumerate(structural_indices):
+                    chord_obj = phrase_data["chord_sequence"][pos]
+
+                    # Build chord-tone candidates across allowed octaves:
+                    chord_tone_candidates = [
+                        (tone.note, octv)
+                        for tone in chord_obj.notes
+                        for octv in [octave]
+                    ]
+                    # Sort by absolute pitch:
+                    chord_tone_candidates.sort(key=lambda p: p[1] * 12 + semitone_index[p[0]])
+
+                    # Relative position along the phrase (0=start .. 1=end):
+                    rel_pos = rank / (len(structural_indices) - 1) if len(structural_indices) > 1 else 0
+
+                    # Map rel_pos to contour height:
+                    if contour_shape == "arch":
+                        height = 4 * rel_pos * (1 - rel_pos)
+                    elif contour_shape == "valley":
+                        height = 1 - 4 * rel_pos * (1 - rel_pos)
+                    elif contour_shape == "rise":
+                        height = rel_pos
+                    # Fall:
+                    else:
+                        height = 1 - rel_pos
+
+                    # Select the anchor pitch at the computed height:
+                    idx_choice = int(round(height * (len(chord_tone_candidates) - 1)))
+                    structural_anchors[pos] = chord_tone_candidates[idx_choice]
+
+            #* PASS 2: Fill in the remaining notes:
+            phrase_selection = [None] * num_notes
+
+            # Place structural anchors first:
+            for pos, pitch in structural_anchors.items():
+                phrase_selection[pos] = pitch
+
+            # Fill segments between anchors:
+            boundary_positions = [-1] + structural_indices + [num_notes]
+            for seg_idx in range(len(boundary_positions) - 1):
+                start_pos = boundary_positions[seg_idx]
+                end_pos = boundary_positions[seg_idx + 1]
+                for j in range(start_pos + 1, end_pos):
+                    if phrase_selection[j] is not None:
+                        continue
+
+                    # Determine last placed pitch:
+                    if j - 1 >= 0 and phrase_selection[j - 1] is not None:
+                        last_pitch = phrase_selection[j - 1]
+                    # First filler: choose from chord-tones then scale-tones:
+                    else:
+                        chord_obj = phrase_data["chord_sequence"][j]
+                        chord_candidates = [(t.note, octave) for t in chord_obj.notes]
+                        scale_candidates = [
+                            (tone, octave)
+                            for tone in scale_tones
+                            if tone not in [c for c,_ in chord_candidates]
+                        ]
+                        candidate_list = chord_candidates + scale_candidates
+                        selected = lwrs(candidate_list)
+                        phrase_selection[j] = selected
+                        last_pitch = selected
+                        continue
+
+                    # Find next structural anchor as target (if any):
+                    next_anchor = None
+                    for pos in structural_indices:
+                        if pos > j:
+                            next_anchor = phrase_selection[pos]
+                            break
+
+                    # Choose direction, biasing toward next anchor if present:
+                    if next_anchor:
+                        sem_diff = (
+                            next_anchor[1] * 12 + semitone_index[next_anchor[0]]
+                            - (last_pitch[1] * 12 + semitone_index[last_pitch[0]])
+                        )
+                        preferred_dir = "up" if sem_diff > 0 else "down"
+                        direction = ewrs([preferred_dir, "up" if preferred_dir == "down" else "down"], base=2)
+                    else:
+                        direction = random.choice(["up", "down"])
+
+                    # Build directed chromatic scale from last_pitch:
+                    directed_chromatic_scale = get_directed_chromatic_scale(last_pitch, direction)
+
+                    # Possible candidates on the list:
+                    chord_tone_names = [t.note for t in phrase_data["chord_sequence"][j].notes]
+                    chord_candidates = [p for p in directed_chromatic_scale if p[0] in chord_tone_names]
+                    scale_candidates = [p for p in directed_chromatic_scale if p[0] in scale_tones and p not in chord_candidates]
+                    chromatic_candidates = [p for p in directed_chromatic_scale if p not in chord_candidates and p not in scale_candidates]
+
+                    #* c. Builds selection list with candidates, according to note classification:
+                    role = note_roles[j]
+                    if role == "principal":
+                        candidate_list = chord_candidates + scale_candidates + chord_candidates
+                    elif role == "important":
+                        candidate_list = chord_candidates + scale_candidates
+                    else:
+                        candidate_list = chord_candidates + scale_candidates + chromatic_candidates
+
+                    #* d. Enforces maximum interval jump:
+                    filtered_candidates = [p for p in candidate_list if semitone_distance(p, last_pitch) <= max_jump]
+
+                    #* e. Selects pitch using LWRS:
+                    selected = lwrs(filtered_candidates)
+                    selected = clamp(selected)
+                    if verbose:
+                        print(f"\nPhrase {i}, Note {j} - {role.upper()}:\n - Last pitch: {last_pitch}\n - Selection list: {filtered_candidates}\n - Selected: {selected}")
+                        print(f" - Is strong: {is_strong}\n - Is long: {is_long}\n - Is first: {is_first}\n - Is last: {is_last}")
+                    
+                    #* f. Append selected pitch:
+                    phrase_selection[j] = selected
+                    last_pitch = selected
+
+            # Append this phrase's selected pitches:
+            all_selected_pitches.extend(phrase_selection)
+
+        #? 5. Writes back into Melody object:
+        write_idx = 0
         for phrase in self.melody.phrases:
-            for note in phrase.notes:
-                if note.note != "X":
-                    note.note, note.octave = tuned_melody[tune_index]
-                    tune_index += 1
+            for note_obj in phrase.notes:
+                if note_obj.note != "X":
+                    note_obj.note, note_obj.octave = all_selected_pitches[write_idx]
+                    write_idx += 1
 
         return self.melody
     

@@ -1,0 +1,143 @@
+
+MIA Harmfirst b.0.3.0 COMPOSITION
+Date: 10/04/2025 at 17:02:47
+
+Title: Ellos arromadice
+Composer: ARH MIA
+
+
+Melody(
+    signature=(4, 4),
+    key=('F', 'minor'),
+    tuning=A4[440Hz],
+    upbeat=0,
+    anacrusis=False,
+    space=510.0,
+    bars_amount=7.96875,
+    phrases=[
+        
+	Phrase(
+	    space=126.0,
+	    notes=[
+		    Note(note=G#, octave=4, frequency=415.3047Hz, time=4, name=Quarter dot=False space=16, tuning=A4[440Hz]),
+		    Note(note=A#, octave=4, frequency=466.1638Hz, time=8, name=Eighth dot=True space=12.0, tuning=A4[440Hz]),
+		    Note(note=A#, octave=4, frequency=466.1638Hz, time=8, name=Eighth dot=False space=8, tuning=A4[440Hz]),
+		    Note(note=C, octave=4, frequency=261.6256Hz, time=4, name=Quarter dot=False space=16, tuning=A4[440Hz]),
+		    Note(note=F#, octave=4, frequency=369.9944Hz, time=8, name=Eighth dot=True space=12.0, tuning=A4[440Hz]),
+		    Note(note=D#, octave=4, frequency=311.127Hz, time=16, name=Sixteenth dot=False space=4, tuning=A4[440Hz]),
+		    Note(note=G#, octave=4, frequency=415.3047Hz, time=16, name=Sixteenth dot=True space=6.0, tuning=A4[440Hz]),
+		    Note(note=C, octave=4, frequency=261.6256Hz, time=16, name=Sixteenth dot=False space=4, tuning=A4[440Hz]),
+		    Note(note=D#, octave=4, frequency=311.127Hz, time=8, name=Eighth dot=False space=8, tuning=A4[440Hz]),
+		    Note(note=F, octave=4, frequency=349.2282Hz, time=8, name=Eighth dot=False space=8, tuning=A4[440Hz]),
+		    Note(note=C, octave=4, frequency=261.6256Hz, time=2, name=Half dot=False space=32, tuning=A4[440Hz])
+    		]
+	),
+        
+	Phrase(
+	    space=128,
+	    notes=[
+		    Note(note=C, octave=4, frequency=261.6256Hz, time=4, name=Quarter dot=False space=16, tuning=A4[440Hz]),
+		    Note(note=G, octave=4, frequency=391.9954Hz, time=4, name=Quarter dot=False space=16, tuning=A4[440Hz]),
+		    Note(note=G, octave=4, frequency=391.9954Hz, time=8, name=Eighth dot=False space=8, tuning=A4[440Hz]),
+		    Note(note=G, octave=4, frequency=391.9954Hz, time=8, name=Eighth dot=False space=8, tuning=A4[440Hz]),
+		    Note(note=F, octave=4, frequency=349.2282Hz, time=4, name=Quarter dot=False space=16, tuning=A4[440Hz]),
+		    Note(note=D, octave=3, frequency=146.8324Hz, time=1, name=Whole dot=False space=64, tuning=A4[440Hz])
+    		]
+	),
+        
+	Phrase(
+	    space=128,
+	    notes=[
+		    Note(note=C#, octave=4, frequency=277.1826Hz, time=4, name=Quarter dot=False space=16, tuning=A4[440Hz]),
+		    Note(note=C, octave=4, frequency=261.6256Hz, time=4, name=Quarter dot=False space=16, tuning=A4[440Hz]),
+		    Note(note=A#, octave=4, frequency=466.1638Hz, time=4, name=Quarter dot=False space=16, tuning=A4[440Hz]),
+		    Note(note=C, octave=4, frequency=261.6256Hz, time=8, name=Eighth dot=False space=8, tuning=A4[440Hz]),
+		    Note(note=G, octave=4, frequency=391.9954Hz, time=8, name=Eighth dot=False space=8, tuning=A4[440Hz]),
+		    Note(note=F, octave=4, frequency=349.2282Hz, time=8, name=Eighth dot=False space=8, tuning=A4[440Hz]),
+		    Note(note=C#, octave=4, frequency=277.1826Hz, time=8, name=Eighth dot=False space=8, tuning=A4[440Hz]),
+		    Note(note=C, octave=4, frequency=261.6256Hz, time=16, name=Sixteenth dot=False space=4, tuning=A4[440Hz]),
+		    Note(note=D, octave=4, frequency=293.6648Hz, time=8, name=Eighth dot=False space=8, tuning=A4[440Hz]),
+		    Note(note=C, octave=4, frequency=261.6256Hz, time=16, name=Sixteenth dot=False space=4, tuning=A4[440Hz]),
+		    Note(note=G, octave=4, frequency=391.9954Hz, time=2, name=Half dot=False space=32, tuning=A4[440Hz])
+    		]
+	),
+        
+	Phrase(
+	    space=128,
+	    notes=[
+		    Note(note=C, octave=4, frequency=261.6256Hz, time=4, name=Quarter dot=False space=16, tuning=A4[440Hz]),
+		    Note(note=G, octave=4, frequency=391.9954Hz, time=4, name=Quarter dot=False space=16, tuning=A4[440Hz]),
+		    Note(note=G, octave=4, frequency=391.9954Hz, time=8, name=Eighth dot=False space=8, tuning=A4[440Hz]),
+		    Note(note=G, octave=4, frequency=391.9954Hz, time=8, name=Eighth dot=False space=8, tuning=A4[440Hz]),
+		    Note(note=F, octave=4, frequency=349.2282Hz, time=4, name=Quarter dot=False space=16, tuning=A4[440Hz]),
+		    Note(note=D, octave=3, frequency=146.8324Hz, time=1, name=Whole dot=False space=64, tuning=A4[440Hz])
+    		]
+	)
+    ]
+)
+Harmony(
+    signature=(4, 4),
+    key=('F', 'minor'),
+    tuning=A4[440Hz],
+    upbeat=0,
+    anacrusis=False,
+    space=512,
+    bars_amount=8.0,
+    chords=[
+
+        Chord(name=C#, ctype=, inversion=0, octave=3, degree=bVI, time=1, space=64, dot=False notes=[Note(note=C#, octave=3, frequency=138.5913Hz, time=1, name=Whole dot=False space=64, tuning=A4[440Hz]), Note(note=F, octave=3, frequency=174.6141Hz, time=1, name=Whole dot=False space=64, tuning=A4[440Hz]), Note(note=G#, octave=3, frequency=207.6523Hz, time=1, name=Whole dot=False space=64, tuning=A4[440Hz])], notes_str=['C#3', 'F3', 'G#3']),
+
+        Chord(name=G#, ctype=, inversion=2, octave=2, degree=bIII, time=1, space=64, dot=False notes=[Note(note=D#, octave=3, frequency=155.5635Hz, time=1, name=Whole dot=False space=64, tuning=A4[440Hz]), Note(note=G#, octave=3, frequency=207.6523Hz, time=1, name=Whole dot=False space=64, tuning=A4[440Hz]), Note(note=C, octave=4, frequency=261.6256Hz, time=1, name=Whole dot=False space=64, tuning=A4[440Hz])], notes_str=['D#3', 'G#3', 'C4']),
+
+        Chord(name=D#, ctype=, inversion=0, octave=3, degree=bVII, time=1, space=64, dot=False notes=[Note(note=D#, octave=3, frequency=155.5635Hz, time=1, name=Whole dot=False space=64, tuning=A4[440Hz]), Note(note=G, octave=3, frequency=195.9977Hz, time=1, name=Whole dot=False space=64, tuning=A4[440Hz]), Note(note=A#, octave=3, frequency=233.0819Hz, time=1, name=Whole dot=False space=64, tuning=A4[440Hz])], notes_str=['D#3', 'G3', 'A#3']),
+
+        Chord(name=A#, ctype=m, inversion=2, octave=2, degree=iv, time=1, space=64, dot=False notes=[Note(note=F, octave=3, frequency=174.6141Hz, time=1, name=Whole dot=False space=64, tuning=A4[440Hz]), Note(note=A#, octave=3, frequency=233.0819Hz, time=1, name=Whole dot=False space=64, tuning=A4[440Hz]), Note(note=C#, octave=4, frequency=277.1826Hz, time=1, name=Whole dot=False space=64, tuning=A4[440Hz])], notes_str=['F3', 'A#3', 'C#4']),
+
+        Chord(name=F, ctype=7, inversion=3, octave=2, degree=*I (7), time=4, space=16, dot=False notes=[Note(note=D#, octave=3, frequency=155.5635Hz, time=4, name=Quarter dot=False space=16, tuning=A4[440Hz]), Note(note=F, octave=3, frequency=174.6141Hz, time=4, name=Quarter dot=False space=16, tuning=A4[440Hz]), Note(note=A, octave=3, frequency=220.0Hz, time=4, name=Quarter dot=False space=16, tuning=A4[440Hz]), Note(note=C, octave=4, frequency=261.6256Hz, time=4, name=Quarter dot=False space=16, tuning=A4[440Hz])], notes_str=['D#3', 'F3', 'A3', 'C4']),
+
+        Chord(name=F, ctype=m, inversion=1, octave=2, degree=i, time=4, space=16, dot=False notes=[Note(note=G#, octave=2, frequency=103.8262Hz, time=4, name=Quarter dot=False space=16, tuning=A4[440Hz]), Note(note=C, octave=3, frequency=130.8128Hz, time=4, name=Quarter dot=False space=16, tuning=A4[440Hz]), Note(note=F, octave=3, frequency=174.6141Hz, time=4, name=Quarter dot=False space=16, tuning=A4[440Hz])], notes_str=['G#2', 'C3', 'F3']),
+
+        Chord(name=C, ctype=m, inversion=2, octave=2, degree=v, time=2, space=32, dot=False notes=[Note(note=G, octave=2, frequency=97.9989Hz, time=2, name=Half dot=False space=32, tuning=A4[440Hz]), Note(note=C, octave=3, frequency=130.8128Hz, time=2, name=Half dot=False space=32, tuning=A4[440Hz]), Note(note=D#, octave=3, frequency=155.5635Hz, time=2, name=Half dot=False space=32, tuning=A4[440Hz])], notes_str=['G2', 'C3', 'D#3']),
+
+        Chord(name=G, ctype=dim, inversion=1, octave=2, degree=II, time=1, space=64, dot=False notes=[Note(note=A#, octave=2, frequency=116.5409Hz, time=1, name=Whole dot=False space=64, tuning=A4[440Hz]), Note(note=C#, octave=3, frequency=138.5913Hz, time=1, name=Whole dot=False space=64, tuning=A4[440Hz]), Note(note=G, octave=3, frequency=195.9977Hz, time=1, name=Whole dot=False space=64, tuning=A4[440Hz])], notes_str=['A#2', 'C#3', 'G3']),
+
+        Chord(name=G#, ctype=sus4, inversion=1, octave=2, degree=bIII (sus4), time=4, space=16, dot=False notes=[Note(note=C#, octave=3, frequency=138.5913Hz, time=4, name=Quarter dot=False space=16, tuning=A4[440Hz]), Note(note=D#, octave=3, frequency=155.5635Hz, time=4, name=Quarter dot=False space=16, tuning=A4[440Hz]), Note(note=G#, octave=3, frequency=207.6523Hz, time=4, name=Quarter dot=False space=16, tuning=A4[440Hz])], notes_str=['C#3', 'D#3', 'G#3']),
+
+        Chord(name=D#, ctype=, inversion=1, octave=2, degree=bVII, time=4, space=16, dot=False notes=[Note(note=G, octave=2, frequency=97.9989Hz, time=4, name=Quarter dot=False space=16, tuning=A4[440Hz]), Note(note=A#, octave=2, frequency=116.5409Hz, time=4, name=Quarter dot=False space=16, tuning=A4[440Hz]), Note(note=D#, octave=3, frequency=155.5635Hz, time=4, name=Quarter dot=False space=16, tuning=A4[440Hz])], notes_str=['G2', 'A#2', 'D#3']),
+
+        Chord(name=A#, ctype=7, inversion=1, octave=2, degree=*IV (7), time=1, space=64, dot=False notes=[Note(note=D, octave=3, frequency=146.8324Hz, time=1, name=Whole dot=False space=64, tuning=A4[440Hz]), Note(note=F, octave=3, frequency=174.6141Hz, time=1, name=Whole dot=False space=64, tuning=A4[440Hz]), Note(note=G#, octave=3, frequency=207.6523Hz, time=1, name=Whole dot=False space=64, tuning=A4[440Hz]), Note(note=A#, octave=3, frequency=233.0819Hz, time=1, name=Whole dot=False space=64, tuning=A4[440Hz])], notes_str=['D3', 'F3', 'G#3', 'A#3']),
+
+        Chord(name=F, ctype=sus4, inversion=2, octave=2, degree=I (sus4), time=2, space=32, dot=False notes=[Note(note=C, octave=3, frequency=130.8128Hz, time=2, name=Half dot=False space=32, tuning=A4[440Hz]), Note(note=F, octave=3, frequency=174.6141Hz, time=2, name=Half dot=False space=32, tuning=A4[440Hz]), Note(note=A#, octave=3, frequency=233.0819Hz, time=2, name=Half dot=False space=32, tuning=A4[440Hz])], notes_str=['C3', 'F3', 'A#3'])
+
+    ]
+)
+LOGS:
+SENTENCES:
+[1]: Ellos arromadice ojeteados
+  - ['E*', 'llos', ' ', 'a', 'rro', 'ma', 'di*', 'ce', ' ', 'o', 'je', 'te', 'a*', 'dos']
+  - [ORIGINAL]
+  - Bars: 2
+  - Chords: 2
+  - Shape: arch
+
+[2]: Olé harmonizá
+  - ['O', 'lé*', ' ', 'har', 'mo', 'ni', 'zá*']
+  - [ORIGINAL]
+  - Bars: 2
+  - Chords: 2
+  - Shape: valley
+
+[3]: Ellos arromadice ojeteados
+  - ['E*', 'llos', ' ', 'a', 'rro', 'ma', 'di*', 'ce', ' ', 'o', 'je', 'te', 'a*', 'dos']
+  - [REPETITION OF SENTENCE 0]
+  - Bars: 2
+  - Chords: 4
+  - Shape: arch
+
+[4]: Olé harmonizá
+  - ['O', 'lé*', ' ', 'har', 'mo', 'ni', 'zá*']
+  - [REPETITION OF RYTHM 1]
+  - Bars: 2
+  - Chords: 4
+  - Shape: valley
+

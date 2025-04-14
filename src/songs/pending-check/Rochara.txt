@@ -1,0 +1,77 @@
+
+MIA Harmfirst b.0.3.0 COMPOSITION
+Date: 10/04/2025 at 18:13:32
+
+Title: Rochara
+Composer: ARH MIA
+
+
+Melody(
+    signature=(3, 4),
+    key=('C', 'minor'),
+    tuning=A4[440Hz],
+    upbeat=1,
+    anacrusis=True,
+    space=192,
+    bars_amount=4.0,
+    phrases=[
+        
+	Phrase(
+	    space=96,
+	    notes=[
+		    Note(note=G#, octave=4, frequency=415.3047Hz, time=4, name=Quarter dot=False space=16, tuning=A4[440Hz]),
+		    Note(note=G#, octave=4, frequency=415.3047Hz, time=4, name=Quarter dot=False space=16, tuning=A4[440Hz]),
+		    Note(note=C, octave=4, frequency=261.6256Hz, time=1, name=Whole dot=False space=64, tuning=A4[440Hz])
+    		]
+	),
+        
+	Phrase(
+	    space=96,
+	    notes=[
+		    Note(note=C, octave=4, frequency=261.6256Hz, time=2, name=Half dot=False space=32, tuning=A4[440Hz]),
+		    Note(note=D#, octave=4, frequency=311.127Hz, time=4, name=Quarter dot=False space=16, tuning=A4[440Hz]),
+		    Note(note=A, octave=4, frequency=440.0Hz, time=4, name=Quarter dot=False space=16, tuning=A4[440Hz]),
+		    Note(note=F, octave=5, frequency=698.4565Hz, time=4, name=Quarter dot=False space=16, tuning=A4[440Hz]),
+		    Note(note=F, octave=6, frequency=1396.9129Hz, time=4, name=Quarter dot=False space=16, tuning=A4[440Hz])
+    		]
+	)
+    ]
+)
+Harmony(
+    signature=(3, 4),
+    key=('C', 'minor'),
+    tuning=A4[440Hz],
+    upbeat=1,
+    anacrusis=True,
+    space=208,
+    bars_amount=4.333333333333333,
+    chords=[
+
+        Chord(name=X, ctype=None, inversion=None, octave=None, degree=, time=4, space=16, dot=False notes=[Note(note=X, octave=0, frequency=0Hz, time=4, name=Quarter dot=False space=16, tuning=A4[440Hz])], notes_str=[]),
+
+        Chord(name=F, ctype=m, inversion=1, octave=3, degree=iv, time=1, space=64, dot=False notes=[Note(note=G#, octave=3, frequency=207.6523Hz, time=1, name=Whole dot=False space=64, tuning=A4[440Hz]), Note(note=C, octave=4, frequency=261.6256Hz, time=1, name=Whole dot=False space=64, tuning=A4[440Hz]), Note(note=F, octave=4, frequency=349.2282Hz, time=1, name=Whole dot=False space=64, tuning=A4[440Hz])], notes_str=['G#3', 'C4', 'F4']),
+
+        Chord(name=C, ctype=m, inversion=2, octave=3, degree=i, time=2, space=32, dot=False notes=[Note(note=G, octave=3, frequency=195.9977Hz, time=2, name=Half dot=False space=32, tuning=A4[440Hz]), Note(note=C, octave=4, frequency=261.6256Hz, time=2, name=Half dot=False space=32, tuning=A4[440Hz]), Note(note=D#, octave=4, frequency=311.127Hz, time=2, name=Half dot=False space=32, tuning=A4[440Hz])], notes_str=['G3', 'C4', 'D#4']),
+
+        Chord(name=F, ctype=7b5, inversion=0, octave=3, degree=*IV (7b5), time=1, space=64, dot=False notes=[Note(note=F, octave=3, frequency=174.6141Hz, time=1, name=Whole dot=False space=64, tuning=A4[440Hz]), Note(note=A, octave=3, frequency=220.0Hz, time=1, name=Whole dot=False space=64, tuning=A4[440Hz]), Note(note=B, octave=3, frequency=246.9417Hz, time=1, name=Whole dot=False space=64, tuning=A4[440Hz]), Note(note=D#, octave=4, frequency=311.127Hz, time=1, name=Whole dot=False space=64, tuning=A4[440Hz])], notes_str=['F3', 'A3', 'B3', 'D#4']),
+
+        Chord(name=C, ctype=aug, inversion=0, octave=3, degree=*I+, time=2, space=32, dot=False notes=[Note(note=C, octave=3, frequency=130.8128Hz, time=2, name=Half dot=False space=32, tuning=A4[440Hz]), Note(note=E, octave=3, frequency=164.8138Hz, time=2, name=Half dot=False space=32, tuning=A4[440Hz]), Note(note=G#, octave=3, frequency=207.6523Hz, time=2, name=Half dot=False space=32, tuning=A4[440Hz])], notes_str=['C3', 'E3', 'G#3'])
+
+    ]
+)
+LOGS:
+SENTENCES:
+[1]: Rochara
+  - ['Ro', 'cha*', 'ra']
+  - [ORIGINAL]
+  - Bars: 2
+  - Chords: 2
+  - Shape: fall
+
+[2]: Puf discantaba
+  - ['Puf*', ' ', 'dis', 'can', 'ta*', 'ba']
+  - [ORIGINAL]
+  - Bars: 2
+  - Chords: 2
+  - Shape: rise
+

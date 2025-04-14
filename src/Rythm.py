@@ -138,12 +138,13 @@ class Rythm:
         self.triplet_types = {3, 6, 12, 24}
         self.for_chords = for_chords
         self.tuning = tuning
+        self.score = None
 
         # If it is for chords, some params are simplier:
         if for_chords:
-            self.params["selection_bias"] = 5
+            self.params["selection_bias"] = 1
             self.params["correct_fitting_importance"] = 100
-            self.params["beat_on_strong_beats_reward"] = 100
+            self.params["beat_on_strong_beats_reward"] = 200
             self.params["initial_rest_duration_reward"] = -100
             self.params["initial_rest_anacrusis_penalty"] = -100
             self.params["final_rest_duration_reward"] = -100
@@ -362,6 +363,7 @@ class Rythm:
 
         current = candidate
         current_score = self.rate(current, syllables, total_space)
+        self.score = current_score
         best = copy.deepcopy(current)
         best_score = current_score
 
@@ -380,6 +382,7 @@ class Rythm:
                     best_score = score
             T *= cooling_rate
         
+        self.score = best_score
         return best
     
 
@@ -527,8 +530,8 @@ class Rythm:
                     remaining -= coin_value * count
                 if remaining == 0:
                     break
-            if remaining != 0:
-                print(f"WARNING: Gap of {remaining} could not be exactly filled with available silence figures")
+            # if remaining != 0:
+                # print(f"WARNING: Gap of {remaining} could not be exactly filled with available silence figures")
             
             # Re-append a final rest (0 with dot False) to restore candidate structure:
             notes.append(0)
@@ -574,10 +577,12 @@ class Rythm:
             notes[idx] = chosen_mod[0]
             dots[idx] = chosen_mod[1]
             total_eff = round(sum(effective(n, d) for n, d in zip(notes, dots)))
-            print(f"\nAdjusted syllable at index {idx}: now {notes[idx]}, {dots[idx]}, total_eff: {total_eff}")
+            self.score = self.score * 0.85
+            # print(f"\nAdjusted syllable at index {idx}: now {notes[idx]}, {dots[idx]}, total_eff: {total_eff}")
         
         if total_eff > total_space:
-            print("WARNING: Even after adjusting syllables, total effective duration exceeds target")
+            self.score = self.score * 0.15
+            # print("WARNING: Even after adjusting syllables, total effective duration exceeds target")
 
         # Step 2: Fill the remaining gap:
         notes.pop()
@@ -599,8 +604,8 @@ class Rythm:
                 remaining -= coin_value * count
             if remaining == 0:
                 break
-        if remaining != 0:
-            print(f"WARNING: Gap of {remaining} could not be exactly filled with available silence figures")
+        # if remaining != 0:
+            # print(f"WARNING: Gap of {remaining} could not be exactly filled with available silence figures")
         notes.append(0)
         dots.append(False)
 

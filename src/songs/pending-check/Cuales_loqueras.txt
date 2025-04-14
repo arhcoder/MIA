@@ -1,0 +1,84 @@
+
+MIA Harmfirst b.0.3.0 COMPOSITION
+Date: 10/04/2025 at 18:17:29
+
+Title: Cuáles loqueras
+Composer: ARH MIA
+
+
+Melody(
+    signature=(4, 4),
+    key=('C', 'minor'),
+    tuning=A4[440Hz],
+    upbeat=1,
+    anacrusis=True,
+    space=256.0,
+    bars_amount=4.0,
+    phrases=[
+        
+	Phrase(
+	    space=128.0,
+	    notes=[
+		    Note(note=C#, octave=4, frequency=277.1826Hz, time=16, name=Sixteenth dot=False space=4, tuning=A4[440Hz]),
+		    Note(note=C#, octave=4, frequency=277.1826Hz, time=8, name=Eighth dot=False space=8, tuning=A4[440Hz]),
+		    Note(note=C#, octave=3, frequency=138.5913Hz, time=16, name=Sixteenth dot=False space=4, tuning=A4[440Hz]),
+		    Note(note=F, octave=3, frequency=174.6141Hz, time=8, name=Eighth dot=True space=12.0, tuning=A4[440Hz]),
+		    Note(note=A#, octave=3, frequency=233.0819Hz, time=8, name=Eighth dot=True space=12.0, tuning=A4[440Hz]),
+		    Note(note=C, octave=4, frequency=261.6256Hz, time=4, name=Quarter dot=True space=24.0, tuning=A4[440Hz]),
+		    Note(note=A#, octave=3, frequency=233.0819Hz, time=4, name=Quarter dot=False space=16, tuning=A4[440Hz]),
+		    Note(note=D, octave=4, frequency=293.6648Hz, time=2, name=Half dot=False space=32, tuning=A4[440Hz]),
+		    Note(note=D, octave=4, frequency=293.6648Hz, time=4, name=Quarter dot=False space=16, tuning=A4[440Hz])
+    		]
+	),
+        
+	Phrase(
+	    space=128,
+	    notes=[
+		    Note(note=D, octave=4, frequency=293.6648Hz, time=4, name=Quarter dot=False space=16, tuning=A4[440Hz]),
+		    Note(note=G#, octave=4, frequency=415.3047Hz, time=4, name=Quarter dot=False space=16, tuning=A4[440Hz]),
+		    Note(note=A, octave=3, frequency=220.0Hz, time=2, name=Half dot=False space=32, tuning=A4[440Hz]),
+		    Note(note=C#, octave=4, frequency=277.1826Hz, time=4, name=Quarter dot=False space=16, tuning=A4[440Hz]),
+		    Note(note=D#, octave=3, frequency=155.5635Hz, time=4, name=Quarter dot=False space=16, tuning=A4[440Hz]),
+		    Note(note=G#, octave=4, frequency=415.3047Hz, time=2, name=Half dot=False space=32, tuning=A4[440Hz])
+    		]
+	)
+    ]
+)
+Harmony(
+    signature=(4, 4),
+    key=('C', 'minor'),
+    tuning=A4[440Hz],
+    upbeat=1,
+    anacrusis=True,
+    space=272,
+    bars_amount=4.25,
+    chords=[
+
+        Chord(name=X, ctype=None, inversion=None, octave=None, degree=, time=4, space=16, dot=False notes=[Note(note=X, octave=0, frequency=0Hz, time=4, name=Quarter dot=False space=16, tuning=A4[440Hz])], notes_str=[]),
+
+        Chord(name=A#, ctype=, inversion=1, octave=3, degree=bVII, time=1, space=64, dot=False notes=[Note(note=D, octave=4, frequency=293.6648Hz, time=1, name=Whole dot=False space=64, tuning=A4[440Hz]), Note(note=F, octave=4, frequency=349.2282Hz, time=1, name=Whole dot=False space=64, tuning=A4[440Hz]), Note(note=A#, octave=4, frequency=466.1638Hz, time=1, name=Whole dot=False space=64, tuning=A4[440Hz])], notes_str=['D4', 'F4', 'A#4']),
+
+        Chord(name=A#, ctype=aug, inversion=1, octave=3, degree=*#VI+, time=1, space=64, dot=False notes=[Note(note=D, octave=4, frequency=293.6648Hz, time=1, name=Whole dot=False space=64, tuning=A4[440Hz]), Note(note=F#, octave=4, frequency=369.9944Hz, time=1, name=Whole dot=False space=64, tuning=A4[440Hz]), Note(note=A#, octave=4, frequency=466.1638Hz, time=1, name=Whole dot=False space=64, tuning=A4[440Hz])], notes_str=['D4', 'F#4', 'A#4']),
+
+        Chord(name=F, ctype=7#5, inversion=0, octave=4, degree=*IV+, time=1, space=64, dot=False notes=[Note(note=F, octave=4, frequency=349.2282Hz, time=1, name=Whole dot=False space=64, tuning=A4[440Hz]), Note(note=A, octave=4, frequency=440.0Hz, time=1, name=Whole dot=False space=64, tuning=A4[440Hz]), Note(note=C#, octave=5, frequency=554.3653Hz, time=1, name=Whole dot=False space=64, tuning=A4[440Hz]), Note(note=D#, octave=5, frequency=622.254Hz, time=1, name=Whole dot=False space=64, tuning=A4[440Hz])], notes_str=['F4', 'A4', 'C#5', 'D#5']),
+
+        Chord(name=C#, ctype=, inversion=1, octave=4, degree=*#I, time=1, space=64, dot=False notes=[Note(note=F, octave=4, frequency=349.2282Hz, time=1, name=Whole dot=False space=64, tuning=A4[440Hz]), Note(note=G#, octave=4, frequency=415.3047Hz, time=1, name=Whole dot=False space=64, tuning=A4[440Hz]), Note(note=C#, octave=5, frequency=554.3653Hz, time=1, name=Whole dot=False space=64, tuning=A4[440Hz])], notes_str=['F4', 'G#4', 'C#5'])
+
+    ]
+)
+LOGS:
+SENTENCES:
+[1]: Cuáles loqueras apalabráis
+  - ['Cuá*', 'les', ' ', 'lo', 'que*', 'ras', ' ', 'a', 'pa', 'la', 'bráis*']
+  - [ORIGINAL]
+  - Bars: 2
+  - Chords: 2
+  - Shape: arch
+
+[2]: Cuál yo cabeando
+  - ['Cuál*', ' ', 'yo*', ' ', 'ca', 'be', 'an*', 'do']
+  - [ORIGINAL]
+  - Bars: 2
+  - Chords: 2
+  - Shape: valley
+

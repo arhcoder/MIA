@@ -582,7 +582,7 @@ class GeneticProgression:
 
 
 
-def build_harmony(chords_per_sentence: list, chords_durations: list, chords_progression: list, params: dict, signature: tuple, upbeat: int, key: str, scale: str, chords_octave: int, tuning: int | float = 440):
+def build_harmony(chords_per_sentence: list, chords_durations: list, chords_progression: list, params: dict, signature: tuple, upbeat: int, key: str, scale: str, chords_octave: int, tuning: int | float = 440, best_rythm_of: int = 10):
     """
         Builds a Harmony object for a chord progression given
 
@@ -609,6 +609,9 @@ def build_harmony(chords_per_sentence: list, chords_durations: list, chords_prog
             - chords_octave [int]: Octave in which chords should be rendered
 
             - tuning [int | float]: Tuning frequency for A4
+
+            - best_rythm_of [int]: Amount of times to repeat the rythm generation to get the best one
+            (default: 10)
             
             The function uses the Rythm.fit method (with for_chords=True) to generate, for each phrase,
             a chord rhythm that is padded with extra silences (if needed) so that the total effective duration
@@ -617,9 +620,7 @@ def build_harmony(chords_per_sentence: list, chords_durations: list, chords_prog
         
         Returns:
             A Harmony object with the assembled chord progression
-    """
-    rythm_harmony = Rythm(signature=signature, upbeat=upbeat, params=params, for_chords=True, tuning=tuning)
-    
+    """    
     # Process each phrase: for each phrase, generate a chord sentence;
     # The number of phrases is the length of chords_per_sentence (which should match the length of chords_durations):
 
@@ -638,7 +639,12 @@ def build_harmony(chords_per_sentence: list, chords_durations: list, chords_prog
         # Fit the chord sentence into the required number of bars;
         # In chord mode, our modified Rythm.fit now returns a tuple:
         # (initial_rest, chord_figures, final_rest, extra_silences, dots)
-        result = rythm_harmony.fit(sentence=chord_sentence, bars=bars)
+        rythms = []
+        for _ in range(best_rythm_of):
+            rythm_harmony = Rythm(signature=signature, upbeat=upbeat, params=params, for_chords=True, tuning=tuning)
+            rythm_result = rythm_harmony.fit(sentence=chord_sentence, bars=bars)
+            rythms.append(rythm_result)
+        result = max(rythms, key=lambda x: x[1])
 
         # In candidate structure:
         # - times_chords[0] is the initial rest (unused for chord sound),
