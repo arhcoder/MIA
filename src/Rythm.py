@@ -142,9 +142,9 @@ class Rythm:
 
         # If it is for chords, some params are simplier:
         if for_chords:
-            self.params["selection_bias"] = 1
+            self.params["selection_bias"] = 2
             self.params["correct_fitting_importance"] = 100
-            self.params["beat_on_strong_beats_reward"] = 200
+            self.params["beat_on_strong_beats_reward"] = 100
             self.params["initial_rest_duration_reward"] = -100
             self.params["initial_rest_anacrusis_penalty"] = -100
             self.params["final_rest_duration_reward"] = -100

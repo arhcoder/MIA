@@ -44,6 +44,7 @@ genetic_progression_params = {
 
     "population_size": 50,
     "generations_per_chord": 12,
+    "generations_per_chord_on_not_restarting": 8,
     "mutation_rate": 0.1,
     "tournament_size": 5,
     "elitism_size": 3,

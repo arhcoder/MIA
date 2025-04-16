@@ -123,10 +123,11 @@ class GeneticProgression:
         self.population = []
         self.key = None
         self.scale = None
+        self.done = False
     
     
     #? MAIN FUNCTION TO CREATE A PROGRESSION:
-    def create(self, chords: int, key: str, scale: str):
+    def create(self, chords: int, key: str, scale: str, restart: bool = True):
         """
             Main method to get a progression acoording to a key, with Genetic Algorithm
 
@@ -150,6 +151,9 @@ class GeneticProgression:
                     - "mixolydian"
                     - "aeolian"
                     - "locrian"
+                - restart [bool]: Default as True. If False, it generates do not recreate
+                    the Genetic Algorithm results, so it starts the process with the existing
+                    results, improving more the result
 
             Returns: Best solution of chord progression in format:
                 list[tuple] in which each tuple has:
@@ -184,13 +188,24 @@ class GeneticProgression:
             key = flats_to_sharps[key]
         self.key = key
 
+        #? Restart validations:
+        if not restart and not self.done:
+            print("\n * WARNING: Try to generate a chord progression via \"create\" method, with parameter \"restart = True\", and this object has never generated progression before, so there is no chance to \"ignore\" restart")
+            self.restart = True
+        else:
+            self.restart = restart
+
 
         #/ GENETIC ALGORITHM /#
         #? Initializate population:
-        self.population = self.initialize(self.params["population_size"], chords, key, scale)
-
-        #? Generaton steps:
-        for _ in range(int(self.params["generations_per_chord"] * chords)):
+        if self.restart:
+            self.population = self.initialize(self.params["population_size"], chords, key, scale)
+            n_generations = int(self.params["generations_per_chord"] * chords)
+        else:
+            n_generations = int(self.params["generations_per_chord_on_not_restarting"] * chords)
+        
+        #? Generation steps:
+        for _ in range(n_generations):
 
             #? Evaluation of progressions:
             evaluated = [(self.rate(ind), ind) for ind in self.population]
@@ -211,6 +226,7 @@ class GeneticProgression:
         
         
         #/ Returns just the best individual:
+        self.done = True
         #? Returns as list[tuple] in which each tuple has:
         #*  - [str] Name of root note on the chord
         #*  - [str] Type of the chord
@@ -584,7 +600,7 @@ class GeneticProgression:
 
 def build_harmony(chords_per_sentence: list, chords_durations: list, chords_progression: list, params: dict, signature: tuple, upbeat: int, key: str, scale: str, chords_octave: int, tuning: int | float = 440, best_rythm_of: int = 10):
     """
-        Builds a Harmony object for a chord progression given
+        Builds a Harmony object for a given chord progression
 
         Parameters:
         
@@ -746,9 +762,7 @@ def octave_chord(current_chord: Chord, last_chord: Chord):
         pass
 
     # Define a mapping to compute pitch in semitones:
-    semitones = {"C": 0, "C#": 1, "D": 2, "D#": 3, "E": 4,
-                 "F": 5, "F#": 6, "G": 7, "G#": 8, "A": 9,
-                 "A#": 10, "B": 11}
+    semitones = {"C": 0, "C#": 1, "D": 2, "D#": 3, "E": 4, "F": 5, "F#": 6, "G": 7, "G#": 8, "A": 9, "A#": 10, "B": 11}
 
     def note_pitch(note):
         return note.octave * 12 + semitones[note.note]

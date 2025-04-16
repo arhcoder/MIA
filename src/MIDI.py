@@ -214,7 +214,7 @@ class MIDI:
         
         #? SAVES TXT FILE:
         with open(filename.replace(".mid", ".txt"), "w", encoding="utf-8") as f:
-            f.write("\nMIA Harmfirst b.0.3.0 COMPOSITION\n")
+            f.write("\nMIA Harmfirst a1 COMPOSITION\n")
             date_str = datetime.datetime.now().strftime("%d/%m/%Y at %H:%M:%S")
             f.write(f"Date: {date_str}\n\n")
             f.write(f"Title: {self.title}\n")
